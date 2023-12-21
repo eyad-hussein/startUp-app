@@ -1,19 +1,25 @@
-import 'package:app/widgets/login_form_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:app/routes.dart';
+import 'package:app/widgets/custom_button_widget.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class ProvidersScreen extends StatelessWidget {
+  const ProvidersScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            Get.back();
+          },
+          icon: Icon(Icons.arrow_back,
+              color: Theme.of(context).colorScheme.primary),
+        ),
+      ),
       backgroundColor: Theme.of(context).colorScheme.background,
       bottomNavigationBar: GestureDetector(
-        onTap: () {
-          Get.toNamed(Routes.providersScreenRoute);
-        },
+        onTap: () {},
         child: ClipRRect(
           borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(20.0),
@@ -24,7 +30,7 @@ class LoginScreen extends StatelessWidget {
             height: 70,
             child: Center(
               child: Text(
-                "Log In",
+                'Create an Account',
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.background,
                   fontSize:
@@ -44,13 +50,13 @@ class LoginScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 const SizedBox(
-                  height: 80,
+                  height: 10,
                 ),
                 Center(
                   child: Column(
                     children: [
                       Text(
-                        "Welcome",
+                        'Let\'s Get Started',
                         style: TextStyle(
                           fontSize: Theme.of(context)
                               .textTheme
@@ -59,21 +65,6 @@ class LoginScreen extends StatelessWidget {
                           fontWeight: Theme.of(context)
                               .textTheme
                               .displayMedium!
-                              .fontWeight,
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-                      Text(
-                        "Please enter your data to continue",
-                        style: TextStyle(
-                          color: Theme.of(context).colorScheme.secondary,
-                          fontSize: Theme.of(context)
-                              .textTheme
-                              .displaySmall!
-                              .fontSize,
-                          fontWeight: Theme.of(context)
-                              .textTheme
-                              .displaySmall!
                               .fontWeight,
                         ),
                       ),
@@ -81,9 +72,38 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(
-                  height: 150,
+                  height: 143,
                 ),
-                const LoginForm(),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    right: 20.0,
+                    left: 20.0,
+                    top: 50,
+                    bottom: 130,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      CustomButton(
+                        content: 'Facebook',
+                        onPressed: () {},
+                        type: CustomButtonType.social,
+                      ),
+                      const SizedBox(height: 5),
+                      CustomButton(
+                        content: 'Twitter',
+                        onPressed: () {},
+                        type: CustomButtonType.social,
+                      ),
+                      const SizedBox(height: 5),
+                      CustomButton(
+                        content: 'Google',
+                        onPressed: () {},
+                        type: CustomButtonType.social,
+                      ),
+                    ],
+                  ),
+                ),
                 const SizedBox(
                   height: 35,
                 ),
@@ -98,11 +118,9 @@ class LoginScreen extends StatelessWidget {
                         height: 1.4,
                       ),
                       children: [
-                        const TextSpan(
-                            text:
-                                "By connecting your account confirm that you agree with our "),
+                        const TextSpan(text: 'Already have an account? '),
                         TextSpan(
-                          text: "Terms and Conditions",
+                          text: 'Sign In',
                           style: TextStyle(
                             fontWeight: FontWeight.w500,
                             color: Theme.of(context).colorScheme.primary,
@@ -111,9 +129,6 @@ class LoginScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                ),
-                const SizedBox(
-                  height: 15,
                 ),
               ],
             )
