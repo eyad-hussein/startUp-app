@@ -1,16 +1,14 @@
 import 'package:app/widgets/custom_form_field_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:app/routes.dart';
 
-class LoginForm extends StatefulWidget {
-  const LoginForm({super.key});
+class SignUpForm extends StatefulWidget {
+  const SignUpForm({super.key});
 
   @override
-  State<LoginForm> createState() => _LoginFormState();
+  State<SignUpForm> createState() => _SignUpFormState();
 }
 
-class _LoginFormState extends State<LoginForm> {
+class _SignUpFormState extends State<SignUpForm> {
   bool _rememberMe = false;
 
   @override
@@ -30,21 +28,11 @@ class _LoginFormState extends State<LoginForm> {
               type: CustomFormFieldType.password,
             ),
             const SizedBox(height: 20),
-            Align(
-              alignment: Alignment.centerRight,
-              child: TextButton(
-                  onPressed: () {
-                    Get.toNamed(Routes.signupScreenRoute);
-                  },
-                  child: Text(
-                    'Forgot Password?',
-                    style: TextStyle(
-                      color: Theme.of(context).colorScheme.error,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  )),
+            const CustomFormField(
+              label: 'Email',
+              type: CustomFormFieldType.name,
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 50),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,

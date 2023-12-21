@@ -23,7 +23,8 @@ class LoginScreen extends StatelessWidget {
                 "Log In",
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.background,
-                  fontSize: Theme.of(context).textTheme.displayMedium!.fontSize,
+                  fontSize:
+                      Theme.of(context).textTheme.displaySmall!.fontSize! * 1.5,
                   fontWeight:
                       Theme.of(context).textTheme.displayMedium!.fontWeight,
                 ),
@@ -32,37 +33,88 @@ class LoginScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Center(
-            child: Column(
+      body: Expanded(
+        child: ListView(
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Text(
-                  "Welcome",
-                  style: TextStyle(
-                    fontSize:
-                        Theme.of(context).textTheme.displayMedium!.fontSize,
-                    fontWeight:
-                        Theme.of(context).textTheme.displayMedium!.fontWeight,
+                const SizedBox(
+                  height: 80,
+                ),
+                Center(
+                  child: Column(
+                    children: [
+                      Text(
+                        "Welcome",
+                        style: TextStyle(
+                          fontSize: Theme.of(context)
+                              .textTheme
+                              .displayMedium!
+                              .fontSize,
+                          fontWeight: Theme.of(context)
+                              .textTheme
+                              .displayMedium!
+                              .fontWeight,
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      Text(
+                        "Please enter your data to continue",
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.secondary,
+                          fontSize: Theme.of(context)
+                              .textTheme
+                              .displaySmall!
+                              .fontSize,
+                          fontWeight: Theme.of(context)
+                              .textTheme
+                              .displaySmall!
+                              .fontWeight,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                const SizedBox(height: 10),
-                Text(
-                  "Please enter your data to continue",
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.secondary,
-                    fontSize:
-                        Theme.of(context).textTheme.displaySmall!.fontSize,
-                    fontWeight:
-                        Theme.of(context).textTheme.displaySmall!.fontWeight,
+                const SizedBox(
+                  height: 150,
+                ),
+                const LoginForm(),
+                const SizedBox(
+                  height: 35,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: RichText(
+                    textAlign: TextAlign.center,
+                    text: TextSpan(
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.secondary,
+                        fontSize: 15,
+                        height: 1.4,
+                      ),
+                      children: [
+                        const TextSpan(
+                            text:
+                                "By connecting your account confirm that you agree with our "),
+                        TextSpan(
+                          text: "Terms and Conditions",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
+                ),
+                const SizedBox(
+                  height: 35,
                 ),
               ],
-            ),
-          ),
-          const LoginForm(),
-        ],
+            )
+          ],
+        ),
       ),
     );
   }

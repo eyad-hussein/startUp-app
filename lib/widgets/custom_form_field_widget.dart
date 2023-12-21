@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-enum CustomFormFieldType { name, password }
+enum CustomFormFieldType {
+  name,
+  password,
+}
 
 class CustomFormField extends StatelessWidget {
   const CustomFormField({super.key, required this.label, required this.type});
@@ -12,6 +15,7 @@ class CustomFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Widget? suffixIcon;
+    bool isObscureText = false;
 
     switch (type) {
       case CustomFormFieldType.name:
@@ -38,9 +42,12 @@ class CustomFormField extends StatelessWidget {
             ),
           ),
         );
+
+        isObscureText = true;
         break;
     }
     return TextFormField(
+      obscureText: isObscureText,
       style: TextStyle(
         color: Theme.of(context).colorScheme.primary,
         fontWeight: FontWeight.w500,
