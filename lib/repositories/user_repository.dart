@@ -5,10 +5,17 @@ import 'package:app/models/user.dart';
 class UserRepository {
   final String apiUrl = 'http://127.0.0.1:8000/api';
 
-  Future<User> register(String name, String email, String password,
-      String passwordConfirmation) async {
+  Future<User> register(
+    String name,
+    String email,
+    String password,
+    String passwordConfirmation,
+  ) async {
     final response = await http.post(
       Uri.parse('$apiUrl/register'),
+      headers: {
+        'Accept': 'application/json',
+      },
       body: {
         'name': name,
         'email': email,
@@ -17,7 +24,10 @@ class UserRepository {
       },
     );
 
+    print(User.fromJson(jsonDecode(response.body)['user']));
+
     if (response.statusCode == 201) {
+      print("yead");
       return User.fromJson(jsonDecode(response.body)['user']);
     } else {
       throw Exception('Failed to register user');

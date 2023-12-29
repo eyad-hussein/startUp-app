@@ -14,8 +14,8 @@ class LoginScreen extends StatelessWidget {
       bottomNavigationBar: GestureDetector(
         onTap: () {
           userController.login(
-            userController.user.value.email,
-            userController.password.value,
+            userController.emailController.text,
+            userController.passwordController.text,
           );
         },
         child: ClipRRect(

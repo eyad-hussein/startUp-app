@@ -23,28 +23,30 @@ class _SignUpFormState extends State<SignUpForm> {
             CustomFormField(
               label: 'Full Name',
               type: CustomFormFieldType.NAME,
-              onChanged: (value) =>
-                  _userController.user.update((user) => user?.name = value),
+              onChanged: (value) {
+                _userController.nameController.text = value;
+              },
             ),
             const SizedBox(height: 20),
             CustomFormField(
               label: 'Password',
               type: CustomFormFieldType.PASSWORD,
-              onChanged: (value) => _userController.password.value = value,
+              onChanged: (value) =>
+                  _userController.passwordController.text = value,
             ),
             const SizedBox(height: 20),
             CustomFormField(
               label: 'Confirm Password',
               type: CustomFormFieldType.PASSWORD,
               onChanged: (value) =>
-                  _userController.passwordConfirmation.value = value,
+                  _userController.passwordConfirmationController.text = value,
             ),
             const SizedBox(height: 20),
             CustomFormField(
               label: 'Email',
               type: CustomFormFieldType.NAME,
               onChanged: (value) =>
-                  _userController.user.update((user) => user?.email = value),
+                  _userController.emailController.text = value,
             ),
             const SizedBox(height: 50),
             Row(

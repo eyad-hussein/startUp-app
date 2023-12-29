@@ -13,7 +13,7 @@ class LoginForm extends StatefulWidget {
 
 class _LoginFormState extends State<LoginForm> {
   bool _rememberMe = false;
-  final UserController userController = Get.find<UserController>();
+  final UserController _userController = Get.find<UserController>();
 
   @override
   Widget build(BuildContext context) {
@@ -26,13 +26,14 @@ class _LoginFormState extends State<LoginForm> {
               label: 'Email',
               type: CustomFormFieldType.NAME,
               onChanged: (value) =>
-                  userController.user.update((user) => user?.email = value),
+                  _userController.emailController.text = value,
             ),
             const SizedBox(height: 20),
             CustomFormField(
               label: 'Password',
               type: CustomFormFieldType.PASSWORD,
-              onChanged: (value) => userController.password.value = value,
+              onChanged: (value) =>
+                  _userController.passwordController.text = value,
             ),
             const SizedBox(height: 20),
             Align(

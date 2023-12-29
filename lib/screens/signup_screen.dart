@@ -23,10 +23,10 @@ class SignUpScreen extends StatelessWidget {
       bottomNavigationBar: GestureDetector(
         onTap: () {
           userController.register(
-            userController.user.value.name,
-            userController.user.value.email,
-            userController.password.value,
-            userController.passwordConfirmation.value,
+            userController.nameController.text,
+            userController.emailController.text,
+            userController.passwordController.text,
+            userController.passwordConfirmationController.text,
           );
         },
         child: ClipRRect(

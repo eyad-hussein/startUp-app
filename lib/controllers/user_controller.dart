@@ -5,36 +5,17 @@ import 'package:app/repositories/user_repository.dart';
 
 class UserController extends GetxController {
   final UserRepository userRepository = UserRepository();
-  final Rx<User> user = User(
-    name: '',
-    email: '',
-  ).obs;
 
-  RxString password = ''.obs;
-  RxString passwordConfirmation = ''.obs;
-
-  late TextEditingController passwordController;
-  late TextEditingController passwordConfirmationController;
-
-  @override
-  void onInit() {
-    super.onInit();
-
-    passwordController = TextEditingController();
-    passwordConfirmationController = TextEditingController();
-
-    ever(
-      password,
-      (_) => passwordController.text = password.value,
-    );
-    ever(
-      passwordConfirmation,
-      (_) => passwordConfirmationController.text = passwordConfirmation.value,
-    );
-  }
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController passwordConfirmationController =
+      TextEditingController();
 
   @override
   void onClose() {
+    nameController.dispose();
+    emailController.dispose();
     passwordController.dispose();
     passwordConfirmationController.dispose();
     super.onClose();
@@ -53,7 +34,7 @@ class UserController extends GetxController {
         password,
         passwordConfirmation,
       );
-      user(newUser);
+      // user(newUser);
     } catch (e) {
       print('Error registering user: $e');
     }
@@ -65,7 +46,7 @@ class UserController extends GetxController {
   ) async {
     try {
       final authenticatedUser = await userRepository.login(email, password);
-      user(authenticatedUser);
+      // user(authenticatedUser);
       print(password);
     } catch (e) {
       print(e);
