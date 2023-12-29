@@ -4,13 +4,7 @@ import 'package:get/get.dart';
 import 'package:app/controllers/user_controller.dart';
 
 class SignUpForm extends StatefulWidget {
-  const SignUpForm(
-      {super.key,
-      required this.passwordController,
-      required this.passwordConfirmationController});
-
-  final TextEditingController passwordController;
-  final TextEditingController passwordConfirmationController;
+  const SignUpForm({super.key});
 
   @override
   State<SignUpForm> createState() => _SignUpFormState();
@@ -36,14 +30,14 @@ class _SignUpFormState extends State<SignUpForm> {
             CustomFormField(
               label: 'Password',
               type: CustomFormFieldType.PASSWORD,
-              onChanged: (value) => widget.passwordController.text = value,
+              onChanged: (value) => _userController.password.value = value,
             ),
             const SizedBox(height: 20),
             CustomFormField(
               label: 'Confirm Password',
               type: CustomFormFieldType.PASSWORD,
               onChanged: (value) =>
-                  widget.passwordConfirmationController.text = value,
+                  _userController.passwordConfirmation.value = value,
             ),
             const SizedBox(height: 20),
             CustomFormField(

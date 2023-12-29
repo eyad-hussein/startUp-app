@@ -5,7 +5,6 @@ import 'package:app/controllers/user_controller.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
-  final TextEditingController passwordController = TextEditingController();
   final UserController userController = Get.find<UserController>();
 
   @override
@@ -16,7 +15,7 @@ class LoginScreen extends StatelessWidget {
         onTap: () {
           userController.login(
             userController.user.value.email,
-            passwordController.text,
+            userController.password.value,
           );
         },
         child: ClipRRect(
@@ -88,9 +87,7 @@ class LoginScreen extends StatelessWidget {
                 const SizedBox(
                   height: 150,
                 ),
-                LoginForm(
-                  passwordController: passwordController,
-                ),
+                const LoginForm(),
                 const SizedBox(
                   height: 35,
                 ),

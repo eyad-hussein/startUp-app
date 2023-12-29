@@ -6,9 +6,6 @@ import 'package:app/controllers/user_controller.dart';
 class SignUpScreen extends StatelessWidget {
   SignUpScreen({super.key});
   final UserController userController = Get.find<UserController>();
-  final TextEditingController passwordController = TextEditingController();
-  final TextEditingController passwordConfirmationController =
-      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +25,8 @@ class SignUpScreen extends StatelessWidget {
           userController.register(
             userController.user.value.name,
             userController.user.value.email,
-            passwordController.text,
-            passwordConfirmationController.text,
+            userController.password.value,
+            userController.passwordConfirmation.value,
           );
         },
         child: ClipRRect(
@@ -86,11 +83,7 @@ class SignUpScreen extends StatelessWidget {
                 const SizedBox(
                   height: 143,
                 ),
-                SignUpForm(
-                  passwordController: passwordController,
-                  passwordConfirmationController:
-                      passwordConfirmationController,
-                ),
+                const SignUpForm(),
                 const SizedBox(
                   height: 35,
                 ),

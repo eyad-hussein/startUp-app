@@ -5,9 +5,7 @@ import 'package:app/widgets/custom_form_field_widget.dart';
 import 'package:app/controllers/user_controller.dart';
 
 class LoginForm extends StatefulWidget {
-  const LoginForm({super.key, this.passwordController});
-
-  final TextEditingController? passwordController;
+  const LoginForm({super.key});
 
   @override
   State<LoginForm> createState() => _LoginFormState();
@@ -34,7 +32,7 @@ class _LoginFormState extends State<LoginForm> {
             CustomFormField(
               label: 'Password',
               type: CustomFormFieldType.PASSWORD,
-              onChanged: (value) => widget.passwordController?.text = value,
+              onChanged: (value) => userController.password.value = value,
             ),
             const SizedBox(height: 20),
             Align(
