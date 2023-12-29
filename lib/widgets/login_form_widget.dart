@@ -1,10 +1,13 @@
-import 'package:app/widgets/custom_form_field_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:app/routes.dart';
+import 'package:app/widgets/custom_form_field_widget.dart';
+import 'package:app/controllers/user_controller.dart';
 
 class LoginForm extends StatefulWidget {
-  const LoginForm({super.key});
+  const LoginForm({super.key, this.passwordController});
+
+  final TextEditingController? passwordController;
 
   @override
   State<LoginForm> createState() => _LoginFormState();
@@ -12,6 +15,7 @@ class LoginForm extends StatefulWidget {
 
 class _LoginFormState extends State<LoginForm> {
   bool _rememberMe = false;
+  final UserController userController = Get.find<UserController>();
 
   @override
   Widget build(BuildContext context) {
@@ -20,14 +24,17 @@ class _LoginFormState extends State<LoginForm> {
       child: Form(
         child: Column(
           children: [
-            const CustomFormField(
-              label: 'Full Name',
-              type: CustomFormFieldType.name,
+            CustomFormField(
+              label: 'Email',
+              type: CustomFormFieldType.NAME,
+              onChanged: (value) =>
+                  userController.user.update((user) => user?.email = value),
             ),
             const SizedBox(height: 20),
-            const CustomFormField(
+            CustomFormField(
               label: 'Password',
-              type: CustomFormFieldType.password,
+              type: CustomFormFieldType.PASSWORD,
+              onChanged: (value) => widget.passwordController?.text = value,
             ),
             const SizedBox(height: 20),
             Align(

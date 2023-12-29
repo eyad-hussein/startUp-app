@@ -4,20 +4,24 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:app/routes.dart';
 import 'package:app/themes.dart';
+import 'package:app/controllers/user_controller.dart';
+import 'package:app/test.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
+  final UserController userController = Get.put(UserController());
 
   @override
   Widget build(BuildContext context) {
+    // return const MaterialApp(home: const Test());
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: Routes.splashScreenRoute,

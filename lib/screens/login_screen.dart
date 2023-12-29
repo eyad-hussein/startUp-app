@@ -1,10 +1,12 @@
-import 'package:app/widgets/login_form_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:app/routes.dart';
+import 'package:app/widgets/login_form_widget.dart';
+import 'package:app/controllers/user_controller.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+  LoginScreen({super.key});
+  final TextEditingController passwordController = TextEditingController();
+  final UserController userController = Get.find<UserController>();
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +14,10 @@ class LoginScreen extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.background,
       bottomNavigationBar: GestureDetector(
         onTap: () {
-          Get.toNamed(Routes.providersScreenRoute);
+          userController.login(
+            userController.user.value.email,
+            passwordController.text,
+          );
         },
         child: ClipRRect(
           borderRadius: const BorderRadius.only(
@@ -83,7 +88,9 @@ class LoginScreen extends StatelessWidget {
                 const SizedBox(
                   height: 150,
                 ),
-                const LoginForm(),
+                LoginForm(
+                  passwordController: passwordController,
+                ),
                 const SizedBox(
                   height: 35,
                 ),

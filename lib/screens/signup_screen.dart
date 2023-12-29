@@ -1,9 +1,14 @@
-import 'package:app/widgets/signup_form_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:app/widgets/signup_form_widget.dart';
+import 'package:app/controllers/user_controller.dart';
 
 class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key});
+  SignUpScreen({super.key});
+  final UserController userController = Get.find<UserController>();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController passwordConfirmationController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +24,14 @@ class SignUpScreen extends StatelessWidget {
       ),
       backgroundColor: Theme.of(context).colorScheme.background,
       bottomNavigationBar: GestureDetector(
-        onTap: () {},
+        onTap: () {
+          userController.register(
+            userController.user.value.name,
+            userController.user.value.email,
+            passwordController.text,
+            passwordConfirmationController.text,
+          );
+        },
         child: ClipRRect(
           borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(20.0),
@@ -74,7 +86,11 @@ class SignUpScreen extends StatelessWidget {
                 const SizedBox(
                   height: 143,
                 ),
-                const SignUpForm(),
+                SignUpForm(
+                  passwordController: passwordController,
+                  passwordConfirmationController:
+                      passwordConfirmationController,
+                ),
                 const SizedBox(
                   height: 35,
                 ),

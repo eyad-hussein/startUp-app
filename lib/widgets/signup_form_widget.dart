@@ -1,8 +1,16 @@
 import 'package:app/widgets/custom_form_field_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:app/controllers/user_controller.dart';
 
 class SignUpForm extends StatefulWidget {
-  const SignUpForm({super.key});
+  const SignUpForm(
+      {super.key,
+      required this.passwordController,
+      required this.passwordConfirmationController});
+
+  final TextEditingController passwordController;
+  final TextEditingController passwordConfirmationController;
 
   @override
   State<SignUpForm> createState() => _SignUpFormState();
@@ -10,7 +18,7 @@ class SignUpForm extends StatefulWidget {
 
 class _SignUpFormState extends State<SignUpForm> {
   bool _rememberMe = false;
-
+  final UserController _userController = Get.find<UserController>();
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -18,19 +26,31 @@ class _SignUpFormState extends State<SignUpForm> {
       child: Form(
         child: Column(
           children: [
-            const CustomFormField(
+            CustomFormField(
               label: 'Full Name',
-              type: CustomFormFieldType.name,
+              type: CustomFormFieldType.NAME,
+              onChanged: (value) =>
+                  _userController.user.update((user) => user?.name = value),
             ),
             const SizedBox(height: 20),
-            const CustomFormField(
+            CustomFormField(
               label: 'Password',
-              type: CustomFormFieldType.password,
+              type: CustomFormFieldType.PASSWORD,
+              onChanged: (value) => widget.passwordController.text = value,
             ),
             const SizedBox(height: 20),
-            const CustomFormField(
+            CustomFormField(
+              label: 'Confirm Password',
+              type: CustomFormFieldType.PASSWORD,
+              onChanged: (value) =>
+                  widget.passwordConfirmationController.text = value,
+            ),
+            const SizedBox(height: 20),
+            CustomFormField(
               label: 'Email',
-              type: CustomFormFieldType.name,
+              type: CustomFormFieldType.NAME,
+              onChanged: (value) =>
+                  _userController.user.update((user) => user?.email = value),
             ),
             const SizedBox(height: 50),
             Row(
