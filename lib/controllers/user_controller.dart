@@ -21,18 +21,13 @@ class UserController extends GetxController {
     super.onClose();
   }
 
-  Future<void> register(
-    String name,
-    String email,
-    String password,
-    String passwordConfirmation,
-  ) async {
+  Future<void> register() async {
     try {
       final newUser = await userRepository.register(
-        name,
-        email,
-        password,
-        passwordConfirmation,
+        nameController.text,
+        emailController.text,
+        passwordController.text,
+        passwordController.text,
       );
       // user(newUser);
     } catch (e) {
@@ -40,14 +35,12 @@ class UserController extends GetxController {
     }
   }
 
-  Future<void> login(
-    String email,
-    String password,
-  ) async {
+  Future<void> login() async {
     try {
-      final authenticatedUser = await userRepository.login(email, password);
+      final authenticatedUser = await userRepository.login(
+          emailController.text, passwordController.text);
       // user(authenticatedUser);
-      print(password);
+      print(passwordController.text);
     } catch (e) {
       print(e);
     }

@@ -13,10 +13,7 @@ class LoginScreen extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.background,
       bottomNavigationBar: GestureDetector(
         onTap: () {
-          userController.login(
-            userController.emailController.text,
-            userController.passwordController.text,
-          );
+          userController.login();
         },
         child: ClipRRect(
           borderRadius: const BorderRadius.only(
