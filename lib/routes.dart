@@ -18,11 +18,11 @@ final getPages = [
   ),
   GetPage(
     name: Routes.loginScreenRoute,
-    page: () => const LoginScreen(),
+    page: () => LoginScreen(),
   ),
   GetPage(
     name: Routes.signupScreenRoute,
-    page: () => const SignUpScreen(),
+    page: () => SignUpScreen(),
   ),
   GetPage(
     name: Routes.providersScreenRoute,
