@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class CustomBrandCard extends StatelessWidget {
   final String text;
-  final IconData icon;
+  final dynamic icon;
 
   const CustomBrandCard({
     Key? key,
@@ -43,10 +43,7 @@ class CustomBrandCard extends StatelessWidget {
                 color: Colors.white,
               ),
               child: Center(
-                child: Icon(
-                  icon,
-                  size: getWidth(25),
-                ),
+                child: icon,
               ),
             ),
           ),
@@ -56,6 +53,7 @@ class CustomBrandCard extends StatelessWidget {
             style: const TextStyle(
               fontSize: 15,
               fontWeight: FontWeight.w500,
+              fontFamily: 'Inter',
               color: Color(0xFF1D1E20),
             ),
           ),

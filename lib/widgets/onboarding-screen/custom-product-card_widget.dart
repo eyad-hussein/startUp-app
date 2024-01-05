@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../models/product.dart';
 
@@ -47,18 +48,17 @@ class _CustomProductCardState extends State<CustomProductCard> {
               ),
               Padding(
                 padding: EdgeInsets.only(
-                  top: getHeight(13),
-                  left: getWidth(120),
+                  top: getHeight(15),
+                  left: getWidth(128),
                 ),
-                child: IconButton(
-                  icon: Icon(
-                    widget.product.isFavourite
-                        ? Icons.favorite
-                        : Icons.favorite_border,
-                    color: widget.product.isFavourite ? Colors.red : null,
-                    size: getWidth(20),
-                  ),
-                  onPressed: () {
+                child: GestureDetector(
+                  child: widget.product.isFavourite
+                      ? SvgPicture.asset('assets/icons/heart.svg')
+                      : SvgPicture.asset(
+                          'assets/icons/heart.svg',
+                          color: Colors.red,
+                        ),
+                  onTap: () {
                     setState(() {
                       widget.product.isFavourite = !widget.product.isFavourite;
                     });
@@ -76,6 +76,7 @@ class _CustomProductCardState extends State<CustomProductCard> {
               style: const TextStyle(
                 color: Color(0xFF1D1E20),
                 fontWeight: FontWeight.w500,
+                fontFamily: 'Inter',
                 fontSize: 11,
               ),
             ),
@@ -88,6 +89,7 @@ class _CustomProductCardState extends State<CustomProductCard> {
               "LE ${widget.product.price}",
               style: const TextStyle(
                 color: Color(0xFF1D1E20),
+                fontFamily: 'Inter',
                 fontWeight: FontWeight.w600,
                 fontSize: 13,
               ),

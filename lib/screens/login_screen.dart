@@ -13,22 +13,19 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       bottomNavigationBar: GestureDetector(
-        onTap: () {
-          userController.login(
+        onTap: () async {
+          await userController.login(
             userController.emailController.text,
             userController.passwordController.text,
           );
+          Get.offNamed(Routes.onBoardingPageRoute);
         },
         child: ClipRRect(
           borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(20.0),
             topRight: Radius.circular(20.0),
           ),
-          child: GestureDetector(
-            onTap: () {
-              Get.offNamed(Routes.onBoardingPage);
-            },
-            child: Container(
+          child: Container(
               color: Theme.of(context).colorScheme.primary,
               height: 70,
               child: Center(
@@ -47,7 +44,6 @@ class LoginScreen extends StatelessWidget {
             ),
           ),
         ),
-      ),
       body: Expanded(
         child: ListView(
           children: [

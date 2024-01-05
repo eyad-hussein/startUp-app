@@ -1,7 +1,10 @@
-import 'package:app/widgets/onboarding-screen-widgets/bottom_navigator_bar.dart';
-import 'package:app/widgets/onboarding-screen-widgets/custom-product-card.dart';
-import 'package:app/widgets/onboarding-screen-widgets/list_view_builder_brands.dart';
-import 'package:app/widgets/onboarding-screen-widgets/list_view_builder_products.dart';
+import 'package:app/widgets/onboarding-screen/custom-appbar-widget.dart';
+import 'package:app/widgets/onboarding-screen/custom-search-bar-widget.dart';
+import 'package:app/widgets/onboarding-screen/custom_bottom_navigator_bar_widget.dart';
+import 'package:app/widgets/onboarding-screen/custom-product-card_widget.dart';
+import 'package:app/widgets/onboarding-screen/list_view_builder_brands_widget.dart';
+import 'package:app/widgets/onboarding-screen/list_view_builder_products_widget.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
 
 import '../models/brand.dart';
@@ -12,12 +15,13 @@ class OnBoardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Brand> dummyBrandList = [
-      Brand(name: 'Adidas', icon: Icons.favorite),
-      Brand(name: 'Nike', icon: Icons.star),
-      Brand(name: 'Puma', icon: Icons.sports_soccer),
-      Brand(name: 'Reebok', icon: Icons.directions_run),
-      Brand(name: 'Under', icon: Icons.accessibility),
+    List<Brand> BrandList = [
+      Brand(
+          name: 'Adidas',
+          icon: SvgPicture.asset('assets/icons/adidas-logo.svg')),
+      Brand(name: 'Nike', icon: SvgPicture.asset('assets/icons/nike-logo.svg')),
+      Brand(name: 'Puma', icon: SvgPicture.asset('assets/icons/puma-logo.svg')),
+      Brand(name: 'Fila', icon: SvgPicture.asset('assets/icons/fila-logo.svg')),
     ];
     List<Product> dummyProducts = List.generate(7, (index) {
       return Product(
@@ -39,227 +43,127 @@ class OnBoardingScreen extends StatelessWidget {
     }
 
     return Scaffold(
-      bottomNavigationBar: Container(
-        height: getHeight(80),
-        decoration: BoxDecoration(
-          gradient: RadialGradient(
-            center: Alignment.topLeft,
-            radius: 1.0,
-            colors: [
-              Colors.black.withOpacity(0.75),
-              Colors.black.withOpacity(1.0),
+      bottomNavigationBar:  const CustomBottomNavigatorBar(),
+      body: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.only(
+            top: getHeight(45),
+            bottom: getHeight(20),
+            left: getWidth(20),
+            right: getWidth(20),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const CustomAppbar(),
+              Padding(
+                padding: EdgeInsets.only(
+                  top: getHeight(20),
+                ),
+                child: const Text(
+                  'Ali',
+                  style: TextStyle(
+                    fontFamily: 'Inter',
+                    fontSize: 28.0,
+                    fontWeight: FontWeight.w600,
+                    height: 31.0 / 28.0,
+                    letterSpacing: -0.0075,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                  top: getHeight(5),
+                ),
+                child: const Text("Welcome to Styleach.",
+                  style: TextStyle(
+                    fontFamily: 'Inter',
+                    fontSize: 15.0,
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xFF8F959E)
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                  top: getHeight(20),
+                ),
+                child: const CustomSearchBar(),
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                  top: getHeight(20),
+                ),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Choose Brand',
+                      style: TextStyle(
+                        fontFamily: 'Inter',
+                        fontSize: 17.0,
+                        fontWeight: FontWeight.w500,
+                        height: 31.0 / 28.0,
+                        letterSpacing: -0.0075,
+                        color: Color(0xFF1D1E20)
+                      ),
+                    ),
+                    Text(
+                      'View all',
+                      style: TextStyle(
+                        fontFamily: 'Inter',
+                        fontSize: 13.0,
+                        color: Color(0xFF8F959E),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                  top: getHeight(15),
+                ),
+                child: SizedBox(
+                  height: getHeight(50),
+                  width: double.infinity,
+                  child: ListViewBrands(
+                    brands: BrandList,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                  top: getHeight(15),
+                ),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'New Arrival',
+                      style: TextStyle(
+                        fontFamily: 'Inter',
+                        fontSize: 17.0,
+                        fontWeight: FontWeight.w600,
+                        height: 31.0 / 28.0,
+                        letterSpacing: -0.0075,
+                      ),
+                    ),
+                    Text(
+                      'View all',
+                      style: TextStyle(
+                        fontFamily: 'Inter',
+                        fontSize: 13.0,
+                        color: Color(0xFF8F959E),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                  height: getHeight(343),
+                  child: ListViewProducts(products: dummyProducts)),
             ],
           ),
-        ),
-        child: const CustomBottomNavigatorBar(),
-      ),
-      body: Container(
-        padding: EdgeInsets.only(
-          top: getHeight(45),
-          bottom: getHeight(20),
-          left: getWidth(20),
-          right: getWidth(20),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                GestureDetector(
-                  onTap: () {},
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 45 / 375,
-                    height: MediaQuery.of(context).size.width * 45 / 375,
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Color(0xFFF5F6FA),
-                    ),
-                    child: const Icon(
-                      Icons.menu,
-                      color: Colors.black,
-                    ),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {},
-                  child: Container(
-                    width: getWidth(45),
-                    height: getHeight(45),
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Color(0xFFF5F6FA),
-                    ),
-                    child: const Icon(
-                      Icons.shopping_bag,
-                      color: Colors.black,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                top: getHeight(20),
-              ),
-              child: const Text(
-                'Ali',
-                style: TextStyle(
-                  fontFamily: 'Inter',
-                  fontSize: 28.0,
-                  fontWeight: FontWeight.w600,
-                  height: 31.0 / 28.0,
-                  letterSpacing: -0.0075,
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                top: getHeight(5),
-              ),
-              child: const Text("Welcome to Styleach."),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                top: getHeight(20),
-              ),
-              child: Row(
-                children: [
-                  Container(
-                    width: getWidth(274),
-                    height: getHeight(60),
-                    padding: EdgeInsets.only(
-                      left: getWidth(15),
-                    ),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: Colors.black),
-                    ),
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.search,
-                          size: getWidth(20),
-                        ),
-                        SizedBox(width: getWidth(10)),
-                        const Expanded(
-                          child: TextField(
-                            decoration: InputDecoration.collapsed(
-                              hintText: 'Search...',
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(
-                      left: getWidth(10),
-                    ),
-                    child: Container(
-                      width: getWidth(50),
-                      height: getHeight(60),
-                      padding: EdgeInsets.only(
-                        left: getWidth(12),
-                      ),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: Colors.black),
-                        gradient: RadialGradient(
-                          center: Alignment.topLeft,
-                          radius: 1.0,
-                          colors: [
-                            Colors.black.withOpacity(0.75),
-                            Colors.black.withOpacity(1.0),
-                          ],
-                        ),
-                      ),
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.camera_alt_outlined,
-                            color: Colors.white,
-                            size: getWidth(26),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                top: getHeight(20),
-              ),
-              child: const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Choose Brand',
-                    style: TextStyle(
-                      fontFamily: 'Inter',
-                      fontSize: 17.0,
-                      fontWeight: FontWeight.w600,
-                      height: 31.0 / 28.0,
-                      letterSpacing: -0.0075,
-                    ),
-                  ),
-                  Text(
-                    'View all',
-                    style: TextStyle(
-                      fontFamily: 'Inter',
-                      fontSize: 13.0,
-                      color: Color(0xFF8F959E),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                top: getHeight(15),
-              ),
-              child: SizedBox(
-                height: getHeight(50),
-                width: double.infinity,
-                child: ListViewBrands(
-                  brands: dummyBrandList,
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                top: getHeight(15),
-              ),
-              child: const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'New Arrival',
-                    style: TextStyle(
-                      fontFamily: 'Inter',
-                      fontSize: 17.0,
-                      fontWeight: FontWeight.w600,
-                      height: 31.0 / 28.0,
-                      letterSpacing: -0.0075,
-                    ),
-                  ),
-                  Text(
-                    'View all',
-                    style: TextStyle(
-                      fontFamily: 'Inter',
-                      fontSize: 13.0,
-                      color: Color(0xFF8F959E),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-                height: getHeight(300),
-                child: ListViewProducts(products: dummyProducts)),
-          ],
         ),
       ),
     );

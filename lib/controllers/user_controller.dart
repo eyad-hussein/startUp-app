@@ -40,7 +40,7 @@ class UserController extends GetxController {
     }
   }
 
-  Future<void> login(
+  Future<void>  login(
     String email,
     String password,
   ) async {

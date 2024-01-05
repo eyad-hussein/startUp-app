@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../models/product.dart';
-import 'custom-product-card.dart';
+import 'custom-product-card_widget.dart';
 
 class ListViewProducts extends StatelessWidget {
   final List<Product> products;
@@ -37,7 +37,8 @@ class ListViewProducts extends StatelessWidget {
 
                 return Expanded(
                   child: Padding(
-                    padding: EdgeInsets.only(left: indexWithinSublist % 2 == 1 ? getWidth(15) : 0),
+                    padding: EdgeInsets.only(left: indexWithinSublist % 2 == 1 ? getWidth(7.5) : 0,
+                    right: indexWithinSublist % 2 == 0 ? getWidth(7.5) : 0),
                     child: CustomProductCard(product: product),
                   ),
                 );

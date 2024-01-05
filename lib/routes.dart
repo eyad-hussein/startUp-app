@@ -10,7 +10,7 @@ class Routes {
   static String loginScreenRoute = '/login-screen';
   static String signupScreenRoute = '/signup-screen';
   static String providersScreenRoute = '/providers-screen';
-  static String onBoardingPage = '/onboarding-screen';
+  static String onBoardingPageRoute = '/onboarding-screen';
 }
 
 final getPages = [
@@ -30,7 +30,7 @@ final getPages = [
     name: Routes.providersScreenRoute,
     page: () => const ProvidersScreen(),
   ),
-  GetPage(name: Routes.onBoardingPage,
+  GetPage(name: Routes.onBoardingPageRoute,
       page: () => const OnBoardingScreen()
   ),
 ];
