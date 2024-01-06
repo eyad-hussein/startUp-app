@@ -22,12 +22,7 @@ class SignUpScreen extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.background,
       bottomNavigationBar: GestureDetector(
         onTap: () {
-          userController.register(
-            userController.nameController.text,
-            userController.emailController.text,
-            userController.passwordController.text,
-            userController.passwordConfirmationController.text,
-          );
+          userController.register();
         },
         child: ClipRRect(
           borderRadius: const BorderRadius.only(

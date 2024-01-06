@@ -19,6 +19,7 @@ class LoginScreen extends StatelessWidget {
             userController.passwordController.text,
           );
           Get.offNamed(Routes.onBoardingPageRoute);
+
         },
         child: ClipRRect(
           borderRadius: const BorderRadius.only(
