@@ -1,4 +1,5 @@
 import 'package:app/screens/login_screen.dart';
+import 'package:app/screens/onboarding_screen.dart';
 import 'package:app/screens/providers_screen.dart';
 import 'package:app/screens/signup_screen.dart';
 import 'package:get/get.dart';
@@ -9,6 +10,7 @@ class Routes {
   static String loginScreenRoute = '/login-screen';
   static String signupScreenRoute = '/signup-screen';
   static String providersScreenRoute = '/providers-screen';
+  static String onBoardingPageRoute = '/onboarding-screen';
 }
 
 final getPages = [
@@ -27,5 +29,8 @@ final getPages = [
   GetPage(
     name: Routes.providersScreenRoute,
     page: () => const ProvidersScreen(),
-  )
+  ),
+  GetPage(name: Routes.onBoardingPageRoute,
+      page: () => const OnBoardingScreen()
+  ),
 ];

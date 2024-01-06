@@ -35,6 +35,7 @@ class UserController extends GetxController {
     }
   }
 
+
   Future<void> login() async {
     try {
       final authenticatedUser = await userRepository.login(

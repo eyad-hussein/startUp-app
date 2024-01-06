@@ -69,6 +69,18 @@ flutter:
   assets:
     - assets/images/logo.svg
     - assets/icons/check.svg
+    - assets/icons/menu.svg
+    - assets/icons/puma-logo.svg
+    - assets/icons/adidas-logo.svg
+    - assets/icons/fila-logo.svg
+    - assets/icons/bag-nav.svg
+    - assets/icons/bag.svg
+    - assets/icons/heart.svg
+    - assets/icons/heart-nav.svg
+    - assets/icons/wallet.svg
+    - assets/icons/search.svg
+    - assets/icons/nike-logo.svg
+    - assets/icons/camera.svg
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
