@@ -43,7 +43,7 @@ class OnBoardingScreen extends StatelessWidget {
     }
 
     return Scaffold(
-      bottomNavigationBar:  const CustomBottomNavigatorBar(),
+      bottomNavigationBar: const CustomBottomNavigatorBar(),
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.only(
@@ -75,13 +75,13 @@ class OnBoardingScreen extends StatelessWidget {
                 padding: EdgeInsets.only(
                   top: getHeight(5),
                 ),
-                child: const Text("Welcome to Styleach.",
+                child: const Text(
+                  "Welcome to Styleach.",
                   style: TextStyle(
-                    fontFamily: 'Inter',
-                    fontSize: 15.0,
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xFF8F959E)
-                  ),
+                      fontFamily: 'Inter',
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xFF8F959E)),
                 ),
               ),
               Padding(
@@ -100,13 +100,12 @@ class OnBoardingScreen extends StatelessWidget {
                     Text(
                       'Choose Brand',
                       style: TextStyle(
-                        fontFamily: 'Inter',
-                        fontSize: 17.0,
-                        fontWeight: FontWeight.w500,
-                        height: 31.0 / 28.0,
-                        letterSpacing: -0.0075,
-                        color: Color(0xFF1D1E20)
-                      ),
+                          fontFamily: 'Inter',
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w500,
+                          height: 31.0 / 28.0,
+                          letterSpacing: -0.0075,
+                          color: Color(0xFF1D1E20)),
                     ),
                     Text(
                       'View all',
@@ -159,6 +158,7 @@ class OnBoardingScreen extends StatelessWidget {
                   ],
                 ),
               ),
+              const SizedBox(height: 20),
               SizedBox(
                   height: getHeight(343),
                   child: ListViewProducts(products: dummyProducts)),

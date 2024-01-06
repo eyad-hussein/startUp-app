@@ -43,7 +43,7 @@ class _CustomProductCardState extends State<CustomProductCard> {
                   widget.product.imageURL,
                   width: getWidth(160),
                   height: getHeight(203),
-                  fit: BoxFit.fill,
+                  fit: BoxFit.contain,
                 ),
               ),
               Padding(
