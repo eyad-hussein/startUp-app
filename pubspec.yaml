@@ -69,6 +69,7 @@ flutter:
   assets:
     - assets/images/logo.svg
     - assets/images/card.png
+    - assets/images/phone.png
     - assets/icons/check.svg
     - assets/icons/menu.svg
     - assets/icons/puma-logo.svg
