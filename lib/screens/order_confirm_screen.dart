@@ -11,7 +11,7 @@ class OrderConfirmedScreen extends StatelessWidget {
     return Scaffold(
       appBar: OrderConfirmedBar(
         onBackPress: () {
-          // Handle back press
+          // Handle back presss
         },
       ),
       backgroundColor: Theme.of(context).colorScheme.background,
