@@ -29,9 +29,9 @@ class _CustomProductCardState extends State<CustomProductCard> {
       return screenWidth * width / 375.0;
     }
 
-    return Container(
-      width: getWidth(160),
-      height: getHeight(257),
+    return SizedBox(
+      width: getWidth(160.0),
+      height: getHeight(257.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -40,16 +40,16 @@ class _CustomProductCardState extends State<CustomProductCard> {
               ClipRRect(
                 borderRadius: BorderRadius.circular(15),
                 child: Image.network(
-                  widget.product.imageURL,
-                  width: getWidth(160),
-                  height: getHeight(203),
-                  fit: BoxFit.contain,
+                  widget.product.imageUrl,
+                  width: getWidth(160.0),
+                  height: getHeight(203.0),
+                  fit: BoxFit.cover,
                 ),
               ),
               Padding(
                 padding: EdgeInsets.only(
-                  top: getHeight(15),
-                  left: getWidth(128),
+                  top: getHeight(10.0),
+                  left: getWidth(120.0),
                 ),
                 child: GestureDetector(
                   child: widget.product.isFavourite
@@ -69,7 +69,7 @@ class _CustomProductCardState extends State<CustomProductCard> {
           ),
           Padding(
             padding: EdgeInsets.only(
-              top: getHeight(5),
+              top: getHeight(5.0),
             ),
             child: Text(
               widget.product.name,
@@ -83,7 +83,7 @@ class _CustomProductCardState extends State<CustomProductCard> {
           ),
           Padding(
             padding: EdgeInsets.only(
-              top: getHeight(1),
+              top: getHeight(1.0),
             ),
             child: Text(
               "LE ${widget.product.price}",

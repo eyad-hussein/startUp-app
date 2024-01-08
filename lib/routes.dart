@@ -30,7 +30,5 @@ final getPages = [
     name: Routes.providersScreenRoute,
     page: () => const ProvidersScreen(),
   ),
-  GetPage(name: Routes.onBoardingPageRoute,
-      page: () => const OnBoardingScreen()
-  ),
+  GetPage(name: Routes.onBoardingPageRoute, page: () => OnBoardingScreen()),
 ];
