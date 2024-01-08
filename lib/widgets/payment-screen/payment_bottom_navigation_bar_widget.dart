@@ -17,7 +17,7 @@ class PaymentBottomNavigationBar extends StatelessWidget {
           height: 70,
           child: Center(
             child: Text(
-              'Save card info',
+              'Save card',
               style: TextStyle(
                 color: Theme.of(context).colorScheme.background,
                 fontSize: Theme.of(context).textTheme.displaySmall!.fontSize! * 1.5,

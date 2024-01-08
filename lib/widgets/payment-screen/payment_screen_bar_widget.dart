@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class PaymentScreenBar extends StatelessWidget implements PreferredSizeWidget{
+class PaymentScreenBar extends StatelessWidget implements PreferredSizeWidget {
   const PaymentScreenBar({Key? key, required this.onBackPress}) : super(key: key);
 
   final VoidCallback onBackPress;
@@ -12,6 +12,16 @@ class PaymentScreenBar extends StatelessWidget implements PreferredSizeWidget{
         onPressed: onBackPress,
         icon: Icon(Icons.arrow_back, color: Theme.of(context).colorScheme.primary),
       ),
+      title: const Center(
+          child: Text(
+            "Payment",
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 18.0, // Adjust the text size as needed
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
     );
   }
 
