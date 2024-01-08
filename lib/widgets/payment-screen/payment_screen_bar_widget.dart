@@ -8,20 +8,19 @@ class PaymentScreenBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      centerTitle: true, // Center the title
       leading: IconButton(
         onPressed: onBackPress,
         icon: Icon(Icons.arrow_back, color: Theme.of(context).colorScheme.primary),
       ),
-      title: const Center(
-          child: Text(
-            "Payment",
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 18.0, // Adjust the text size as needed
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+      title: const Text(
+        "Payment",
+        style: TextStyle(
+          color: Colors.black,
+          fontSize: 18.0, // Adjust the text size as needed
+          fontWeight: FontWeight.bold,
         ),
+      ),
     );
   }
 
