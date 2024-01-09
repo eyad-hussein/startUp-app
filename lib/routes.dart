@@ -1,5 +1,8 @@
+import 'package:app/screens/address_screen.dart';
+import 'package:app/screens/cart_screen.dart';
 import 'package:app/screens/login_screen.dart';
 import 'package:app/screens/onboarding_screen.dart';
+import 'package:app/screens/product_overview_screen.dart';
 import 'package:app/screens/providers_screen.dart';
 import 'package:app/screens/signup_screen.dart';
 import 'package:get/get.dart';
@@ -11,6 +14,9 @@ class Routes {
   static String signupScreenRoute = '/signup-screen';
   static String providersScreenRoute = '/providers-screen';
   static String onBoardingPageRoute = '/onboarding-screen';
+  static String productScreenRoute = '/product-overview-screen';
+  static String addressScreenRoute = '/address-screen';
+  static String cartScreenRoute = '/cart-screen';
 }
 
 final getPages = [
@@ -32,5 +38,17 @@ final getPages = [
   ),
   GetPage(name: Routes.onBoardingPageRoute,
       page: () => const OnBoardingScreen()
+  ),
+  GetPage(
+    name: Routes.productScreenRoute,
+    page: () => const ProductOverviewScreen(),
+  ),
+  GetPage(
+    name: Routes.addressScreenRoute,
+    page: () => const AddressScreen(),
+  ),
+  GetPage(
+    name: Routes.cartScreenRoute,
+    page: () => const CartScreen(),
   ),
 ];
