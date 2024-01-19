@@ -1,6 +1,6 @@
 import 'package:app/screens/login_screen.dart';
 import 'package:app/screens/onboarding_screen.dart';
-import 'package:app/screens/order_confirm_screen.dart';
+import 'package:app/screens/order_confirmed_screen.dart';
 // import 'package:app/screens/payment_screen.dart';
 import 'package:app/screens/providers_screen.dart';
 import 'package:app/screens/signup_screen.dart';
@@ -14,8 +14,7 @@ class Routes {
   static String providersScreenRoute = '/providers-screen';
   static String onBoardingPageRoute = '/onboarding-screen';
   static String addnewcardRoute = '/add-new-card-screen';
-  static String orderconfirmedRoute = '/order-confirmed-screen';
-
+  static String orderConfirmedRoute = '/order-confirmed-screen';
 }
 
 final getPages = [
@@ -35,14 +34,12 @@ final getPages = [
     name: Routes.providersScreenRoute,
     page: () => const ProvidersScreen(),
   ),
-  GetPage(name: Routes.onBoardingPageRoute,
-      page: () => const OnBoardingScreen()
+  GetPage(
+    name: Routes.onBoardingPageRoute,
+    page: () => const OnBoardingScreen(),
   ),
-  // GetPage(name: Routes.paymentPageRoute,
-  //     page: () => const PaymentScreen()
-  // ),
-
-   GetPage(name: Routes.orderconfirmedRoute,
-      page: () => OrderConfirmedScreen()
-   ),
+  GetPage(
+    name: Routes.orderConfirmedRoute,
+    page: () => const OrderConfirmedScreen(),
+  ),
 ];
