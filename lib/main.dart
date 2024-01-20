@@ -24,7 +24,8 @@ class MyApp extends StatelessWidget {
     // return const MaterialApp(home: const Test());
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: Routes.addnewcardRoute,// Restore it to default after finishing testing
+      initialRoute: Routes
+          .addNewCardScreenRoute, // Restore it to default after finishing testing
       getPages: getPages,
       themeMode: ThemeMode.light,
       theme: kLightTheme,

@@ -1,51 +1,57 @@
+import 'package:app/widgets/add-new-card-screen/card_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:app/widgets/add-new-card-screen/add_new_card_bar_widget.dart';
 
 import '../widgets/add-new-card-screen/add-new-card-bottom-navigation-bar.dart';
 
 class AddNewCardScreen extends StatelessWidget {
+  const AddNewCardScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AddNewCardBar(
-        onBackPress: () {
-          Navigator.pop(context);
-        },
+      appBar: AppBar(
+        centerTitle: true,
+        leading: IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.arrow_back,
+              color: Theme.of(context).colorScheme.primary),
+        ),
+        title: Text(
+          "Add New Card",
+          style: TextStyle(
+            color: Theme.of(context).colorScheme.primary,
+            fontSize: Theme.of(context).textTheme.displaySmall!.fontSize! * 1.3,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                LogoButton(
-                  logo: Icons.credit_card,
-                  onPressed: () {
-                    // Handle button press for credit card
-                  },
+                CardButton(
+                  active: true,
+                  iconPath: 'mastercard',
                 ),
-                LogoButton(
-                  logo: Icons.account_balance_wallet,
-                  onPressed: () {
-                    // Handle button press for wallet
-                  },
+                CardButton(
+                  iconPath: 'paypal',
                 ),
-                LogoButton(
-                  logo: Icons.payment,
-                  onPressed: () {
-                    // Handle button press for payment
-                  },
+                CardButton(
+                  iconPath: 'paypal',
                 ),
               ],
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             Text(
               'Card Owner',
               style: TextStyle(
-                fontSize: 18.0,
-                fontWeight: FontWeight.bold,
+                fontSize:
+                    Theme.of(context).textTheme.displaySmall!.fontSize! * 1.2,
               ),
             ),
             SizedBox(height: 8.0),
@@ -132,21 +138,6 @@ class AddNewCardScreen extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: AddNewCardBottomNavigationBar(),
-    );
-  }
-}
-
-class LogoButton extends StatelessWidget {
-  final IconData logo;
-  final VoidCallback onPressed;
-
-  LogoButton({required this.logo, required this.onPressed});
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPressed,
-      child: Icon(logo, size: 40),
     );
   }
 }
