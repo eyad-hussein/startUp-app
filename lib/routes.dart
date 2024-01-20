@@ -1,7 +1,7 @@
-import 'package:app/screens/add_new_card_screen.dart';
 import 'package:app/screens/login_screen.dart';
 import 'package:app/screens/onboarding_screen.dart';
-import 'package:app/screens/payment_screen.dart';
+import 'package:app/screens/order_confirmed_screen.dart';
+// import 'package:app/screens/payment_screen.dart';
 import 'package:app/screens/providers_screen.dart';
 import 'package:app/screens/signup_screen.dart';
 import 'package:get/get.dart';
@@ -13,8 +13,8 @@ class Routes {
   static String signupScreenRoute = '/signup-screen';
   static String providersScreenRoute = '/providers-screen';
   static String onBoardingPageRoute = '/onboarding-screen';
-  static String paymentPageRoute = '/payment-screen';
   static String addNewCardScreenRoute = '/add-new-card-screen';
+  static String orderConfirmedScreenRoute = '/order-confirmed-screen';
 }
 
 final getPages = [

@@ -36,29 +36,11 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            SvgPicture.asset(
-              'assets/images/logo.svg',
-            ),
-            Text(
-              'Styleach',
-              style: TextStyle(
-                fontSize: Theme.of(context).textTheme.displayLarge!.fontSize,
-                fontWeight:
-                    Theme.of(context).textTheme.displayLarge!.fontWeight,
-              ),
-            ),
-            Text(
-              'Find Your Style',
-              style: TextStyle(
-                fontSize: 40,
-                fontWeight: FontWeight.w400,
-                fontFamily: GoogleFonts.sacramento().fontFamily,
-              ),
-            )
-          ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 40),
+          child: SvgPicture.asset(
+            'assets/logos/logo.svg',
+          ),
         ),
       ),
     );
