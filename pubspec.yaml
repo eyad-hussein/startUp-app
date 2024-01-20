@@ -85,6 +85,10 @@ flutter:
     - assets/icons/search.svg
     - assets/icons/nike-logo.svg
     - assets/icons/camera.svg
+
+    - assets/icons/mastercard.png
+    - assets/icons/paypal.png
+    - assets/icons/bank.svg
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
