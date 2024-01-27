@@ -11,8 +11,8 @@ class Routes {
   static String loginScreenRoute = '/login-screen';
   static String signupScreenRoute = '/signup-screen';
   static String providersScreenRoute = '/providers-screen';
-  static String onBoardingPageRoute = '/onboarding-screen';
-  static String paymentPageRoute = '/payment-screen';
+  static String onBoardingScreenRoute = '/onboarding-screen';
+  static String paymentScreenRoute = '/payment-screen';
 }
 
 final getPages = [
@@ -32,10 +32,7 @@ final getPages = [
     name: Routes.providersScreenRoute,
     page: () => const ProvidersScreen(),
   ),
-  GetPage(name: Routes.onBoardingPageRoute,
-      page: () => const OnBoardingScreen()
-  ),
-  GetPage(name: Routes.paymentPageRoute,
-      page: () => const PaymentScreen()
-  ),
+  GetPage(
+      name: Routes.onBoardingScreenRoute, page: () => const OnBoardingScreen()),
+  GetPage(name: Routes.paymentScreenRoute, page: () => const PaymentScreen()),
 ];
