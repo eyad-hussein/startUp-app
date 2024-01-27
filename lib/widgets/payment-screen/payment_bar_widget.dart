@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class AddNewCardBar extends StatelessWidget implements PreferredSizeWidget {
-  const AddNewCardBar({Key? key, required this.onBackPress}) : super(key: key);
+class PaymentBar extends StatelessWidget implements PreferredSizeWidget {
+  const PaymentBar({Key? key, required this.onBackPress}) : super(key: key);
 
   final VoidCallback onBackPress;
 
@@ -15,7 +15,7 @@ class AddNewCardBar extends StatelessWidget implements PreferredSizeWidget {
             color: Theme.of(context).colorScheme.primary),
       ),
       title: const Text(
-        "Add New Card",
+        "Payment",
         style: TextStyle(
           color: Colors.black,
           fontSize: 18.0,

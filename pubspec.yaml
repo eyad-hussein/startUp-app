@@ -89,6 +89,9 @@ flutter:
     - assets/icons/mastercard.png
     - assets/icons/paypal.png
     - assets/icons/fawry.jpeg
+    - assets/images/card1.png
+    - assets/images/card2.png
+    - assets/icons/plus.svg
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

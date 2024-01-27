@@ -20,8 +20,10 @@ class OrderConfirmBottomNavigationBar extends StatelessWidget {
               'Add card',
               style: TextStyle(
                 color: Theme.of(context).colorScheme.background,
-                fontSize: Theme.of(context).textTheme.displaySmall!.fontSize! * 1.5,
-                fontWeight: Theme.of(context).textTheme.displayMedium!.fontWeight,
+                fontSize:
+                    Theme.of(context).textTheme.displaySmall!.fontSize! * 1.5,
+                fontWeight:
+                    Theme.of(context).textTheme.displayMedium!.fontWeight,
               ),
             ),
           ),
