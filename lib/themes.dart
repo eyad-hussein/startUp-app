@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 final ColorScheme kLightColorScheme = ThemeData().colorScheme.copyWith(
       primary: const Color(0xFF1D1E20),
       secondary: const Color(0xFF8F959E),
+      tertiary: const Color(0xFFF5F6FA),
       background: const Color(0xFFFEFEFE),
       error: const Color(0xFFEA4335),
     );
