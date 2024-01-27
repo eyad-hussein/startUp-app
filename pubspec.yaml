@@ -70,7 +70,6 @@ flutter:
     - assets/images/logo.svg
     - assets/images/logo.png
     - assets/logos/logo.svg
-    - assets/images/card.png
     - assets/images/phone.png
     - assets/icons/check.svg
     - assets/icons/menu.svg

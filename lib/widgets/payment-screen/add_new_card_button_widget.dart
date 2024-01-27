@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class AddNewCard extends StatelessWidget {
-  const AddNewCard({super.key});
+class AddNewCardButton extends StatelessWidget {
+  const AddNewCardButton({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
         onPressed: () {},
         style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.symmetric(vertical: 15),
+          padding: const EdgeInsets.symmetric(vertical: 15),
           foregroundColor: Theme.of(context).colorScheme.primary,
           shape: RoundedRectangleBorder(
               side: const BorderSide(),
