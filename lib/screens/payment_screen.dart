@@ -1,3 +1,7 @@
+import 'package:app/widgets/onboarding-screen/custom-appbar-widget.dart';
+import 'package:app/widgets/payment-screen/add_new_card_button_widget.dart';
+import 'package:app/widgets/payment-screen/card_carousel_widget.dart';
+import 'package:app/widgets/payment-screen/payment_bar_widget.dart';
 import 'package:flutter/material.dart';
 
 class PaymentScreen extends StatelessWidget {
@@ -30,6 +34,22 @@ class PaymentScreen extends StatelessWidget {
             ),
           ),
         ),
+      ),
+      body: Column(
+        children: [
+          PaymentBar(
+            onBackPress: () => {},
+          ),
+          const CardCarousel(),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              children: [
+                AddNewCard(),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }
