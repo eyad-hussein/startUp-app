@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-enum CustomFormFieldType {
-  NAME,
-  PASSWORD,
+enum AuthFormFieldType {
+  name,
+  password,
 }
 
-class CustomFormField extends StatelessWidget {
-  const CustomFormField(
+class AuthFormField extends StatelessWidget {
+  const AuthFormField(
       {super.key,
       required this.label,
       required this.type,
       required this.onChanged});
 
   final String label;
-  final CustomFormFieldType type;
+  final AuthFormFieldType type;
   final void Function(String) onChanged;
 
   @override
@@ -23,7 +23,7 @@ class CustomFormField extends StatelessWidget {
     bool isObscureText = false;
 
     switch (type) {
-      case CustomFormFieldType.NAME:
+      case AuthFormFieldType.name:
         suffixIcon = Padding(
           padding: const EdgeInsets.all(12),
           child: SvgPicture.asset(
@@ -36,7 +36,7 @@ class CustomFormField extends StatelessWidget {
           ),
         );
         break;
-      case CustomFormFieldType.PASSWORD:
+      case AuthFormFieldType.password:
         suffixIcon = Padding(
           padding: const EdgeInsets.only(top: 14),
           child: Text(
