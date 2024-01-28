@@ -15,7 +15,7 @@ class LoginScreen extends StatelessWidget {
       bottomNavigationBar: GestureDetector(
         onTap: () async {
           await userController.login();
-          Get.offNamed(Routes.onBoardingPageRoute);
+          Get.offNamed(Routes.onBoardingScreenRoute);
         },
         child: ClipRRect(
           borderRadius: const BorderRadius.only(
