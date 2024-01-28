@@ -1,3 +1,5 @@
+import 'package:app/widgets/custom_appbar_widget.dart';
+import 'package:app/widgets/onboarding-screen/custom_search_bar_widget.dart';
 import 'package:get/get.dart';
 import 'package:app/controllers/product_controller.dart';
 import 'package:app/widgets/onboarding-screen/custom-appbar-widget.dart';
@@ -27,7 +29,6 @@ class OnBoardingScreen extends StatelessWidget {
       Brand(name: 'Puma', icon: SvgPicture.asset('assets/icons/puma-logo.svg')),
       Brand(name: 'Fila', icon: SvgPicture.asset('assets/icons/fila-logo.svg')),
     ];
-
     final double screenWidth = MediaQuery.of(context).size.width;
     final double screenHeight = MediaQuery.of(context).size.height;
     double getHeight(double height) {
@@ -51,7 +52,9 @@ class OnBoardingScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const CustomAppbar(),
+              const CustomAppbar(
+                type: CustomAppbarType.ONBOARDING,
+              ),
               Padding(
                 padding: EdgeInsets.only(
                   top: getHeight(20),

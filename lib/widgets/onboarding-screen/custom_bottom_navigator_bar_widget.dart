@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+
+import '../../routes.dart';
 
 class CustomBottomNavigatorBar extends StatefulWidget {
   const CustomBottomNavigatorBar({super.key});
@@ -51,6 +55,12 @@ class _BottomNavigatorBarState extends State<CustomBottomNavigatorBar> {
               setState(() {
                 _selectedIndex = index;
               });
+              if(index == 3){
+                Get.offNamed(Routes.addressScreenRoute);
+              }
+              if(index == 2){
+                Get.offNamed(Routes.cartScreenRoute);
+              }
             },
             items: [
               const BottomNavigationBarItem(
@@ -83,6 +93,7 @@ class _BottomNavigatorBarState extends State<CustomBottomNavigatorBar> {
                       : Colors.white.withOpacity(0.3),
                 ),
                 label: '',
+
               ),
             ],
           ),

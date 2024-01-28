@@ -43,6 +43,7 @@ dependencies:
   firebase_core: ^2.24.2
   cloud_firestore: ^4.13.6
   http: ^1.1.2
+  slidable_button: ^3.0.0+1
 
 dev_dependencies:
   flutter_test:
@@ -84,6 +85,16 @@ flutter:
     - assets/icons/search.svg
     - assets/icons/nike-logo.svg
     - assets/icons/camera.svg
+    - assets/icons/arrow-left.svg
+    - assets/icons/arrow-up.svg
+    - assets/icons/arrow-down.svg
+    - assets/icons/trash.svg
+    - assets/icons/arrow-left-small.svg
+    - assets/icons/map.svg
+    - assets/icons/check-green.svg
+    - assets/icons/container-empty.svg
+    - assets/images/dummy-1.svg
+    - assets/images/dummy-2.svg
 
     - assets/icons/mastercard.png
     - assets/icons/paypal.png
