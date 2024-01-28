@@ -1,4 +1,4 @@
-import 'package:app/widgets/custom_form_field_widget.dart';
+import 'package:app/widgets/auth_form_field_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:app/controllers/user_controller.dart';
@@ -20,31 +20,31 @@ class _SignUpFormState extends State<SignUpForm> {
       child: Form(
         child: Column(
           children: [
-            CustomFormField(
+            AuthFormField(
               label: 'Full Name',
-              type: CustomFormFieldType.NAME,
+              type: AuthFormFieldType.name,
               onChanged: (value) {
                 _userController.nameController.text = value;
               },
             ),
             const SizedBox(height: 20),
-            CustomFormField(
+            AuthFormField(
               label: 'Password',
-              type: CustomFormFieldType.PASSWORD,
+              type: AuthFormFieldType.password,
               onChanged: (value) =>
                   _userController.passwordController.text = value,
             ),
             const SizedBox(height: 20),
-            CustomFormField(
+            AuthFormField(
               label: 'Confirm Password',
-              type: CustomFormFieldType.PASSWORD,
+              type: AuthFormFieldType.password,
               onChanged: (value) =>
                   _userController.passwordConfirmationController.text = value,
             ),
             const SizedBox(height: 20),
-            CustomFormField(
+            AuthFormField(
               label: 'Email',
-              type: CustomFormFieldType.NAME,
+              type: AuthFormFieldType.name,
               onChanged: (value) =>
                   _userController.emailController.text = value,
             ),

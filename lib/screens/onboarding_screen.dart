@@ -1,7 +1,7 @@
 import 'package:app/widgets/custom_appbar_widget.dart';
 import 'package:app/widgets/onboarding-screen/custom_search_bar_widget.dart';
 import 'package:app/widgets/onboarding-screen/custom_bottom_navigator_bar_widget.dart';
-import 'package:app/widgets/onboarding-screen/custom_product_card_widget.dart';
+import 'package:app/widgets/onboarding-screen/custom-product-card-widget.dart';
 import 'package:app/widgets/onboarding-screen/list_view_builder_brands_widget.dart';
 import 'package:app/widgets/onboarding-screen/list_view_builder_products_widget.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -169,6 +169,7 @@ class OnBoardingScreen extends StatelessWidget {
                   ],
                 ),
               ),
+              const SizedBox(height: 20),
               SizedBox(
                   height: getHeight(343),
                   child: ListViewProducts(products: dummyProducts)),

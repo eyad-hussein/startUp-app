@@ -24,7 +24,8 @@ class MyApp extends StatelessWidget {
     // return const MaterialApp(home: const Test());
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: Routes.splashScreenRoute,
+      initialRoute: Routes
+          .paymentScreenRoute, // Restore it to default after finishing testing
       getPages: getPages,
       themeMode: ThemeMode.light,
       theme: kLightTheme,
@@ -32,3 +33,17 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+// class MyApp extends StatelessWidget {
+//   MyApp({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         backgroundColor: Colors.white,
+//         body: Text("hi"),
+//       ),
+//     );
+//   }
+// }

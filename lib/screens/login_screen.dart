@@ -14,11 +14,8 @@ class LoginScreen extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.background,
       bottomNavigationBar: GestureDetector(
         onTap: () async {
-          await userController.login(
-            userController.emailController.text,
-            userController.passwordController.text,
-          );
-          Get.offNamed(Routes.onBoardingPageRoute);
+          await userController.login();
+          Get.offNamed(Routes.onBoardingScreenRoute);
         },
         child: ClipRRect(
           borderRadius: const BorderRadius.only(
@@ -26,24 +23,23 @@ class LoginScreen extends StatelessWidget {
             topRight: Radius.circular(20.0),
           ),
           child: Container(
-              color: Theme.of(context).colorScheme.primary,
-              height: 70,
-              child: Center(
-                child: Text(
-                  "Log In",
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.background,
-                    fontSize:
-                        Theme.of(context).textTheme.displaySmall!.fontSize! *
-                            1.5,
-                    fontWeight:
-                        Theme.of(context).textTheme.displayMedium!.fontWeight,
-                  ),
+            color: Theme.of(context).colorScheme.primary,
+            height: 70,
+            child: Center(
+              child: Text(
+                "Log In",
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.background,
+                  fontSize:
+                      Theme.of(context).textTheme.displaySmall!.fontSize! * 1.5,
+                  fontWeight:
+                      Theme.of(context).textTheme.displayMedium!.fontWeight,
                 ),
               ),
             ),
           ),
         ),
+      ),
       body: Expanded(
         child: ListView(
           children: [

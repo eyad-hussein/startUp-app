@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:app/routes.dart';
-import 'package:app/widgets/custom_form_field_widget.dart';
+import 'package:app/widgets/auth_form_field_widget.dart';
 import 'package:app/controllers/user_controller.dart';
 
 class LoginForm extends StatefulWidget {
@@ -22,16 +22,16 @@ class _LoginFormState extends State<LoginForm> {
       child: Form(
         child: Column(
           children: [
-            CustomFormField(
+            AuthFormField(
               label: 'Email',
-              type: CustomFormFieldType.NAME,
+              type: AuthFormFieldType.name,
               onChanged: (value) =>
                   _userController.emailController.text = value,
             ),
             const SizedBox(height: 20),
-            CustomFormField(
+            AuthFormField(
               label: 'Password',
-              type: CustomFormFieldType.PASSWORD,
+              type: AuthFormFieldType.password,
               onChanged: (value) =>
                   _userController.passwordController.text = value,
             ),
