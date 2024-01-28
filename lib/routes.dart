@@ -45,7 +45,7 @@ final getPages = [
   ),
   GetPage(
     name: Routes.onBoardingScreenRoute,
-    page: () => const OnBoardingScreen(),
+    page: () => OnBoardingScreen(),
   ),
   GetPage(
     name: Routes.paymentScreenRoute,
