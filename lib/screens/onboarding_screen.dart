@@ -3,7 +3,7 @@ import 'package:app/controllers/product_controller.dart';
 import 'package:app/widgets/onboarding-screen/custom-appbar-widget.dart';
 import 'package:app/widgets/onboarding-screen/custom-search-bar-widget.dart';
 import 'package:app/widgets/onboarding-screen/custom_bottom_navigator_bar_widget.dart';
-import 'package:app/widgets/onboarding-screen/custom-product-card_widget.dart';
+import 'package:app/widgets/onboarding-screen/custom-product-card-widget.dart';
 import 'package:app/widgets/onboarding-screen/list_view_builder_brands_widget.dart';
 import 'package:app/widgets/onboarding-screen/list_view_builder_products_widget.dart';
 import 'package:flutter_svg/flutter_svg.dart';
