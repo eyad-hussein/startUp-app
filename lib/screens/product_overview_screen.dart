@@ -34,7 +34,7 @@ class ProductOverviewScreen extends StatelessWidget {
                   width: double.infinity,
                   height: getHeight(387),
                   child: Image.network(
-                    product.imageURL,
+                    product.imageUrl,
                     fit: BoxFit.fill,
                   ),
                 ),
@@ -116,20 +116,20 @@ class ProductOverviewScreen extends StatelessWidget {
                 ],
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(
-                left: getWidth(20),
-                top: getHeight(21),
-                right: getWidth(20),
-              ),
-              child: SizedBox(
-                height: getHeight(77),
-                width: getWidth(335),
-                child: ListViewSubImages(
-                  SubImagesUrl: product.subImagesUrl,
-                ),
-              ),
-            ),
+            // Padding(
+            //   padding: EdgeInsets.only(
+            //     left: getWidth(20),
+            //     top: getHeight(21),
+            //     right: getWidth(20),
+            //   ),
+            //   child: SizedBox(
+            //     height: getHeight(77),
+            //     width: getWidth(335),
+            //     child: ListViewSubImages(
+            //       SubImagesUrl: product.subImagesUrl,
+            //     ),
+            //   ),
+            // ),
             Padding(
               padding: EdgeInsets.only(
                 top: getHeight(16),
@@ -162,17 +162,17 @@ class ProductOverviewScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        top: getHeight(10),
-                      ),
-                      child: SizedBox(
-                          width: getWidth(335),
-                          height: getHeight(54),
-                          child: ListViewSizes(
-                            sizesAvailable: product.sizesAvailable,
-                          )),
-                    ),
+                    // Padding(
+                    //   padding: EdgeInsets.only(
+                    //     top: getHeight(10),
+                    //   ),
+                    //   child: SizedBox(
+                    //       width: getWidth(335),
+                    //       height: getHeight(54),
+                    //       child: ListViewSizes(
+                    //         sizesAvailable: product.sizesAvailable,
+                    //       )),
+                    // ),
                   ],
                 ),
               ),
@@ -198,14 +198,14 @@ class ProductOverviewScreen extends StatelessWidget {
                         fontFamily: 'Inter',
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        top: getHeight(10),
-                      ),
-                      //this should be handled better in the CustomProductDescription
-                      child: CustomProductDescription(
-                          description: product.Description),
-                    ),
+                    // Padding(
+                    //   padding: EdgeInsets.only(
+                    //     top: getHeight(10),
+                    //   ),
+                    //   //this should be handled better in the CustomProductDescription
+                    //   child: CustomProductDescription(
+                    //       description: product.description),
+                    // ),
                   ],
                 ),
               ),

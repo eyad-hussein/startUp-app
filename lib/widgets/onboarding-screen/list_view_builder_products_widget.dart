@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../models/product.dart';
-import 'custom-product-card-widget.dart';
+import 'custom_product_card_widget.dart';
 
 class ListViewProducts extends StatelessWidget {
   const ListViewProducts({Key? key, required this.products}) : super(key: key);
@@ -47,72 +47,3 @@ class ListViewProducts extends StatelessWidget {
     );
   }
 }
-
-// ListView.builder(
-//             itemCount: snapshot.data!.length,
-//             itemBuilder: (context, index) {
-//               int startIndex = index;
-//               int endIndex = startIndex + 2;
-
-//               if (endIndex <= snapshot.data!.length) {
-//                 final firstProduct = snapshot.data![startIndex];
-//                 final secondProduct = snapshot.data![startIndex + 1];
-
-//                 return Row(
-//                   children: [
-//                     Expanded(
-//                       child: ListTile(
-//                         title: Text(firstProduct.name),
-//                         subtitle: Text('\$${firstProduct.price}'),
-//                       ),
-//                     ),
-//                     Expanded(
-//                       child: ListTile(
-//                         title: Text(secondProduct.name),
-//                         subtitle: Text('\$${secondProduct.price}'),
-//                       ),
-//                     ),
-//                   ],
-//                 );
-//               } else {
-//                 // If there is only one item left, display it in a single-column row
-//                 final remainingProduct = snapshot.data![startIndex];
-
-//                 return ListTile(
-//                   title: Text(remainingProduct.name),
-//                   subtitle: Text('\$${remainingProduct.price}'),
-//                 );
-//               }
-    
-//             },
-//           );
-
-
-          // return Column(
-                // children: [
-                  // if (index > 0) SizedBox(height: getHeight(10)),
-                  // Row(
-                    // children: snapshot.data!
-                        // .sublist(startIndex, endIndex)
-                        // .asMap()
-                        // .entries
-                        // .map((entry) {
-                      // int indexWithinSublist = entry.key;
-                      // Product product = entry.value;
-// 
-                      // return Expanded(
-                        // child: Padding(
-                          // padding: EdgeInsets.only(
-                              // left: indexWithinSublist % 2 == 1
-                                  // ? getWidth(7.5)
-                                  // : 0,
-                              // right: indexWithinSublist % 2 == 0
-                                  // ? getWidth(7.5)
-                                  // : 0),
-                          // child: CustomProductCard(product: product),
-                        // ),
-                      // );
-                    // }).toList(),
-                  // ),
-                // ],
-              // );

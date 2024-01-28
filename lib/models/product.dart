@@ -1,13 +1,11 @@
 class Product {
   final String name;
   final double price;
-  final List<String> subImagesUrl;
-  final List<String> sizesAvailable;
-  final String Description;
-  bool isFavourite;
+  // final List<String> subImagesUrl;
+  // final List<String> sizesAvailable;
   final String imageUrl;
   final String imageAlt;
-  final int price;
+  // final String description;
   bool isFavourite;
 
   Product({
@@ -15,7 +13,7 @@ class Product {
     required this.imageUrl,
     this.imageAlt = "Image",
     required this.price,
-    required this.Description,
+    // required this.description,
     this.isFavourite = false,
   });
 
@@ -24,7 +22,7 @@ class Product {
       name: json['name'] as String,
       imageUrl: json['image']['url'] as String,
       imageAlt: json['image']['alt'] as String,
-      price: json['price'] as int,
+      price: json['price'] as double,
     );
   }
 

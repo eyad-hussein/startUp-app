@@ -33,7 +33,7 @@ class _CustomProductCardState extends State<CustomProductCard> {
     }
 
     return GestureDetector(
-      onTap: ()=>Get.toNamed(
+      onTap: () => Get.toNamed(
         Routes.productScreenRoute,
         arguments: widget.product,
       ),
@@ -48,7 +48,7 @@ class _CustomProductCardState extends State<CustomProductCard> {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(15),
                   child: Image.network(
-                    widget.product.imageURL,
+                    widget.product.imageUrl,
                     width: getWidth(160),
                     height: getHeight(203),
                     fit: BoxFit.contain,
@@ -68,7 +68,8 @@ class _CustomProductCardState extends State<CustomProductCard> {
                           ),
                     onTap: () {
                       setState(() {
-                        widget.product.isFavourite = !widget.product.isFavourite;
+                        widget.product.isFavourite =
+                            !widget.product.isFavourite;
                       });
                     },
                   ),
