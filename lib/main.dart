@@ -1,3 +1,4 @@
+import 'package:app/controllers/product_controller.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,7 @@ void main() async {
 class MyApp extends StatelessWidget {
   MyApp({super.key});
   final UserController userController = Get.put(UserController());
+  final ProductController productController = Get.put(ProductController());
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: Routes
-          .paymentScreenRoute, // Restore it to default after finishing testing
+          .onBoardingScreenRoute, // Restore it to default after finishing testing
       getPages: getPages,
       themeMode: ThemeMode.light,
       theme: kLightTheme,

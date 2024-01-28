@@ -1,3 +1,5 @@
+import 'package:get/get.dart';
+import 'package:app/controllers/product_controller.dart';
 import 'package:app/widgets/onboarding-screen/custom-appbar-widget.dart';
 import 'package:app/widgets/onboarding-screen/custom-search-bar-widget.dart';
 import 'package:app/widgets/onboarding-screen/custom_bottom_navigator_bar_widget.dart';
@@ -11,10 +13,12 @@ import '../models/brand.dart';
 import '../models/product.dart';
 
 class OnBoardingScreen extends StatelessWidget {
-  const OnBoardingScreen({Key? key}) : super(key: key);
+  OnBoardingScreen({Key? key}) : super(key: key);
+  final ProductController productController = Get.find<ProductController>();
 
   @override
   Widget build(BuildContext context) {
+    final Future<List<Product>> products = productController.getProducts();
     List<Brand> BrandList = [
       Brand(
           name: 'Adidas',
@@ -23,15 +27,7 @@ class OnBoardingScreen extends StatelessWidget {
       Brand(name: 'Puma', icon: SvgPicture.asset('assets/icons/puma-logo.svg')),
       Brand(name: 'Fila', icon: SvgPicture.asset('assets/icons/fila-logo.svg')),
     ];
-    List<Product> dummyProducts = List.generate(7, (index) {
-      return Product(
-        imageURL:
-            'https://teeshoppen.co.uk/cdn/shop/products/12224235_1800x1800.png?v=1663763153',
-        name: 'Product ${index + 1}',
-        price: (index + 1) * 10.0,
-        isFavourite: index % 3 == 0,
-      );
-    });
+
     final double screenWidth = MediaQuery.of(context).size.width;
     final double screenHeight = MediaQuery.of(context).size.height;
     double getHeight(double height) {
@@ -161,7 +157,7 @@ class OnBoardingScreen extends StatelessWidget {
               const SizedBox(height: 20),
               SizedBox(
                   height: getHeight(343),
-                  child: ListViewProducts(products: dummyProducts)),
+                  child: ListViewProducts(products: products)),
             ],
           ),
         ),
