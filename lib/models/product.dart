@@ -22,7 +22,7 @@ class Product {
       name: json['name'] as String,
       imageUrl: json['image']['url'] as String,
       imageAlt: json['image']['alt'] as String,
-      price: json['price'] as double,
+      price:  (json['price'] as num).toDouble(),
     );
   }
 
