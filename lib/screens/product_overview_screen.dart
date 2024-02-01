@@ -35,7 +35,8 @@ class ProductOverviewScreen extends StatelessWidget {
                   height: getHeight(387),
                   child: Image.network(
                     product.imageUrl,
-                    fit: BoxFit.fill,
+                    fit: BoxFit.cover,
+                    alignment: Alignment.topCenter,
                   ),
                 ),
                 Padding(
@@ -61,9 +62,9 @@ class ProductOverviewScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text(
-                        "Men's Printed Pullover Hoodie",
-                        style: TextStyle(
+                      Text(
+                        product.shortDescription,
+                        style: const TextStyle(
                           fontFamily: 'Inter',
                           fontWeight: FontWeight.w400,
                           fontSize: 13,
@@ -116,20 +117,20 @@ class ProductOverviewScreen extends StatelessWidget {
                 ],
               ),
             ),
-            // Padding(
-            //   padding: EdgeInsets.only(
-            //     left: getWidth(20),
-            //     top: getHeight(21),
-            //     right: getWidth(20),
-            //   ),
-            //   child: SizedBox(
-            //     height: getHeight(77),
-            //     width: getWidth(335),
-            //     child: ListViewSubImages(
-            //       SubImagesUrl: product.subImagesUrl,
-            //     ),
-            //   ),
-            // ),
+            Padding(
+              padding: EdgeInsets.only(
+                left: getWidth(20),
+                top: getHeight(21),
+                right: getWidth(20),
+              ),
+              child: SizedBox(
+                height: getHeight(77),
+                width: getWidth(335),
+                child: ListViewSubImages(
+                  SubImagesUrl: product.subImagesUrl,
+                ),
+              ),
+            ),
             Padding(
               padding: EdgeInsets.only(
                 top: getHeight(16),
@@ -162,17 +163,17 @@ class ProductOverviewScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    // Padding(
-                    //   padding: EdgeInsets.only(
-                    //     top: getHeight(10),
-                    //   ),
-                    //   child: SizedBox(
-                    //       width: getWidth(335),
-                    //       height: getHeight(54),
-                    //       child: ListViewSizes(
-                    //         sizesAvailable: product.sizesAvailable,
-                    //       )),
-                    // ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        top: getHeight(10),
+                      ),
+                      child: SizedBox(
+                          width: getWidth(335),
+                          height: getHeight(54),
+                          child: ListViewSizes(
+                            sizesAvailable: product.sizesAvailable,
+                          )),
+                    ),
                   ],
                 ),
               ),
@@ -198,14 +199,14 @@ class ProductOverviewScreen extends StatelessWidget {
                         fontFamily: 'Inter',
                       ),
                     ),
-                    // Padding(
-                    //   padding: EdgeInsets.only(
-                    //     top: getHeight(10),
-                    //   ),
-                    //   //this should be handled better in the CustomProductDescription
-                    //   child: CustomProductDescription(
-                    //       description: product.description),
-                    // ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        top: getHeight(10),
+                      ),
+                      //this should be handled better in the CustomProductDescription
+                      child: CustomProductDescription(
+                          description: product.description),
+                    ),
                   ],
                 ),
               ),

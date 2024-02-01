@@ -64,7 +64,7 @@ class _CustomProductCardState extends State<CustomProductCard> {
                         ? SvgPicture.asset('assets/icons/heart.svg')
                         : SvgPicture.asset(
                             'assets/icons/heart.svg',
-                            color: Colors.red,
+                      colorFilter: const ColorFilter.mode(Colors.red, BlendMode.srcIn),
                           ),
                     onTap: () {
                       setState(() {

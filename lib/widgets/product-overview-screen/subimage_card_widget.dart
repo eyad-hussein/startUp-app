@@ -28,7 +28,7 @@ class SubImageCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(9),
         child: Image.network(
           ImageURL,
-          fit: BoxFit.fill,
+          fit: BoxFit.cover,
         ),
       ),
     );
