@@ -11,7 +11,7 @@ class ProductRepository {
       'Accept': 'application/json',
     });
 
-    print(response.body);
+    // print(jsonDecode(response.body)['products'][0]['image']['subimages']);
     if (response.statusCode == 200) {
       final result = jsonDecode(response.body)['products'];
 

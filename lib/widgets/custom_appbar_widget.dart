@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 enum CustomAppbarType { ONBOARDING, PRODUCT }
 
@@ -23,7 +24,9 @@ class CustomAppbar extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Get.back();
+          },
           child: Container(
             width: getHeight(45),
             height: getHeight(45),
