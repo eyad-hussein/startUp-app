@@ -318,7 +318,7 @@ class ProductOverviewScreen extends StatelessWidget {
                                   Row(
                                     children: [
                                       const Text(
-                                        "4.8",
+                                        "3.5",
                                         style: TextStyle(
                                           fontFamily: 'Inter',
                                           fontWeight: FontWeight.w500,
@@ -346,7 +346,7 @@ class ProductOverviewScreen extends StatelessWidget {
                                     padding: EdgeInsets.only(
                                       top: getHeight(5),
                                     ),
-                                    child: StarReviewWidget(review: 3),
+                                    child: StarReviewWidget(review: 3.5),
                                   ),
                                 ],
                               ),

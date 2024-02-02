@@ -16,7 +16,6 @@ class CustomBottomNavigatorBar extends StatefulWidget {
 
 class _BottomNavigatorBarState extends State<CustomBottomNavigatorBar> {
   int _selectedIndex = 0;
-  Product product = Product(name: 'Lorem Ipsum', imageUrl: "imageUrl", subImagesUrl: ['S'], price: 99.9, description: "Lorem Ipsum", shortDescription: "Lorem Ipsum", brand: "LOREM IPSUM", sizesAvailable: ["XL"], reviews: [Review(content: 'Lorem Ipsum', rating: 4)]);
   @override
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
@@ -62,9 +61,6 @@ class _BottomNavigatorBarState extends State<CustomBottomNavigatorBar> {
               }
               if(index == 2){
                 Get.offNamed(Routes.cartScreenRoute);
-              }
-              if(index == 1){
-                Get.toNamed(Routes.productScreenRoute,arguments: product);
               }
             },
             items: [

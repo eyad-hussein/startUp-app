@@ -10,8 +10,6 @@ class StarReviewWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     int intPart = review.floor();
     double floatPart = review - intPart;
-    floatPart -= 0.05;
-
     Color starColor = Color(0xFFFF981F);
 
     return Row(
