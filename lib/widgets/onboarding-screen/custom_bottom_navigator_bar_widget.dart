@@ -1,3 +1,5 @@
+import 'package:app/models/product.dart';
+import 'package:app/models/review.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -14,7 +16,6 @@ class CustomBottomNavigatorBar extends StatefulWidget {
 
 class _BottomNavigatorBarState extends State<CustomBottomNavigatorBar> {
   int _selectedIndex = 0;
-
   @override
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;

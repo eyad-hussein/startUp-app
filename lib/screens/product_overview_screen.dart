@@ -2,7 +2,9 @@ import 'package:app/models/product.dart';
 import 'package:app/widgets/custom_appbar_widget.dart';
 import 'package:app/widgets/product-overview-screen/list_view_builder_sizes_widget.dart';
 import 'package:app/widgets/product-overview-screen/list_view_builder_subimages_widget.dart';
+import 'package:app/widgets/product-overview-screen/review_stars_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import '../widgets/product-overview-screen/product_description_text_widget.dart';
@@ -168,11 +170,12 @@ class ProductOverviewScreen extends StatelessWidget {
                         top: getHeight(10),
                       ),
                       child: SizedBox(
-                          width: getWidth(335),
-                          height: getHeight(54),
-                          child: ListViewSizes(
-                            sizesAvailable: product.sizesAvailable,
-                          )),
+                        width: getWidth(335),
+                        height: getHeight(54),
+                        child: ListViewSizes(
+                          sizesAvailable: product.sizesAvailable,
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -184,7 +187,7 @@ class ProductOverviewScreen extends StatelessWidget {
                 top: getHeight(20),
                 right: getWidth(20),
               ),
-              child: Container(
+              child: SizedBox(
                 width: getWidth(335),
                 height: getHeight(125),
                 child: Column(
@@ -217,9 +220,9 @@ class ProductOverviewScreen extends StatelessWidget {
                 left: getWidth(20),
                 right: getWidth(20),
               ),
-              child: const Column(
+              child: Column(
                 children: [
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
@@ -242,7 +245,196 @@ class ProductOverviewScreen extends StatelessWidget {
                       ),
                     ],
                   ),
+                  Padding(
+                    padding: EdgeInsets.only(
+                      top: getHeight(15),
+                    ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          width: getHeight(45),
+                          height: getHeight(45),
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Color(0xFFCCD9E0),
+                          ),
+                          //Add Image for the rev photo here
+                        ),
+                        Expanded(
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(
+                                  left: getWidth(10),
+                                ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text(
+                                      'Ronald Richards',
+                                      style: TextStyle(
+                                        fontFamily: 'Inter',
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 15,
+                                        color: Color(0xFF1D1E20),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.only(
+                                        top: getHeight(5),
+                                      ),
+                                      child: Row(
+                                        children: [
+                                          SvgPicture.asset(
+                                              'assets/icons/clock.svg'),
+                                          Padding(
+                                            padding: EdgeInsets.only(
+                                              left: getWidth(5),
+                                            ),
+                                            //here should be the date text
+                                            child: const Text(
+                                              "13 Sep, 2020",
+                                              style: TextStyle(
+                                                fontFamily: 'Inter',
+                                                fontWeight: FontWeight.w400,
+                                                fontSize: 11,
+                                                color: Color(0xFF8F959E),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    children: [
+                                      const Text(
+                                        "3.5",
+                                        style: TextStyle(
+                                          fontFamily: 'Inter',
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 15,
+                                          color: Color(0xFF1D1E20),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                          left: getWidth(5),
+                                        ),
+                                        child: const Text(
+                                          "Rating",
+                                          style: TextStyle(
+                                            fontFamily: 'Inter',
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 11,
+                                            color: Color(0xFF8F959E),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                      top: getHeight(5),
+                                    ),
+                                    child: StarReviewWidget(review: 3.5),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                      padding: EdgeInsets.only(
+                        top: getHeight(10),
+                        right: getWidth(20),
+                      ),
+                      //Should be renamed CustomDescription we 5alas
+                      child: CustomProductDescription(
+                        description:
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque malesuada eget vitae asdas asd asd  amdet...",
+                      )),
                 ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                top: getHeight(15),
+              ),
+              child: Container(
+                height: getHeight(39),
+                width: getWidth(335),
+                child: const Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Total Price",
+                          style: TextStyle(
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w600,
+                            fontSize: 15,
+                            color: Color(0xFF1D1E20),
+                          ),
+                        ),
+                        Text(
+                          "with VAT,SD",
+                          style: TextStyle(
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w400,
+                            fontSize: 11,
+                            color: Color(0xFF8F959E),
+                          ),
+                        )
+                      ],
+                    ),
+                    Text(
+                      "125\$",
+                      style: TextStyle(
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w600,
+                        fontSize: 17,
+                        color: Color(0xFF1D1E20),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: getHeight(20),),
+              child: Container(
+                height: getHeight(75),
+                decoration: const BoxDecoration(
+                  color: Color(0xFF9775FA),
+                ),
+                child: const Center(
+                  child: Text(
+                    "Add to Cart",
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w500,
+                      fontFamily: 'Inter',
+                      color: Color(0xFFFEFEFE),
+                    ),
+                  ),
+                ),
               ),
             ),
           ],
