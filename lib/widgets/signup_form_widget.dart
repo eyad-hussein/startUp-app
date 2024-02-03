@@ -1,4 +1,4 @@
-import 'package:app/widgets/auth_form_field_widget.dart';
+import 'package:app/widgets/auth/auth_form_field_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:app/controllers/user_controller.dart';

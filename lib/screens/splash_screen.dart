@@ -1,9 +1,8 @@
+import 'package:app/shared/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
-import 'package:app/routes.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
