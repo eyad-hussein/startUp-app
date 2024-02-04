@@ -29,9 +29,14 @@ class LoginScreen extends StatelessWidget {
       bottomNavigationBar: GestureDetector(
         onTap: () async {
           if (formKey.currentState?.validate() ?? false) {
-            // Form is valid, proceed with submission
-            await authController.login();
+            try {
+              await authController.login();
+            } catch (e) {
+              // AUTH FAILED MESSAGE
+              print(e);
+            }
           } else {
+            // FORM NOT SUBMITTED MESSAGE
             print('Form no submitted');
           }
           // await userController.login();

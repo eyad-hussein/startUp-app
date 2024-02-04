@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // TODO :: check whether to add rememberme option or not
+// TODO:: sign up button ui
 class LoginForm extends StatefulWidget {
   final GlobalKey<FormState> formKey;
   const LoginForm({super.key, required this.formKey});
@@ -40,11 +41,24 @@ class _LoginFormState extends State<LoginForm> {
                   _authController.passwordController.text = value,
             ),
             const SizedBox(height: 20),
-            Align(
-              alignment: Alignment.centerRight,
-              child: TextButton(
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
                   onPressed: () {
                     Get.toNamed(Routes.forgetPasswordEmailRoute);
+                  },
+                  child: Text(
+                    'Sign Up?',
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.primary,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {
+                    Get.toNamed(Routes.signupScreenRoute);
                   },
                   child: Text(
                     'Forgot Password?',
@@ -52,7 +66,9 @@ class _LoginFormState extends State<LoginForm> {
                       color: Theme.of(context).colorScheme.error,
                       fontWeight: FontWeight.w500,
                     ),
-                  )),
+                  ),
+                ),
+              ],
             ),
             // const SizedBox(height: 20),
             // Row(

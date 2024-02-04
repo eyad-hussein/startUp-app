@@ -1,3 +1,4 @@
+import 'package:app/controllers/auth_controller.dart';
 import 'package:app/shared/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -6,12 +7,13 @@ import 'package:get/get.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
-
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  final AuthController authController = Get.find<AuthController>();
+
   @override
   void initState() {
     super.initState();
@@ -19,7 +21,15 @@ class _SplashScreenState extends State<SplashScreen> {
 
     Future.delayed(
       const Duration(seconds: 3),
-      () => Get.offNamed(Routes.loginScreenRoute),
+      () async {
+        await authController.checkInitialAuthentication();
+
+        if (authController.isLoggedIn.value) {
+          Get.offNamed(Routes.onBoardingScreenRoute);
+        } else {
+          Get.offNamed(Routes.loginScreenRoute);
+        }
+      },
     );
   }
 

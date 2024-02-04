@@ -1,7 +1,7 @@
+import 'package:app/controllers/auth_controller.dart';
 import 'package:app/widgets/auth/auth_form_field_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:app/controllers/user_controller.dart';
 
 class SignUpForm extends StatefulWidget {
   const SignUpForm({super.key});
@@ -12,7 +12,7 @@ class SignUpForm extends StatefulWidget {
 
 class _SignUpFormState extends State<SignUpForm> {
   bool _rememberMe = false;
-  final UserController _userController = Get.find<UserController>();
+  final AuthController _authController = Get.find<AuthController>();
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,7 +24,7 @@ class _SignUpFormState extends State<SignUpForm> {
               label: 'Full Name',
               type: AuthFormFieldType.name,
               onChanged: (value) {
-                _userController.nameController.text = value;
+                _authController.nameController.text = value;
               },
             ),
             const SizedBox(height: 20),
@@ -32,21 +32,21 @@ class _SignUpFormState extends State<SignUpForm> {
               label: 'Password',
               type: AuthFormFieldType.password,
               onChanged: (value) =>
-                  _userController.passwordController.text = value,
+                  _authController.passwordController.text = value,
             ),
             const SizedBox(height: 20),
             AuthFormField(
               label: 'Confirm Password',
               type: AuthFormFieldType.password,
               onChanged: (value) =>
-                  _userController.passwordConfirmationController.text = value,
+                  _authController.passwordConfirmationController.text = value,
             ),
             const SizedBox(height: 20),
             AuthFormField(
               label: 'Email',
               type: AuthFormFieldType.name,
               onChanged: (value) =>
-                  _userController.emailController.text = value,
+                  _authController.emailController.text = value,
             ),
             const SizedBox(height: 50),
             Row(
