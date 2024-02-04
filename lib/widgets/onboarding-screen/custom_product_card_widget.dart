@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 import '../../models/product.dart';
-import '../../routes.dart';
+import '../../shared/routes.dart';
 
 class CustomProductCard extends StatefulWidget {
   final Product product;
@@ -64,7 +63,8 @@ class _CustomProductCardState extends State<CustomProductCard> {
                         ? SvgPicture.asset('assets/icons/heart.svg')
                         : SvgPicture.asset(
                             'assets/icons/heart.svg',
-                      colorFilter: const ColorFilter.mode(Colors.red, BlendMode.srcIn),
+                            colorFilter: const ColorFilter.mode(
+                                Colors.red, BlendMode.srcIn),
                           ),
                     onTap: () {
                       setState(() {

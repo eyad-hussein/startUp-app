@@ -1,13 +1,11 @@
-import 'package:app/routes.dart';
+import 'package:app/shared/routes.dart';
 import 'package:app/widgets/custom_bottom_nav_bar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:app/widgets/login_form_widget.dart';
-import 'package:app/controllers/user_controller.dart';
 
-class NewPasswordScreen extends StatelessWidget {
-  const NewPasswordScreen({super.key});
+class ForgetPasswordEmailScreen extends StatelessWidget {
+  const ForgetPasswordEmailScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +21,12 @@ class NewPasswordScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
-      bottomNavigationBar: CustomBottomNavBar(
-        text: 'Reset Password',
-        height: getHeight(75),
+      bottomNavigationBar: GestureDetector(
+        onTap: () => Get.offNamed(Routes.verificationCodeRoute),
+        child: CustomBottomNavBar(
+          text: 'Confirm Mail',
+          height: getHeight(75),
+        ),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -56,17 +57,30 @@ class NewPasswordScreen extends StatelessWidget {
           ),
           Center(
             child: Text(
-              "New Password",
+              "Forgot Password",
               style: TextStyle(
                 fontSize: Theme.of(context).textTheme.displayMedium!.fontSize,
                 fontWeight:
-                Theme.of(context).textTheme.displayMedium!.fontWeight,
+                    Theme.of(context).textTheme.displayMedium!.fontWeight,
               ),
             ),
           ),
           Padding(
             padding: EdgeInsets.only(
-              top: getHeight(186),
+              top: getHeight(68),
+              left: getWidth(75),
+            ),
+            child: SizedBox(
+              height: getHeight(166),
+              width: getWidth(225),
+              child: SvgPicture.asset(
+                'assets/images/lock.svg',
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+              top: getHeight(80),
               left: getWidth(20),
               right: getWidth(20),
             ),
@@ -77,7 +91,7 @@ class NewPasswordScreen extends StatelessWidget {
               ),
               cursorColor: Theme.of(context).colorScheme.secondary,
               decoration: InputDecoration(
-                labelText: 'Password',
+                labelText: 'Email Address',
                 labelStyle: TextStyle(
                   color: Theme.of(context).colorScheme.secondary,
                   fontWeight: FontWeight.w500,
@@ -93,33 +107,10 @@ class NewPasswordScreen extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(
-              top: getHeight(20),
-              left: getWidth(20),
-              right: getWidth(20),
+              right: getWidth(50),
+              left: getWidth(50),
+              top: getHeight(155),
             ),
-            child: TextFormField(
-              style: TextStyle(
-                color: Theme.of(context).colorScheme.primary,
-                fontWeight: FontWeight.w500,
-              ),
-              cursorColor: Theme.of(context).colorScheme.secondary,
-              decoration: InputDecoration(
-                labelText: 'Confirm Password',
-                labelStyle: TextStyle(
-                  color: Theme.of(context).colorScheme.secondary,
-                  fontWeight: FontWeight.w500,
-                ),
-                contentPadding: const EdgeInsets.only(bottom: 13),
-                focusedBorder: const UnderlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Color(0xFF8F959E),
-                  ),
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: getWidth(87),top: getHeight(230),),
             child: RichText(
               textAlign: TextAlign.center,
               text: TextSpan(
@@ -131,7 +122,7 @@ class NewPasswordScreen extends StatelessWidget {
                 children: const [
                   TextSpan(
                       text:
-                      "Please write your new password."),
+                          "Please write your email to receive a confirmation code to set a new password."),
                 ],
               ),
             ),

@@ -1,25 +1,24 @@
-import 'package:app/screens/address_screen.dart';
-import 'package:app/screens/cart_screen.dart';
-import 'package:app/screens/forget_password_email_screen.dart';
-import 'package:app/screens/login_screen.dart';
-import 'package:app/screens/new_password_screen.dart';
-import 'package:app/screens/onboarding_screen.dart';
-import 'package:app/screens/product_overview_screen.dart';
-import 'package:app/screens/order_confirmed_screen.dart';
 import 'package:app/screens/add_new_card_screen.dart';
+import 'package:app/screens/address_screen.dart';
+import 'package:app/screens/auth/forget_password_email_screen.dart';
+import 'package:app/screens/auth/login_screen.dart';
+import 'package:app/screens/auth/new_password_screen.dart';
+import 'package:app/screens/auth/signup_screen.dart';
+import 'package:app/screens/auth/verification_code_screen.dart';
+import 'package:app/screens/cart_screen.dart';
+import 'package:app/screens/onboarding_screen.dart';
+import 'package:app/screens/order_confirmed_screen.dart';
 import 'package:app/screens/payment_screen.dart';
+import 'package:app/screens/product_overview_screen.dart';
 import 'package:app/screens/providers_screen.dart';
-import 'package:app/screens/signup_screen.dart';
-import 'package:app/screens/verification_code_screen.dart';
-import 'package:get/get.dart';
 import 'package:app/screens/splash_screen.dart';
+import 'package:get/get.dart';
 
 class Routes {
   static String splashScreenRoute = '/splash-screen';
   static String loginScreenRoute = '/login-screen';
   static String signupScreenRoute = '/signup-screen';
   static String providersScreenRoute = '/providers-screen';
-  static String onBoardingPageRoute = '/onboarding-screen';
   static String productScreenRoute = '/product-overview-screen';
   static String addressScreenRoute = '/address-screen';
   static String cartScreenRoute = '/cart-screen';

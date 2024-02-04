@@ -1,11 +1,9 @@
-import 'package:app/routes.dart';
+import 'package:app/shared/routes.dart';
 import 'package:app/widgets/custom_bottom_nav_bar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:app/widgets/login_form_widget.dart';
-import 'package:app/controllers/user_controller.dart';
 
 class VerificationCodeScreen extends StatelessWidget {
   const VerificationCodeScreen({super.key});
@@ -104,7 +102,6 @@ class VerificationCodeScreen extends StatelessWidget {
                             }
                           },
                           decoration: InputDecoration(
-
                             hintText: "0",
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(50.0),
