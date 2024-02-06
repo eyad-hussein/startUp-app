@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../models/brand.dart';
+import '../../models/brand_model.dart';
 import 'custom_brand_card_widget.dart';
 
 class ListViewBrands extends StatelessWidget {

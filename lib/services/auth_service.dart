@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:app/models/user.dart';
+import 'package:app/models/user_model.dart';
 import 'package:app/shared/config.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
@@ -12,7 +12,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class AuthService extends GetxService {
   static const String _tokenKey = 'user_token';
 
-  Future<User> register(
+  Future<UserModel> register(
     String name,
     String email,
     String password,
@@ -38,13 +38,13 @@ class AuthService extends GetxService {
 
       final token = _extractToken(response);
       await _storeToken(token);
-      return User.fromJson(jsonDecode(response.body)['user']);
+      return UserModel.fromJson(jsonDecode(response.body)['user']);
     } catch (e) {
       throw Exception('Server Error: $e');
     }
   }
 
-  Future<User> login(String email, String password) async {
+  Future<UserModel> login(String email, String password) async {
     try {
       var response = await http.post(
         Uri.parse('$apiUrl/login'),
@@ -60,7 +60,7 @@ class AuthService extends GetxService {
 
       final token = _extractToken(response);
       await _storeToken(token);
-      return User.fromJson(jsonDecode(response.body)['user']);
+      return UserModel.fromJson(jsonDecode(response.body)['user']);
     } catch (e) {
       throw Exception('Server Error: $e');
     }

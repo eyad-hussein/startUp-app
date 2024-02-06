@@ -10,7 +10,7 @@ import 'package:app/screens/onboarding_screen.dart';
 import 'package:app/screens/order_confirmed_screen.dart';
 import 'package:app/screens/payment_screen.dart';
 import 'package:app/screens/product_overview_screen.dart';
-import 'package:app/screens/providers_screen.dart';
+import 'package:app/screens/auth/providers_screen.dart';
 import 'package:app/screens/splash_screen.dart';
 import 'package:get/get.dart';
 

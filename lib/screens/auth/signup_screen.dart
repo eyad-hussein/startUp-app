@@ -36,28 +36,30 @@ class SignUpScreen extends StatelessWidget {
         },
         child: const MainBottomNavigationBar(content: "Sign Up"),
       ),
-      body: ListView(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              const SizedBox(
-                height: verticalSpaceMedium,
-              ),
-              const Center(
-                child: Header(title: "Sign Up"),
-              ),
-              const SizedBox(
-                height: verticalSpaceMassive,
-              ),
-              SignUpForm(
-                formKey: formKey,
-              ),
-              const SizedBox(
-                height: verticalSpaceMedium,
-              ),
-            ],
-          )
+          const SizedBox(
+            height: verticalSpaceMedium,
+          ),
+          const Center(
+            child: Header(title: "Sign Up"),
+          ),
+          const SizedBox(
+            height: verticalSpaceMassive * 0.8,
+          ),
+          Expanded(
+            child: ListView(
+              children: [
+                SignUpForm(
+                  formKey: formKey,
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(
+            height: verticalSpaceRegular,
+          ),
         ],
       ),
     );

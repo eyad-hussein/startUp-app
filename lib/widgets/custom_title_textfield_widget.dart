@@ -1,5 +1,4 @@
 import 'dart:core';
-import 'dart:core';
 
 import 'package:flutter/material.dart';
 
@@ -10,15 +9,15 @@ class CustomTitledTextField extends StatelessWidget {
   final String textHint;
   final double topPadding;
   final double textFieldHeight;
-  const CustomTitledTextField(
-      {super.key,
-      required this.height,
-      required this.textHint,
-      required this.title,
-      required this.width,
-      required this.topPadding,
-      required this.textFieldHeight,
-      });
+  const CustomTitledTextField({
+    super.key,
+    required this.height,
+    required this.textHint,
+    required this.title,
+    required this.width,
+    required this.topPadding,
+    required this.textFieldHeight,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -51,17 +50,16 @@ class CustomTitledTextField extends StatelessWidget {
               child: Container(
                 height: textFieldHeight,
                 child: TextField(
-                    decoration: InputDecoration(
-                      hintText: textHint,
-                      hintStyle: const TextStyle(
+                  decoration: InputDecoration(
+                    hintText: textHint,
+                    hintStyle: const TextStyle(
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w400,
                         fontSize: 15,
-                        color: Color(0xFF8F959E)
-                      ),
-                      border: InputBorder.none,
-                      contentPadding: EdgeInsets.all(10.0),
-                    ),
+                        color: Color(0xFF8F959E)),
+                    border: InputBorder.none,
+                    contentPadding: EdgeInsets.all(10.0),
+                  ),
                 ),
               ),
             ),

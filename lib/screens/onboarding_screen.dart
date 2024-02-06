@@ -9,8 +9,8 @@ import 'package:app/widgets/onboarding-screen/list_view_builder_products_widget.
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
 
-import '../models/brand.dart';
-import '../models/product.dart';
+import '../models/brand_model.dart';
+import '../models/product_model.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   OnBoardingScreen({Key? key}) : super(key: key);
@@ -19,14 +19,14 @@ class OnBoardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Future<List<Product>> products = productController.getProducts();
-    List<Brand> BrandList = [
-      Brand(
-          name: 'Adidas',
-          icon: SvgPicture.asset('assets/icons/adidas-logo.svg')),
-      Brand(name: 'Nike', icon: SvgPicture.asset('assets/icons/nike-logo.svg')),
-      Brand(name: 'Puma', icon: SvgPicture.asset('assets/icons/puma-logo.svg')),
-      Brand(name: 'Fila', icon: SvgPicture.asset('assets/icons/fila-logo.svg')),
-    ];
+    // List<Brand> BrandList = [
+    //   Brand(
+    //       name: 'Adidas',
+    //       icon: SvgPicture.asset('assets/icons/adidas-logo.svg')),
+    //   Brand(name: 'Nike', icon: SvgPicture.asset('assets/icons/nike-logo.svg')),
+    //   Brand(name: 'Puma', icon: SvgPicture.asset('assets/icons/puma-logo.svg')),
+    //   Brand(name: 'Fila', icon: SvgPicture.asset('assets/icons/fila-logo.svg')),
+    // ];
     final double screenWidth = MediaQuery.of(context).size.width;
     final double screenHeight = MediaQuery.of(context).size.height;
     double getHeight(double height) {
@@ -122,9 +122,9 @@ class OnBoardingScreen extends StatelessWidget {
                 child: SizedBox(
                   height: getHeight(50),
                   width: double.infinity,
-                  child: ListViewBrands(
-                    brands: BrandList,
-                  ),
+                  // child: ListViewBrands(
+                  //   brands: BrandList,
+                  // ),
                 ),
               ),
               Padding(

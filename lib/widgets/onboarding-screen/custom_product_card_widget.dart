@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-import '../../models/product.dart';
+import '../../models/product_model.dart';
 import '../../shared/routes.dart';
 
 class CustomProductCard extends StatefulWidget {
@@ -47,7 +47,7 @@ class _CustomProductCardState extends State<CustomProductCard> {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(15),
                   child: Image.network(
-                    widget.product.imageUrl,
+                    widget.product.image.url,
                     width: getWidth(160),
                     height: getHeight(203),
                     fit: BoxFit.fitHeight,
