@@ -46,7 +46,7 @@ class _LoginFormState extends State<LoginForm> {
               children: [
                 TextButton(
                   onPressed: () {
-                    Get.toNamed(Routes.forgetPasswordEmailRoute);
+                    Get.toNamed(Routes.signupScreenRoute);
                   },
                   child: Text(
                     'Sign Up?',

@@ -1,13 +1,13 @@
 import 'package:app/models/user.dart';
-import 'package:app/repositories/auth_repository.dart';
+import 'package:app/services/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AuthController extends GetxController {
-  final AuthRepository authRepository = AuthRepository();
-  final RxBool isLoggedIn = false.obs;
+  final AuthService _authService = Get.put(AuthService());
 
-  final RxBool isLogged = false.obs;
+  final Rx<User?> user = Rx<User?>(null);
+  final RxBool isLoggedIn = false.obs;
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
@@ -23,47 +23,50 @@ class AuthController extends GetxController {
     super.onClose();
   }
 
-  Future<void> checkInitialAuthentication() async {
-    final token = await authRepository.getToken();
-    if (token != null) {
-      final isValidToken = await authRepository.validateToken(token);
-      if (isValidToken) {
-        isLoggedIn.value = true;
-      }
-    }
-  }
-
   Future<void> register() async {
     try {
-      final newUser = await authRepository.register(
+      await _authService.register(
         nameController.text,
         emailController.text,
         passwordController.text,
         passwordController.text,
       );
-      // user(newUser);
     } catch (e) {
-      print('Error registering user: $e');
+      throw Exception('Failed to register user');
     }
+  }
+
+  Future<bool> validateToken(String token) async {
+    return await _authService.validateToken(token);
   }
 
   Future<User?> login() async {
     try {
-      final authenticatedUser = await authRepository.login(
+      final authenticatedUser = await _authService.login(
           emailController.text, passwordController.text);
       isLoggedIn.value = true;
       return authenticatedUser;
     } catch (e) {
-      return null;
+      throw Exception(e);
     }
   }
 
   Future<void> logout() async {
     try {
       isLoggedIn.value = false;
-      await authRepository.logout();
+      await _authService.logout();
     } catch (e) {
-      print(e);
+      throw Exception('Failed to logout user');
+    }
+  }
+
+  Future<void> checkInitialAuthentication() async {
+    final token = await _authService.getToken();
+    if (token != null) {
+      final isValidToken = await _authService.validateToken(token);
+      if (isValidToken) {
+        isLoggedIn.value = true;
+      }
     }
   }
 }

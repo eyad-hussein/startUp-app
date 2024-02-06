@@ -8,23 +8,20 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 
 void main() async {
-  // WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.initializeApp(
-  //   options: DefaultFirebaseOptions.currentPlatform,
-  // );
+  Get.put(UserController());
+  Get.put(AuthController());
+  Get.put(ProductController());
+
   try {
     await dotenv.load(fileName: ".env");
   } on Exception catch (e) {
-    print(e);
+    throw Exception('Failed to load .env file: $e');
   }
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({super.key});
-  final UserController userController = Get.put(UserController());
-  final AuthController authController = Get.put(AuthController());
-  final ProductController productController = Get.put(ProductController());
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -41,16 +38,11 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// class MyApp extends StatelessWidget {
-//   MyApp({super.key});
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       home: Scaffold(
-//         backgroundColor: Colors.white,
-//         body: Text("hi"),
-//       ),
-//     );
-//   }
-// }
+
+
+
+  // WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp(
+  //   options: DefaultFirebaseOptions.currentPlatform,
+  // );
