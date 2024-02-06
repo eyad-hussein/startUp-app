@@ -3,6 +3,8 @@ import 'package:app/widgets/auth/auth_form_field_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+// TODO :: update checkmark for name field
+// TODO :: add logic for password verification
 class SignUpForm extends StatefulWidget {
   const SignUpForm({super.key, required this.formKey});
   final GlobalKey<FormState> formKey;
@@ -19,6 +21,7 @@ class _SignUpFormState extends State<SignUpForm> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Form(
+        autovalidateMode: AutovalidateMode.onUserInteraction,
         key: widget.formKey,
         child: Column(
           children: [
@@ -50,7 +53,7 @@ class _SignUpFormState extends State<SignUpForm> {
               onChanged: (value) =>
                   _authController.emailController.text = value,
             ),
-            const SizedBox(height: 50),
+            // const SizedBox(height: 50),
             // Row(
             //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
             //   crossAxisAlignment: CrossAxisAlignment.center,

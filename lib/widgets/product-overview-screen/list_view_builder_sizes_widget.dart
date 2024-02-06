@@ -1,9 +1,10 @@
+import 'package:app/models/size_model.dart';
 import 'package:flutter/material.dart';
-import '../../models/brand.dart';
+import '../../models/brand_model.dart';
 import 'subimage_card_widget.dart';
 
 class ListViewSizes extends StatelessWidget {
-  final List<String> sizesAvailable;
+  final List<SizeModel> sizesAvailable;
   const ListViewSizes({
     super.key,
     required this.sizesAvailable,
@@ -39,7 +40,7 @@ class ListViewSizes extends StatelessWidget {
             ),
             child: Center(
               child: Text(
-                sizesAvailable[index],
+                sizesAvailable[index].size,
                 style: const TextStyle(
                   fontFamily: 'Inter',
                   fontWeight: FontWeight.w600,

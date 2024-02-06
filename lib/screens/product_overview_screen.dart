@@ -1,4 +1,4 @@
-import 'package:app/models/product.dart';
+import 'package:app/models/product_model.dart';
 import 'package:app/widgets/custom_appbar_widget.dart';
 import 'package:app/widgets/product-overview-screen/list_view_builder_sizes_widget.dart';
 import 'package:app/widgets/product-overview-screen/list_view_builder_subimages_widget.dart';
@@ -36,7 +36,7 @@ class ProductOverviewScreen extends StatelessWidget {
                   width: double.infinity,
                   height: getHeight(387),
                   child: Image.network(
-                    product.imageUrl,
+                    product.image.url,
                     fit: BoxFit.cover,
                     alignment: Alignment.topCenter,
                   ),
@@ -129,7 +129,7 @@ class ProductOverviewScreen extends StatelessWidget {
                 height: getHeight(77),
                 width: getWidth(335),
                 child: ListViewSubImages(
-                  SubImagesUrl: product.subImagesUrl,
+                  subImages: product.subImages,
                 ),
               ),
             ),
@@ -418,7 +418,9 @@ class ProductOverviewScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: getHeight(20),),
+              padding: EdgeInsets.only(
+                top: getHeight(20),
+              ),
               child: Container(
                 height: getHeight(75),
                 decoration: const BoxDecoration(

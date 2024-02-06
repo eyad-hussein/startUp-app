@@ -2,19 +2,19 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
 
 @immutable
-class User extends Equatable {
+class UserModel extends Equatable {
   final int id;
   final String name;
   final String email;
 
-  const User({
+  const UserModel({
     required this.id,
     required this.name,
     required this.email,
   });
 
-  factory User.fromJson(Map<String, dynamic> json) {
-    return User(
+  factory UserModel.fromJson(Map<String, dynamic> json) {
+    return UserModel(
       id: json['id'] as int,
       name: json['name'] as String,
       email: json['email'] as String,

@@ -1,4 +1,4 @@
-import 'package:app/models/user.dart';
+import 'package:app/models/user_model.dart';
 import 'package:app/services/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 class AuthController extends GetxController {
   final AuthService _authService = Get.put(AuthService());
 
-  final Rx<User?> user = Rx<User?>(null);
+  final Rx<UserModel?> user = Rx<UserModel?>(null);
   final RxBool isLoggedIn = false.obs;
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
@@ -40,7 +40,7 @@ class AuthController extends GetxController {
     return await _authService.validateToken(token);
   }
 
-  Future<User?> login() async {
+  Future<UserModel?> login() async {
     try {
       final authenticatedUser = await _authService.login(
           emailController.text, passwordController.text);

@@ -1,4 +1,4 @@
-import 'package:app/models/product.dart';
+import 'package:app/models/product_model.dart';
 import 'package:get/get.dart';
 import 'package:app/services/product_service.dart';
 
