@@ -6,6 +6,7 @@ import 'package:app/widgets/shared/main_bottom_navigation_bar_widget.dart';
 import 'package:app/widgets/shared/mixed_text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:app/shared/routes.dart';
 
 enum MixedTextArgs { mainText, linkText, route }
 
@@ -31,6 +32,7 @@ class LoginScreen extends StatelessWidget {
           if (formKey.currentState?.validate() ?? false) {
             try {
               await authController.login();
+              Get.offNamed(Routes.onBoardingScreenRoute);
             } catch (e) {
               // AUTH FAILED MESSAGE
               print(e);
@@ -39,8 +41,6 @@ class LoginScreen extends StatelessWidget {
             // FORM NOT SUBMITTED MESSAGE
             print('Form no submitted');
           }
-          // await userController.login();
-          // Get.offNamed(Routes.onBoardingScreenRoute);
         },
         child: const MainBottomNavigationBar(content: "Log In"),
       ),

@@ -4,20 +4,22 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SignUpForm extends StatefulWidget {
-  const SignUpForm({super.key});
+  const SignUpForm({super.key, required this.formKey});
+  final GlobalKey<FormState> formKey;
 
   @override
   State<SignUpForm> createState() => _SignUpFormState();
 }
 
 class _SignUpFormState extends State<SignUpForm> {
-  bool _rememberMe = false;
+  // bool _rememberMe = false;
   final AuthController _authController = Get.find<AuthController>();
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Form(
+        key: widget.formKey,
         child: Column(
           children: [
             AuthFormField(
@@ -44,32 +46,32 @@ class _SignUpFormState extends State<SignUpForm> {
             const SizedBox(height: 20),
             AuthFormField(
               label: 'Email',
-              type: AuthFormFieldType.name,
+              type: AuthFormFieldType.email,
               onChanged: (value) =>
                   _authController.emailController.text = value,
             ),
             const SizedBox(height: 50),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const Text("Remember me"),
-                Transform.scale(
-                  origin: const Offset(45, 0),
-                  scale: 0.7,
-                  child: Switch.adaptive(
-                      inactiveThumbColor:
-                          Theme.of(context).colorScheme.secondary,
-                      inactiveTrackColor:
-                          Theme.of(context).colorScheme.background,
-                      activeColor: Theme.of(context).colorScheme.background,
-                      activeTrackColor: const Color(0xFF34C559),
-                      value: _rememberMe,
-                      onChanged: (value) =>
-                          setState(() => _rememberMe = value)),
-                ),
-              ],
-            ),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //   crossAxisAlignment: CrossAxisAlignment.center,
+            //   children: [
+            //     const Text("Remember me"),
+            //     Transform.scale(
+            //       origin: const Offset(45, 0),
+            //       scale: 0.7,
+            //       child: Switch.adaptive(
+            //           inactiveThumbColor:
+            //               Theme.of(context).colorScheme.secondary,
+            //           inactiveTrackColor:
+            //               Theme.of(context).colorScheme.background,
+            //           activeColor: Theme.of(context).colorScheme.background,
+            //           activeTrackColor: const Color(0xFF34C559),
+            //           value: _rememberMe,
+            //           onChanged: (value) =>
+            //               setState(() => _rememberMe = value)),
+            //     ),
+            //   ],
+            // ),
           ],
         ),
       ),

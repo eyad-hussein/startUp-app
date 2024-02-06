@@ -1,10 +1,10 @@
 import 'package:app/models/product.dart';
+import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:app/shared/config.dart';
 
-class ProductRepository {
-  final String apiUrl = "http://127.0.0.1:8000/api";
-
+class ProductService extends GetxService {
   Future<List<Product>> showMain() async {
     final response =
         await http.get(Uri.parse('$apiUrl/products/main'), headers: {
