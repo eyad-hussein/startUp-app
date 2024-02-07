@@ -6,7 +6,7 @@ import '../../models/product_model.dart';
 import '../../shared/routes.dart';
 
 class CustomProductCard extends StatefulWidget {
-  final Product product;
+  final ProductModel product;
 
   const CustomProductCard({
     Key? key,

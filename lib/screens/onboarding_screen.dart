@@ -1,4 +1,4 @@
-import 'package:app/widgets/custom_appbar_widget.dart';
+import 'package:app/widgets/shared/extended_appbar_widget.dart';
 import 'package:app/widgets/onboarding-screen/custom_search_bar_widget.dart';
 import 'package:get/get.dart';
 import 'package:app/controllers/product_controller.dart';
@@ -18,7 +18,7 @@ class OnBoardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Future<List<Product>> products = productController.getProducts();
+    final Future<List<ProductModel>> products = productController.getProducts();
     // List<Brand> BrandList = [
     //   Brand(
     //       name: 'Adidas',
@@ -38,7 +38,7 @@ class OnBoardingScreen extends StatelessWidget {
     }
 
     return Scaffold(
-      bottomNavigationBar: const CustomBottomNavigatorBar(),
+      // bottomNavigationBar: const CustomBottomNavigatorBar(),
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.only(
@@ -50,8 +50,8 @@ class OnBoardingScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const CustomAppbar(
-                type: CustomAppbarType.ONBOARDING,
+              const ExtendedAppbar(
+                type: ExtendedAppbarType.onboarding,
               ),
               Padding(
                 padding: EdgeInsets.only(

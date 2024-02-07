@@ -26,9 +26,10 @@ class Routes {
   static String paymentScreenRoute = '/payment-screen';
   static String addNewCardScreenRoute = '/add-new-card-screen';
   static String orderConfirmedScreenRoute = '/order-confirmed-screen';
-  static String forgetPasswordEmailRoute = '/forget-password-email-screen';
-  static String newPasswordRoute = '/new-password-screen';
-  static String verificationCodeRoute = '/verification-code-screen';
+  static String forgetPasswordEmailScreenRoute =
+      '/forget-password-email-screen';
+  static String newPasswordScreenRoute = '/new-password-screen';
+  static String verificationCodeScreenRoute = '/verification-code-screen';
 }
 
 final getPages = [
@@ -77,15 +78,15 @@ final getPages = [
     page: () => const CartScreen(),
   ),
   GetPage(
-    name: Routes.forgetPasswordEmailRoute,
+    name: Routes.forgetPasswordEmailScreenRoute,
     page: () => const ForgetPasswordEmailScreen(),
   ),
   GetPage(
-    name: Routes.newPasswordRoute,
+    name: Routes.newPasswordScreenRoute,
     page: () => const NewPasswordScreen(),
   ),
   GetPage(
-    name: Routes.verificationCodeRoute,
+    name: Routes.verificationCodeScreenRoute,
     page: () => const VerificationCodeScreen(),
   ),
 ];

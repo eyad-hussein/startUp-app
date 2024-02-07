@@ -15,13 +15,13 @@ class ListViewBrands extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       itemCount: brands.length,
       itemBuilder: (context, index) {
-        return Padding(
-          padding: EdgeInsets.only(left: index == 0 ? 0 : 10),
-          child: CustomBrandCard(
-            text: brands[index].name,
-            icon: brands[index].icon,
-          ),
-        );
+        // return Padding(
+        //   padding: EdgeInsets.only(left: index == 0 ? 0 : 10),
+        //   child: CustomBrandCard(
+        //     text: brands[index].name,
+        //     // icon: brands[index].icon,
+        //   ),
+        // );
       },
     );
   }

@@ -4,7 +4,7 @@ import 'package:app/models/image_model.dart';
 import 'package:app/models/size_model.dart';
 import 'package:app/models/sub_image_model.dart';
 
-class Product {
+class ProductModel {
   final int id;
   final String name;
   final double price;
@@ -18,7 +18,7 @@ class Product {
   bool isFavourite = false;
   int? quantity;
 
-  Product({
+  ProductModel({
     required this.id,
     required this.name,
     required this.image,
@@ -31,7 +31,7 @@ class Product {
     required this.reviews,
   });
 
-  factory Product.fromJson(Map<String, dynamic> json) {
+  factory ProductModel.fromJson(Map<String, dynamic> json) {
     List<SubImageModel> subImagesUrl = (json['image']['sub_images'] as List)
         .map((subImage) => SubImageModel.fromJson(subImage))
         .toList();
@@ -44,7 +44,7 @@ class Product {
         .map((review) => ReviewModel.fromJson(review))
         .toList();
 
-    return Product(
+    return ProductModel(
       id: json['id'] as int,
       name: json['name'] as String,
       image: ImageModel.fromJson(json['image']),

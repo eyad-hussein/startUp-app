@@ -1,18 +1,15 @@
 import 'package:equatable/equatable.dart';
 
 class SubImageModel extends Equatable {
-  final String id;
+  final int id;
   final String url;
-  final String alt;
 
-  const SubImageModel(
-      {required this.id, required this.url, this.alt = "Image"});
+  const SubImageModel({required this.id, required this.url});
 
   factory SubImageModel.fromJson(Map<String, dynamic> json) {
     return SubImageModel(
-      id: json['id'],
-      url: json['url'],
-      alt: json['alt'],
+      id: json['id'] as int,
+      url: json['url'] as String,
     );
   }
 
@@ -20,10 +17,9 @@ class SubImageModel extends Equatable {
     return {
       'id': id,
       'url': url,
-      'alt': alt,
     };
   }
 
   @override
-  List<Object?> get props => [id, url, alt];
+  List<Object?> get props => [id, url];
 }

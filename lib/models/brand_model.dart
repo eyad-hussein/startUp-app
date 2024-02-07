@@ -5,11 +5,11 @@ class Brand extends Equatable {
   final int id;
   final String name;
   final String address;
-  final ImageModel icon;
+  // final ImageModel icon;
 
   const Brand({
     required this.name,
-    required this.icon,
+    // required this.icon,
     required this.id,
     required this.address,
   });
@@ -19,7 +19,7 @@ class Brand extends Equatable {
       id: json['id'] as int,
       name: json['name'] as String,
       address: json['address'] as String,
-      icon: ImageModel.fromJson(json['icon']),
+      // icon: ImageModel.fromJson(json['icon']),
     );
   }
 
@@ -28,10 +28,10 @@ class Brand extends Equatable {
       'id': id,
       'name': name,
       'address': address,
-      'icon': icon.toJson(),
+      // 'icon': icon.toJson(),
     };
   }
 
   @override
-  List<Object?> get props => [id, name, address, icon];
+  List<Object?> get props => [id, name, address];
 }

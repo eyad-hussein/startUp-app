@@ -23,7 +23,7 @@ class VerificationCodeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       bottomNavigationBar: GestureDetector(
-        onTap: () => Get.offNamed(Routes.newPasswordRoute),
+        onTap: () => Get.offNamed(Routes.newPasswordScreenRoute),
         child: CustomBottomNavBar(
           text: 'Confirm Code',
           height: getHeight(75),

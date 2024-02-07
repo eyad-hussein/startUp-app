@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 class ImageModel extends Equatable {
-  final String id;
+  final int id;
   final String url;
   final String alt;
 
@@ -9,9 +9,9 @@ class ImageModel extends Equatable {
 
   factory ImageModel.fromJson(Map<String, dynamic> json) {
     return ImageModel(
-      id: json['id'],
-      url: json['url'],
-      alt: json['alt'],
+      id: json['id'] as int,
+      url: json['url'] as String,
+      alt: json['alt'] as String,
     );
   }
 
