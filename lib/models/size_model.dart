@@ -1,21 +1,20 @@
 import 'package:equatable/equatable.dart';
 
+enum SizeType { S, M, L, XL, XXL }
+
 class SizeModel extends Equatable {
   final int id;
   final String size;
-  final int productId;
 
   const SizeModel({
     required this.id,
     required this.size,
-    required this.productId,
   });
 
   factory SizeModel.fromJson(Map<String, dynamic> json) {
     return SizeModel(
       id: json['id'] as int,
       size: json['size'] as String,
-      productId: json['product_id'] as int,
     );
   }
 
@@ -23,10 +22,9 @@ class SizeModel extends Equatable {
     return {
       'id': id,
       'size': size,
-      'product_id': productId,
     };
   }
 
   @override
-  List<Object?> get props => [id, size, productId];
+  List<Object?> get props => [id, size];
 }

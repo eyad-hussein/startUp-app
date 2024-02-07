@@ -22,7 +22,7 @@ class ForgetPasswordEmailScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       bottomNavigationBar: GestureDetector(
-        onTap: () => Get.offNamed(Routes.verificationCodeRoute),
+        onTap: () => Get.offNamed(Routes.verificationCodeScreenRoute),
         child: CustomBottomNavBar(
           text: 'Confirm Mail',
           height: getHeight(75),

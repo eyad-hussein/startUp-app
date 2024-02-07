@@ -26,14 +26,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // return const MaterialApp(home: const Test());
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      initialRoute: Routes
-          .providersScreenRoute, // Restore it to default after finishing testing
-      getPages: getPages,
-      themeMode: ThemeMode.light,
-      theme: kLightTheme,
-      darkTheme: kDarkTheme,
+    return SafeArea(
+      child: GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        initialRoute: Routes
+            .loginScreenRoute, // Restore it to default after finishing testing
+        getPages: getPages,
+        themeMode: ThemeMode.light,
+        theme: kLightTheme,
+        darkTheme: kDarkTheme,
+      ),
     );
   }
 }

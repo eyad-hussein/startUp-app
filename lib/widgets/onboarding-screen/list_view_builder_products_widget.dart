@@ -5,7 +5,7 @@ import 'custom_product_card_widget.dart';
 
 class ListViewProducts extends StatelessWidget {
   const ListViewProducts({Key? key, required this.products}) : super(key: key);
-  final Future<List<Product>> products;
+  final Future<List<ProductModel>> products;
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +20,10 @@ class ListViewProducts extends StatelessWidget {
       return screenWidth * width / 375.0;
     }
 
-    return FutureBuilder<List<Product>>(
+    return FutureBuilder<List<ProductModel>>(
       future: products,
-      builder: (BuildContext context, AsyncSnapshot<List<Product>> snapshot) {
+      builder:
+          (BuildContext context, AsyncSnapshot<List<ProductModel>> snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const CircularProgressIndicator();
         } else if (snapshot.hasError) {

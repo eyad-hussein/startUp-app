@@ -5,9 +5,9 @@ import 'dart:convert';
 import 'package:app/shared/config.dart';
 
 class ProductService extends GetxService {
-  Future<List<Product>> showMain() async {
+  Future<List<ProductModel>> dummyProducts() async {
     final response =
-        await http.get(Uri.parse('$apiUrl/products/main'), headers: {
+        await http.get(Uri.parse('$apiUrl/dummy-products'), headers: {
       'Accept': 'application/json',
     });
 
@@ -15,8 +15,9 @@ class ProductService extends GetxService {
     if (response.statusCode == 200) {
       final result = jsonDecode(response.body)['products'];
 
-      final List<Product> products =
-          result.map<Product>((product) => Product.fromJson(product)).toList();
+      final List<ProductModel> products = result
+          .map<ProductModel>((product) => ProductModel.fromJson(product))
+          .toList();
       return products;
     } else {
       throw Exception('Failed to retrieve products');

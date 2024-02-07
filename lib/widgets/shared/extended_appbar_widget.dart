@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-enum CustomAppbarType { ONBOARDING, PRODUCT }
+enum ExtendedAppbarType { onboarding, product }
 
-class CustomAppbar extends StatelessWidget {
-  const CustomAppbar({super.key, required this.type});
-  final CustomAppbarType type;
+class ExtendedAppbar extends StatelessWidget {
+  const ExtendedAppbar({super.key, required this.type});
+  final ExtendedAppbarType type;
   @override
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
@@ -39,7 +39,7 @@ class CustomAppbar extends StatelessWidget {
                 vertical: getHeight(10),
               ),
               child: SvgPicture.asset(
-                type == CustomAppbarType.PRODUCT
+                type == ExtendedAppbarType.product
                     ? 'assets/icons/arrow-left.svg'
                     : 'assets/icons/menu.svg',
               ),

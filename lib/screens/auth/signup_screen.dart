@@ -24,7 +24,7 @@ class SignUpScreen extends StatelessWidget {
           if (formKey.currentState?.validate() ?? false) {
             try {
               await authController.register();
-              Get.offNamed(Routes.verificationCodeRoute);
+              Get.offNamed(Routes.verificationCodeScreenRoute);
             } catch (e) {
               // AUTH FAILED MESSAGE
               print(e);

@@ -1,16 +1,17 @@
+import 'package:app/models/user_model.dart';
 import 'package:equatable/equatable.dart';
 
 class ReviewModel extends Equatable {
   final int id;
   final int productId;
-  final int userId;
+  final UserModel user;
   final String content;
   final double rating;
 
   const ReviewModel({
     required this.id,
     required this.productId,
-    required this.userId,
+    required this.user,
     required this.content,
     required this.rating,
   });
@@ -19,7 +20,7 @@ class ReviewModel extends Equatable {
     return ReviewModel(
       id: json['id'] as int,
       productId: json['product_id'] as int,
-      userId: json['user_id'] as int,
+      user: UserModel.fromJson(json['user']),
       content: json['content'] as String,
       rating: (json['rating'] as num).toDouble(),
     );
@@ -29,12 +30,12 @@ class ReviewModel extends Equatable {
     return {
       'id': id,
       'product_id': productId,
-      'user_id': userId,
+      'user': user.toJson(),
       'content': content,
       'rating': rating,
     };
   }
 
   @override
-  List<Object?> get props => [id, productId, userId, content, rating];
+  List<Object?> get props => [id, productId, user, content, rating];
 }
