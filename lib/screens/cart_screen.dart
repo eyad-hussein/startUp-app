@@ -4,6 +4,9 @@ import 'package:app/widgets/custom_bottom_nav_bar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+const String dummytext =
+    "12, Court Street, Second District New Borg El-Arab City";
+
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
 
@@ -19,8 +22,6 @@ class CartScreen extends StatelessWidget {
       return screenWidth * width / 375.0;
     }
 
-    final String dummytext =
-        "12, Court Street, Second District New Borg El-Arab City";
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -65,19 +66,19 @@ class CartScreen extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.only(top: getHeight(25)),
-                child:
-                    CartProductCard(height: getHeight(120), width: getWidth(335)),
+                child: CartProductCard(
+                    height: getHeight(120), width: getWidth(335)),
               ),
               Padding(
                 padding: EdgeInsets.only(top: getHeight(20)),
-                child:
-                    CartProductCard(height: getHeight(120), width: getWidth(335)),
+                child: CartProductCard(
+                    height: getHeight(120), width: getWidth(335)),
               ),
               Padding(
                 padding: EdgeInsets.only(
                   top: getHeight(20),
                 ),
-                child: PersonalInformationViewer(
+                child: const PersonalInformationViewer(
                     text: dummytext,
                     assetPath: 'assets/icons/map.svg',
                     title: 'Delivery Address'),
@@ -86,9 +87,9 @@ class CartScreen extends StatelessWidget {
                 padding: EdgeInsets.only(
                   top: getHeight(20),
                 ),
-                child: PersonalInformationViewer(
+                child: const PersonalInformationViewer(
                     text: dummytext,
-                    assetPath: 'assets/icons/visa.svg',
+                    assetPath: 'assets/icons/map.svg',
                     title: 'Payment Method'),
               ),
               Padding(
