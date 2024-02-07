@@ -38,7 +38,7 @@ class OnBoardingScreen extends StatelessWidget {
     }
 
     return Scaffold(
-      // bottomNavigationBar: const CustomBottomNavigatorBar(),
+      bottomNavigationBar: const CustomBottomNavigatorBar(),
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.only(
