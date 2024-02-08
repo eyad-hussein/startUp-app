@@ -1,4 +1,5 @@
 import 'package:app/controllers/auth_controller.dart';
+import 'package:app/controllers/image_search_controller.dart';
 import 'package:app/controllers/product_controller.dart';
 import 'package:app/controllers/user_controller.dart';
 import 'package:app/shared/routes.dart';
@@ -11,6 +12,7 @@ void main() async {
   Get.put(UserController());
   Get.put(AuthController());
   Get.put(ProductController());
+  Get.put(ImageSearchController());
 
   try {
     await dotenv.load(fileName: ".env");

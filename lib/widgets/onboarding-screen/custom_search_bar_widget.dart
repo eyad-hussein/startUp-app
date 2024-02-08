@@ -1,3 +1,4 @@
+import 'package:app/widgets/onboarding-screen/image_search_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -50,30 +51,7 @@ class CustomSearchBar extends StatelessWidget {
           padding: EdgeInsets.only(
             left: getWidth(10),
           ),
-          child: Container(
-            width: getWidth(50),
-            height: getHeight(60),
-            padding: EdgeInsets.only(
-              left: getWidth(12),
-            ),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: Colors.black),
-              gradient: RadialGradient(
-                center: Alignment.topLeft,
-                radius: 1.0,
-                colors: [
-                  Colors.black.withOpacity(0.75),
-                  Colors.black.withOpacity(1.0),
-                ],
-              ),
-            ),
-            child: Row(
-              children: [
-                SvgPicture.asset('assets/icons/camera.svg'),
-              ],
-            ),
-          ),
+          child: ImageSearchButton(),
         ),
       ],
     );

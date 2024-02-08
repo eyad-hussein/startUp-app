@@ -1,3 +1,4 @@
+import 'package:app/controllers/image_search_controller.dart';
 import 'package:app/widgets/shared/extended_appbar_widget.dart';
 import 'package:app/widgets/onboarding-screen/custom_search_bar_widget.dart';
 import 'package:get/get.dart';
