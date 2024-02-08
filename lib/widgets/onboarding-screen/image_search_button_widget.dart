@@ -21,7 +21,7 @@ class ImageSearchButton extends StatelessWidget {
       return screenWidth * width / 375.0;
     }
     return GestureDetector(
-      onTap: ()=>imageSearchController.pickImage(),
+      onTap: ()=>imageSearchController.upload(),
       child: Container(
         width: getWidth(50),
         height: getHeight(60),
