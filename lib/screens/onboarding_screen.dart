@@ -19,7 +19,8 @@ class OnBoardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Future<List<ProductModel>> products = productController.getProducts();
+    //final Future<List<ProductModel>> products = productController.getProducts();
+    final Future<List<ProductModel>> products = Get.arguments as Future<List<ProductModel>>;
     // List<Brand> BrandList = [
     //   Brand(
     //       name: 'Adidas',

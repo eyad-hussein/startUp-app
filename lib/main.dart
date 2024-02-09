@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
         initialRoute: Routes
-            .onBoardingScreenRoute, // Restore it to default after finishing testing
+            .productSearchRoute, // Restore it to default after finishing testing
         getPages: getPages,
         themeMode: ThemeMode.light,
         theme: kLightTheme,

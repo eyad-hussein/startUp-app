@@ -11,6 +11,7 @@ import 'package:app/screens/order_confirmed_screen.dart';
 import 'package:app/screens/payment_screen.dart';
 import 'package:app/screens/product_overview_screen.dart';
 import 'package:app/screens/auth/providers_screen.dart';
+import 'package:app/screens/product_search_screen.dart';
 import 'package:app/screens/splash_screen.dart';
 import 'package:get/get.dart';
 
@@ -22,6 +23,7 @@ class Routes {
   static String productScreenRoute = '/product-overview-screen';
   static String addressScreenRoute = '/address-screen';
   static String cartScreenRoute = '/cart-screen';
+  static String productSearchRoute = '/product-search-screen';
   static String onBoardingScreenRoute = '/onboarding-screen';
   static String paymentScreenRoute = '/payment-screen';
   static String addNewCardScreenRoute = '/add-new-card-screen';
@@ -88,5 +90,9 @@ final getPages = [
   GetPage(
     name: Routes.verificationCodeScreenRoute,
     page: () => const VerificationCodeScreen(),
+  ),
+  GetPage(
+    name: Routes.productSearchRoute,
+    page: () => const ProductSearchScreen(),
   ),
 ];

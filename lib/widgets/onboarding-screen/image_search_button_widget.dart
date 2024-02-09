@@ -1,12 +1,17 @@
+import 'package:app/models/product_model.dart';
+import 'package:app/shared/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:image_picker/image_picker.dart';
 import '../../controllers/image_search_controller.dart';
 
 
+
 class ImageSearchButton extends StatelessWidget {
-  ImageSearchButton({super.key});
+  final ImageSource source;
+  ImageSearchButton({super.key,required this.source});
   final ImageSearchController imageSearchController = Get.find<ImageSearchController>();
   @override
   Widget build(BuildContext context) {
@@ -21,7 +26,10 @@ class ImageSearchButton extends StatelessWidget {
       return screenWidth * width / 375.0;
     }
     return GestureDetector(
-      onTap: ()=>imageSearchController.upload(),
+      onTap: () async {
+        Future<List<ProductModel>> products = imageSearchController.getSimilarProducts(source);
+        Get.toNamed(Routes.onBoardingScreenRoute,arguments: products);
+        },
       child: Container(
         width: getWidth(50),
         height: getHeight(60),

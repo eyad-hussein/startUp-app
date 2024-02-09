@@ -32,7 +32,7 @@ class LoginScreen extends StatelessWidget {
           if (formKey.currentState?.validate() ?? false) {
             try {
               await authController.login();
-              Get.offNamed(Routes.onBoardingScreenRoute);
+              Get.offNamed(Routes.productSearchRoute);
             } catch (e) {
               // AUTH FAILED MESSAGE
               print(e);

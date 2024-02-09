@@ -1,6 +1,7 @@
 import 'package:app/widgets/onboarding-screen/image_search_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:image_picker/image_picker.dart';
 
 
 class CustomSearchBar extends StatelessWidget {
@@ -51,7 +52,7 @@ class CustomSearchBar extends StatelessWidget {
           padding: EdgeInsets.only(
             left: getWidth(10),
           ),
-          child: ImageSearchButton(),
+          child: ImageSearchButton(source: ImageSource.gallery,),
         ),
       ],
     );
