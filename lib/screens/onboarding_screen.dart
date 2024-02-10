@@ -1,3 +1,4 @@
+import 'package:app/controllers/image_search_controller.dart';
 import 'package:app/widgets/shared/extended_appbar_widget.dart';
 import 'package:app/widgets/onboarding-screen/custom_search_bar_widget.dart';
 import 'package:get/get.dart';
@@ -18,7 +19,8 @@ class OnBoardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Future<List<ProductModel>> products = productController.getProducts();
+    //final Future<List<ProductModel>> products = productController.getProducts();
+    final Future<List<ProductModel>> products = Get.arguments as Future<List<ProductModel>>;
     // List<Brand> BrandList = [
     //   Brand(
     //       name: 'Adidas',
