@@ -1,6 +1,6 @@
 import 'package:app/widgets/cart-screen/cart_product_card_widget.dart';
 import 'package:app/widgets/cart-screen/personal_information_viewer_widget.dart';
-import 'package:app/widgets/custom_bottom_nav_bar_widget.dart';
+import 'package:app/widgets/shared/main_bottom_navigation_bar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -204,8 +204,7 @@ class CartScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar:
-          CustomBottomNavBar(height: getHeight(80), text: 'Checkout'),
+      bottomNavigationBar: const MainBottomNavigationBar(content: "Checkout"),
     );
   }
 }

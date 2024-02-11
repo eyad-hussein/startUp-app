@@ -1,4 +1,4 @@
-import 'package:app/widgets/custom_bottom_nav_bar_widget.dart';
+import 'package:app/widgets/shared/main_bottom_navigation_bar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -19,9 +19,8 @@ class NewPasswordScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
-      bottomNavigationBar: CustomBottomNavBar(
-        text: 'Reset Password',
-        height: getHeight(75),
+      bottomNavigationBar: const MainBottomNavigationBar(
+        content: 'Reset Password',
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,

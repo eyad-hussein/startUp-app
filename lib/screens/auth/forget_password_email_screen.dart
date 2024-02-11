@@ -1,5 +1,5 @@
 import 'package:app/shared/routes.dart';
-import 'package:app/widgets/custom_bottom_nav_bar_widget.dart';
+import 'package:app/widgets/shared/main_bottom_navigation_bar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -23,9 +23,8 @@ class ForgetPasswordEmailScreen extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.background,
       bottomNavigationBar: GestureDetector(
         onTap: () => Get.offNamed(Routes.verificationCodeScreenRoute),
-        child: CustomBottomNavBar(
-          text: 'Confirm Mail',
-          height: getHeight(75),
+        child: const MainBottomNavigationBar(
+          content: 'Confirm Mail',
         ),
       ),
       body: Column(

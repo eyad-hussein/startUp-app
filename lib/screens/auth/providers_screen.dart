@@ -87,19 +87,19 @@ class ProvidersScreen extends StatelessWidget {
                       CustomButton(
                         content: 'Facebook',
                         onPressed: () {},
-                        type: CustomButtonType.SOCIAL,
+                        type: CustomButtonType.social,
                       ),
                       const SizedBox(height: 5),
                       CustomButton(
                         content: 'Twitter',
                         onPressed: () {},
-                        type: CustomButtonType.SOCIAL,
+                        type: CustomButtonType.social,
                       ),
                       const SizedBox(height: 5),
                       CustomButton(
                         content: 'Google',
                         onPressed: () {},
-                        type: CustomButtonType.SOCIAL,
+                        type: CustomButtonType.social,
                       ),
                     ],
                   ),

@@ -7,6 +7,7 @@ enum ExtendedAppbarType { onboarding, product }
 class ExtendedAppbar extends StatelessWidget {
   const ExtendedAppbar({super.key, required this.type});
   final ExtendedAppbarType type;
+
   @override
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;

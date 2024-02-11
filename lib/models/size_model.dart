@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-enum SizeType { S, M, L, XL, XXL }
+enum SizeType { s, m, l, xl, xxl }
 
 class SizeModel extends Equatable {
   final int id;

@@ -24,8 +24,10 @@ class CustomBrandCard extends StatelessWidget {
     }
 
     return Container(
-      width: getWidth(115),
-      height: getHeight(50),
+      constraints: BoxConstraints(
+        minWidth: getWidth(115),
+        minHeight: getHeight(50),
+      ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: const Color(0xFFF5F6FA),

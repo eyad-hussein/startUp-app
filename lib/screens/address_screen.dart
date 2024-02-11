@@ -1,5 +1,5 @@
-import 'package:app/widgets/custom_bottom_nav_bar_widget.dart';
 import 'package:app/widgets/custom_title_textfield_widget.dart';
+import 'package:app/widgets/shared/main_bottom_navigation_bar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -152,9 +152,8 @@ class AddressScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: CustomBottomNavBar(
-        height: getHeight(80),
-        text: 'Save Address',
+      bottomNavigationBar: const MainBottomNavigationBar(
+        content: 'Save Address',
       ),
     );
   }

@@ -1,7 +1,5 @@
 import 'package:app/models/size_model.dart';
 import 'package:flutter/material.dart';
-import '../../../models/brand_model.dart';
-import 'subimage_card_widget.dart';
 
 class ListViewSizes extends StatelessWidget {
   final List<SizeModel> sizesAvailable;
@@ -10,8 +8,15 @@ class ListViewSizes extends StatelessWidget {
     required this.sizesAvailable,
   });
 
+  bool _checkAvailability(List<String> allSizes, String size) {
+    return allSizes.contains(size);
+  }
+
   @override
   Widget build(BuildContext context) {
+    List<String> sizesStringList =
+        SizeType.values.map((e) => e.toString().split('.').last).toList();
+
     final double screenWidth = MediaQuery.of(context).size.width;
     final double screenHeight = MediaQuery.of(context).size.height;
 
@@ -35,9 +40,11 @@ class ListViewSizes extends StatelessWidget {
             height: getHeight(60),
             width: getWidth(60),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: const Color(0xFFF5F6FA),
-            ),
+                borderRadius: BorderRadius.circular(10),
+                color: _checkAvailability(sizesStringList,
+                        sizesAvailable[index].size.toLowerCase())
+                    ? const Color(0xFFE5E5E5)
+                    : const Color(0xFFE5E5E5).withOpacity(0.5)),
             child: Center(
               child: Text(
                 sizesAvailable[index].size,
