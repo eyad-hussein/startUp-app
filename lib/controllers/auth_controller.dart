@@ -40,12 +40,13 @@ class AuthController extends GetxController {
     return await _authService.validateToken(token);
   }
 
-  Future<UserModel?> login() async {
+  Future<void> login() async {
     try {
-      final authenticatedUser = await _authService.login(
-          emailController.text, passwordController.text);
+      user.value = await _authService.login(
+        emailController.text,
+        passwordController.text,
+      );
       isLoggedIn.value = true;
-      return authenticatedUser;
     } catch (e) {
       throw Exception(e);
     }
@@ -62,6 +63,7 @@ class AuthController extends GetxController {
 
   Future<void> checkInitialAuthentication() async {
     final token = await _authService.getToken();
+    print(token);
     if (token != null) {
       final isValidToken = await _authService.validateToken(token);
       if (isValidToken) {

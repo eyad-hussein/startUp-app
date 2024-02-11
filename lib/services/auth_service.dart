@@ -8,6 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 // TODO :: check for errors explicitly
 // TODO :: create a tokenhandler class
+// TODO :: create a sharedpreferences service
 
 class AuthService extends GetxService {
   static const String _tokenKey = 'user_token';
@@ -105,14 +106,19 @@ class AuthService extends GetxService {
 
   Future<bool> validateToken(String token) async {
     try {
-      final response = await http.get(
+      final response = await http.post(
         Uri.parse('$apiUrl/validate-token'),
-        headers: {
-          'Authorization': 'Bearer $token',
+        body: {
+          'token': token,
         },
       );
+      print(token);
+      print(response.body);
 
-      if (response.statusCode != 200) {
+      final result = jsonDecode(response.body);
+
+      if ((response.statusCode != 200) ||
+          (result != null || result['valid'] == false)) {
         await removeToken();
         return false;
       }

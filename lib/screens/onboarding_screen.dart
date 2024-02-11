@@ -19,16 +19,11 @@ class OnBoardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //final Future<List<ProductModel>> products = productController.getProducts();
-    final Future<List<ProductModel>> products = Get.arguments as Future<List<ProductModel>>;
-    // List<Brand> BrandList = [
-    //   Brand(
-    //       name: 'Adidas',
-    //       icon: SvgPicture.asset('assets/icons/adidas-logo.svg')),
-    //   Brand(name: 'Nike', icon: SvgPicture.asset('assets/icons/nike-logo.svg')),
-    //   Brand(name: 'Puma', icon: SvgPicture.asset('assets/icons/puma-logo.svg')),
-    //   Brand(name: 'Fila', icon: SvgPicture.asset('assets/icons/fila-logo.svg')),
-    // ];
+    // final Future<List<ProductModel>> products = productController.getProducts();
+    var arguments = Get.arguments;
+    final List<ProductModel> products =
+        arguments['products'] as List<ProductModel>;
+    final List<BrandModel> brands = arguments['brands'] as List<BrandModel>;
     final double screenWidth = MediaQuery.of(context).size.width;
     final double screenHeight = MediaQuery.of(context).size.height;
     double getHeight(double height) {
@@ -124,9 +119,9 @@ class OnBoardingScreen extends StatelessWidget {
                 child: SizedBox(
                   height: getHeight(50),
                   width: double.infinity,
-                  // child: ListViewBrands(
-                  //   brands: BrandList,
-                  // ),
+                  child: ListViewBrands(
+                    brands: brands,
+                  ),
                 ),
               ),
               Padding(

@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 class CustomBrandCard extends StatelessWidget {
   final String text;
-  final dynamic icon;
+  // final dynamic icon;
 
   const CustomBrandCard({
     Key? key,
     required this.text,
-    required this.icon,
+    // required this.icon,
   }) : super(key: key);
 
   @override
@@ -33,20 +33,20 @@ class CustomBrandCard extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Padding(
-            padding: const EdgeInsets.all(5.0),
-            child: Container(
-              width: getWidth(40),
-              height: getHeight(40),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.white,
-              ),
-              child: Center(
-                child: icon,
-              ),
-            ),
-          ),
+          // Padding(
+          //   padding: const EdgeInsets.all(5.0),
+          //   child: Container(
+          //     width: getWidth(40),
+          //     height: getHeight(40),
+          //     decoration: BoxDecoration(
+          //       borderRadius: BorderRadius.circular(10),
+          //       color: Colors.white,
+          //     ),
+          //     child: Center(
+          //       child: icon,
+          //     ),
+          //   ),
+          // ),
           const SizedBox(width: 5),
           Text(
             text,
