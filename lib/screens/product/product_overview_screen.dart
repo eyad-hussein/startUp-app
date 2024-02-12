@@ -1,3 +1,4 @@
+import 'package:app/controllers/cart_controller.dart';
 import 'package:app/models/product_model.dart';
 import 'package:app/shared/ui/ui_helpers.dart';
 import 'package:app/widgets/product/product-overview-screen/product_description/product_description_widget.dart';
@@ -15,6 +16,7 @@ class ProductOverviewScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
     final double screenHeight = MediaQuery.of(context).size.height;
+    final CartController _cartController = Get.find<CartController>();
 
     double getHeight(double height) {
       return screenHeight * height / 812.0;
@@ -49,7 +51,9 @@ class ProductOverviewScreen extends StatelessWidget {
     print(product.id);
     return Scaffold(
       bottomNavigationBar: GestureDetector(
-        onTap: () async {},
+        onTap: () async {
+          _cartController.addToCart(product);
+        },
         child: const MainBottomNavigationBar(content: "Add To Cart"),
       ),
       body: Stack(

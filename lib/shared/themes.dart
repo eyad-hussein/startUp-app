@@ -41,7 +41,7 @@ final TextTheme kPrimaryTextTheme = GoogleFonts.openSansTextTheme(
   ),
   titleMedium: const TextStyle(
     fontSize: 17,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
   ),
   titleSmall: const TextStyle(
     fontSize: 13,

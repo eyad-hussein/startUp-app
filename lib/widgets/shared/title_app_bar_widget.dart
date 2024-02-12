@@ -1,3 +1,5 @@
+import 'package:app/shared/themes.dart';
+import 'package:app/shared/ui/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -10,21 +12,23 @@ class TitleAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      title: Text(
-        title,
-        style: TextStyle(
-          color: Theme.of(context).colorScheme.primary,
-          fontWeight: Theme.of(context).textTheme.displayMedium!.fontWeight,
-          fontSize: Theme.of(context).textTheme.bodySmall!.fontSize!,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: horizontalSpaceSmall),
+      child: AppBar(
+        title: Text(
+          title,
+          style: kPrimaryTextTheme.titleMedium,
         ),
-      ),
-      leading: IconButton(
-        onPressed: () {
-          Get.back();
-        },
-        icon: Icon(Icons.arrow_back,
-            color: Theme.of(context).colorScheme.primary),
+        centerTitle: true,
+        leading: IconButton(
+          onPressed: () {
+            Get.back();
+          },
+          icon: Icon(
+            Icons.arrow_back,
+            color: Theme.of(context).colorScheme.primary,
+          ),
+        ),
       ),
     );
   }

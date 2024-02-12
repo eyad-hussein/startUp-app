@@ -41,3 +41,24 @@ const double lineHeightMassive = 3.0;
 
 // Colors
 const Color correctColor = Colors.green;
+
+// Shadow Colors
+const Color shadowColorGrey = Color(0xFF8F959E);
+const Color shadowColorGreyLight = Color.fromARGB(255, 234, 235, 236);
+const Color shadowColorGreyDark = Color.fromARGB(255, 115, 117, 119);
+
+// Elevations
+const double elevationTiny = 2.5;
+const double elevationSmall = 5;
+const double elevationRegular = 7.5;
+const double elevationMedium = 10;
+const double elevationLarge = 12.5;
+const double elevationMassive = 20;
+
+// Border Radius
+const double borderRadiusTiny = 5.0;
+const double borderRadiusSmall = 10.0;
+const double borderRadiusRegular = 15.0;
+const double borderRadiusMedium = 20.0;
+const double borderRadiusLarge = 25.0;
+const double borderRadiusMassive = 30.0;
