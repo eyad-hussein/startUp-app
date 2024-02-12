@@ -1,6 +1,8 @@
 import 'package:app/widgets/cart-screen/cart_product_card_widget.dart';
 import 'package:app/widgets/cart-screen/personal_information_viewer_widget.dart';
+import 'package:app/widgets/shared/main_app_bar_widget.dart';
 import 'package:app/widgets/shared/main_bottom_navigation_bar_widget.dart';
+import 'package:app/widgets/shared/title_app_bar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -23,6 +25,8 @@ class CartScreen extends StatelessWidget {
     }
 
     return Scaffold(
+      bottomNavigationBar: const MainBottomNavigationBar(content: "Checkout"),
+      appBar: const TitleAppBar(title: 'Cart'),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.only(
@@ -52,11 +56,10 @@ class CartScreen extends StatelessWidget {
                     padding: EdgeInsets.only(
                       left: getWidth(109),
                     ),
-                    child: const Text(
+                    child: Text(
                       'Cart',
                       style: TextStyle(
-                        color: Color(0xFF1D1E20),
-                        fontFamily: 'Inter',
+                        color: Theme.of(context).colorScheme.primary,
                         fontWeight: FontWeight.w600,
                         fontSize: 17,
                       ),
@@ -96,7 +99,7 @@ class CartScreen extends StatelessWidget {
                 padding: EdgeInsets.only(
                   top: getHeight(20),
                 ),
-                child: Container(
+                child: SizedBox(
                   width: getWidth(336),
                   height: getHeight(131),
                   child: Column(
@@ -204,7 +207,6 @@ class CartScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: const MainBottomNavigationBar(content: "Checkout"),
     );
   }
 }

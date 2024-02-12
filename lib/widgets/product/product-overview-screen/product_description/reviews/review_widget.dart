@@ -1,5 +1,5 @@
 import 'package:app/models/review_model.dart';
-import 'package:app/widgets/product/product-overview-screen/product_description/product_description_text_widget.dart';
+import 'package:app/widgets/product/product-overview-screen/product_description/description_box/description_box_content_widget.dart';
 import 'package:app/widgets/product/product-overview-screen/product_description/reviews/review_stars_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';

@@ -1,3 +1,4 @@
+import 'package:app/shared/ui/ui_helpers.dart';
 import 'package:app/widgets/shared/header_widget.dart';
 import 'package:app/widgets/shared/sub_header_widget.dart';
 import 'package:flutter/material.dart';
@@ -10,9 +11,15 @@ class LoginHeader extends StatelessWidget {
     return const Center(
       child: Column(
         children: [
-          Header(title: "Welcome Back!"),
-          SizedBox(height: 10),
-          SubHeader(title: "Please enter your data to continue")
+          Header(
+            title: "Welcome",
+          ),
+          SizedBox(
+            height: verticalSpaceTiny,
+          ),
+          SubHeader(
+            title: "Please enter your data to continue",
+          )
         ],
       ),
     );
