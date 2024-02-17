@@ -15,7 +15,7 @@ class LoginHeader extends StatelessWidget {
             title: "Welcome",
           ),
           SizedBox(
-            height: verticalSpaceTiny,
+            height: kVerticalSpaceTiny,
           ),
           SubHeader(
             title: "Please enter your data to continue",

@@ -69,7 +69,7 @@ class _AuthFormFieldState extends State<AuthFormField> {
           padding: const EdgeInsets.only(top: 14),
           child: Text(
             'Strong',
-            style: kPrimaryTextTheme.bodySmall!.copyWith(
+            style: kBodyLarge.copyWith(
               color: Theme.of(context).colorScheme.tertiary,
             ),
           ),
@@ -118,7 +118,7 @@ class _AuthFormFieldState extends State<AuthFormField> {
             return 'Please enter a valid email address';
           }
           setState(() {
-            suffixIconColor = correctColor;
+            suffixIconColor = kCorrectColor;
           });
           return null;
         };
@@ -129,17 +129,15 @@ class _AuthFormFieldState extends State<AuthFormField> {
       onChanged: widget.onChanged,
       validator: validator,
       obscureText: isObscureText,
-      style: kPrimaryTextTheme.displayLarge!.copyWith(
+      style: kBodyLarge.copyWith(
         color: Theme.of(context).colorScheme.primary,
-        fontWeight: FontWeight.w500,
       ),
       cursorColor: Theme.of(context).colorScheme.secondary,
       decoration: InputDecoration(
         suffixIcon: suffixIcon,
         labelText: widget.label,
-        labelStyle: kPrimaryTextTheme.displayLarge!.copyWith(
+        labelStyle: kBodyLarge.copyWith(
           color: Theme.of(context).colorScheme.tertiary,
-          height: lineHeightTiny,
         ),
         contentPadding: const EdgeInsets.only(bottom: 13),
         focusedBorder: UnderlineInputBorder(

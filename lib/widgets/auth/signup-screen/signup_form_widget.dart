@@ -20,7 +20,7 @@ class _SignUpFormState extends State<SignUpForm> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: horizontalSpaceRegular),
+      padding: const EdgeInsets.symmetric(horizontal: kHorizontalSpaceRegular),
       child: Form(
         autovalidateMode: AutovalidateMode.onUserInteraction,
         key: widget.formKey,
@@ -33,21 +33,21 @@ class _SignUpFormState extends State<SignUpForm> {
                 _authController.nameController.text = value;
               },
             ),
-            const SizedBox(height: verticalSpaceRegular),
+            const SizedBox(height: kVerticalSpaceRegular),
             AuthFormField(
               label: 'Password',
               type: AuthFormFieldType.password,
               onChanged: (value) =>
                   _authController.passwordController.text = value,
             ),
-            const SizedBox(height: verticalSpaceRegular),
+            const SizedBox(height: kVerticalSpaceRegular),
             AuthFormField(
               label: 'Confirm Password',
               type: AuthFormFieldType.password,
               onChanged: (value) =>
                   _authController.passwordConfirmationController.text = value,
             ),
-            const SizedBox(height: verticalSpaceRegular),
+            const SizedBox(height: kVerticalSpaceRegular),
             AuthFormField(
               label: 'Email',
               type: AuthFormFieldType.email,

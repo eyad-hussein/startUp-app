@@ -7,7 +7,6 @@ import 'package:app/widgets/shared/mixed_text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:app/shared/routes.dart';
-import 'package:app/shared/themes.dart';
 
 enum MixedTextArgs { mainText, linkText, route }
 
@@ -51,25 +50,25 @@ class LoginScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               const SizedBox(
-                height: verticalSpaceLarge,
+                height: kVerticalSpaceLarge,
               ),
               const LoginHeader(),
               const SizedBox(
-                height: verticalSpaceMassive,
+                height: kVerticalSpaceMassive,
               ),
               SizedBox(
-                height: verticalSpaceMassive * 2.5,
+                height: kVerticalSpaceMassive * 2.5,
                 child: LoginForm(
                   formKey: formKey,
                 ),
               ),
               const SizedBox(
-                height: verticalSpaceRegular,
+                height: kVerticalSpaceRegular,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: MixedText(
-                  fontSize: kPrimaryTextTheme.displayMedium!.fontSize!,
+                  fontSize: kBodyLarge.fontSize!,
                   mainText: loginMixedText[MixedTextArgs.mainText]!,
                   linkText: loginMixedText[MixedTextArgs.linkText]!,
                   route: loginMixedText[MixedTextArgs.route]!,

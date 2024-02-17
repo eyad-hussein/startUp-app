@@ -28,13 +28,13 @@ class CartProductCard extends StatelessWidget {
     }
 
     return Material(
-      elevation: elevationLarge,
-      shadowColor: shadowColorGreyLight,
-      borderRadius: BorderRadius.circular(borderRadiusSmall),
+      elevation: kElevationLarge,
+      shadowColor: kShadowColorGreyLight,
+      borderRadius: BorderRadius.circular(kBorderRadiusSmall),
       child: Container(
-        padding: const EdgeInsets.only(left: horizontalSpaceSmall),
+        padding: const EdgeInsets.only(left: kHorizontalSpaceSmall),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(borderRadiusSmall),
+          borderRadius: BorderRadius.circular(kBorderRadiusSmall),
           color: Theme.of(context).colorScheme.background,
         ),
         child: Row(
@@ -47,7 +47,7 @@ class CartProductCard extends StatelessWidget {
             ),
             Container(
               padding: const EdgeInsets.only(
-                left: horizontalSpaceSmall,
+                left: kHorizontalSpaceSmall,
               ),
               child: CardProductInfo(
                 getHeight: getHeight,
