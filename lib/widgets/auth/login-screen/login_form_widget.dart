@@ -23,7 +23,7 @@ class _LoginFormState extends State<LoginForm> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: horizontalSpaceRegular),
+      padding: const EdgeInsets.symmetric(horizontal: kHorizontalSpaceRegular),
       child: Form(
         key: widget.formKey,
         autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -35,14 +35,14 @@ class _LoginFormState extends State<LoginForm> {
               onChanged: (value) =>
                   _authController.emailController.text = value,
             ),
-            const SizedBox(height: verticalSpaceRegular),
+            const SizedBox(height: kVerticalSpaceRegular),
             AuthFormField(
               label: 'Password',
               type: AuthFormFieldType.password,
               onChanged: (value) =>
                   _authController.passwordController.text = value,
             ),
-            const SizedBox(height: verticalSpaceRegular),
+            const SizedBox(height: kVerticalSpaceRegular),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -50,9 +50,9 @@ class _LoginFormState extends State<LoginForm> {
                   onPressed: () {
                     Get.toNamed(Routes.signUpScreenRoute);
                   },
-                  child: Text(
+                  child: const Text(
                     'Sign Up?',
-                    style: kSecondaryTextTheme.bodyLarge,
+                    style: kBodyLarge,
                   ),
                 ),
                 TextButton(
@@ -61,7 +61,7 @@ class _LoginFormState extends State<LoginForm> {
                   },
                   child: Text(
                     'Forgot Password?',
-                    style: kSecondaryTextTheme.bodyLarge!.copyWith(
+                    style: kBodyLarge.copyWith(
                       color: Theme.of(context).colorScheme.error,
                     ),
                   ),

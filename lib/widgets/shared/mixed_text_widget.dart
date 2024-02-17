@@ -1,4 +1,5 @@
 import 'package:app/shared/themes.dart';
+import 'package:app/shared/ui/ui_helpers.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -31,7 +32,7 @@ class MixedText extends StatelessWidget {
           TextSpan(text: mainText),
           TextSpan(
             text: linkText,
-            style: kPrimaryTextTheme.bodyMedium!.copyWith(
+            style: kBodyLarge.copyWith(
               color: Theme.of(context).colorScheme.primary,
               fontWeight: FontWeight.w600,
             ),

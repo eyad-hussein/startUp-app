@@ -54,7 +54,7 @@ class ProductDescription extends StatelessWidget {
               ),
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(vertical: verticalSpaceSmall),
+                    const EdgeInsets.symmetric(vertical: kVerticalSpaceSmall),
                 child: SizedBox(
                   height: getHeight(77),
                   width: getWidth(335),
@@ -64,7 +64,7 @@ class ProductDescription extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: verticalSpaceRegular),
+                padding: const EdgeInsets.only(bottom: kVerticalSpaceRegular),
                 child: ProductSizes(
                   sizesAvailable: product.sizesAvailable,
                   getHeight: getHeight,
@@ -72,7 +72,7 @@ class ProductDescription extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: verticalSpaceRegular),
+                padding: const EdgeInsets.only(bottom: kVerticalSpaceRegular),
                 child: DescriptionBox(
                   description: product.description,
                   getHeight: getHeight,

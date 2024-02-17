@@ -1,4 +1,4 @@
-import 'package:app/shared/themes.dart';
+import 'package:app/shared/ui/ui_helpers.dart';
 import 'package:flutter/material.dart';
 
 class MainBottomNavigationBar extends StatelessWidget {
@@ -19,7 +19,7 @@ class MainBottomNavigationBar extends StatelessWidget {
         child: Center(
           child: Text(
             content,
-            style: kSecondaryTextTheme.titleMedium!.copyWith(
+            style: kLabelLarge.copyWith(
               color: Theme.of(context).colorScheme.secondary,
             ),
           ),

@@ -1,64 +1,169 @@
 import 'package:flutter/material.dart';
 
+// Text Styles
+const TextStyle kDisplay = TextStyle(
+  fontFamily: "Roboto",
+  fontSize: 36,
+  height: 44,
+  letterSpacing: 0,
+  fontWeight: FontWeight.w500,
+);
+
+const TextStyle kHeadlineLarge = TextStyle(
+  fontFamily: "Roboto",
+  fontSize: 32,
+  height: 40,
+  letterSpacing: 0,
+  fontWeight: FontWeight.normal,
+);
+
+const TextStyle kHeadlineMedium = TextStyle(
+  fontFamily: "Roboto",
+  fontSize: 28,
+  height: 36,
+  letterSpacing: 0,
+  fontWeight: FontWeight.normal,
+);
+
+const TextStyle kHeadlineSmall = TextStyle(
+  fontFamily: "Roboto",
+  fontSize: 24,
+  height: 32,
+  letterSpacing: 0,
+  fontWeight: FontWeight.normal,
+);
+
+const TextStyle kTitleLarge = TextStyle(
+  fontFamily: "Roboto",
+  fontSize: 22,
+  height: 28,
+  letterSpacing: 0,
+  fontWeight: FontWeight.bold,
+);
+
+const TextStyle kTitleMedium = TextStyle(
+  fontFamily: "Roboto",
+  fontSize: 18,
+  height: 24,
+  letterSpacing: 0.1,
+  fontWeight: FontWeight.bold,
+);
+
+const TextStyle kTitleSmall = TextStyle(
+  fontFamily: "Roboto",
+  fontSize: 14,
+  height: 20,
+  letterSpacing: 0.1,
+  fontWeight: FontWeight.w500,
+);
+
+const TextStyle kBodyLarge = TextStyle(
+  fontFamily: "Roboto",
+  fontSize: 16,
+  height: 24,
+  letterSpacing: 0.5,
+  fontWeight: FontWeight.normal,
+);
+
+const TextStyle kBodyMedium = TextStyle(
+  fontFamily: "Roboto",
+  fontSize: 14,
+  height: 20,
+  letterSpacing: 0.25,
+  fontWeight: FontWeight.normal,
+);
+
+const TextStyle kBodySmall = TextStyle(
+  fontFamily: "Roboto",
+  fontSize: 12,
+  height: 16,
+  letterSpacing: 0.4,
+  fontWeight: FontWeight.normal,
+);
+
+const TextStyle kLabelLarge = TextStyle(
+  fontFamily: "Roboto",
+  fontSize: 14,
+  height: 20,
+  letterSpacing: 0.1,
+  fontWeight: FontWeight.bold,
+);
+
+const TextStyle kLabelMedium = TextStyle(
+  fontFamily: "Roboto",
+  fontSize: 12,
+  height: 16,
+  letterSpacing: 0.5,
+  fontWeight: FontWeight.bold,
+);
+
+const TextStyle kLabelSmall = TextStyle(
+  fontFamily: "Roboto",
+  fontSize: 11,
+  height: 16,
+  letterSpacing: 0.5,
+  fontWeight: FontWeight.bold,
+);
+
 // Horizontal Spacing
-const double horizontalSpaceTiny = 5.0;
-const double horizontalSpaceSmall = 10.0;
-const double horizontalSpaceRegular = 20.0;
-const double horizontalSpaceMedium = 25.0;
-const double horizontalSpaceLarge = 50.0;
+const double kHorizontalSpaceTiny = 5.0;
+const double kHorizontalSpaceSmall = 10.0;
+const double kHorizontalSpaceRegular = 20.0;
+const double kHorizontalSpaceMedium = 25.0;
+const double kHorizontalSpaceLarge = 50.0;
 
 // Vertical Spacing
-const double verticalSpaceTiny = 5.0;
-const double verticalSpaceSmall = 10.0;
-const double verticalSpaceRegular = 20.0;
-const double verticalSpaceMedium = 25;
-const double verticalSpaceLarge = 80.0;
-const double verticalSpaceMassive = 120.0;
+const double kVerticalSpaceTiny = 5.0;
+const double kVerticalSpaceSmall = 10.0;
+const double kVerticalSpaceRegular = 20.0;
+const double kVerticalSpaceMedium = 25;
+const double kVerticalSpaceLarge = 80.0;
+const double kVerticalSpaceMassive = 120.0;
 
 // Word Spacing
-const double wordSpaceTiny = .5;
-const double wordSpaceSmall = 1.0;
-const double wordSpaceRegular = 1.5;
-const double wordSpaceMedium = 2.0;
-const double wordSpaceLarge = 2.5;
-const double wordSpaceMassive = 3.0;
+const double kWordSpaceTiny = .5;
+const double kWordSpaceSmall = 1.0;
+const double kWordSpaceRegular = 1.5;
+const double kWordSpaceMedium = 2.0;
+const double kWordSpaceLarge = 2.5;
+const double kWordSpaceMassive = 3.0;
 
 // Letter Spacing
-const double letterSpaceTiny = .5;
-const double letterSpaceSmall = 1.0;
-const double letterSpaceRegular = 1.5;
-const double letterSpaceMedium = 2.0;
-const double letterSpaceLarge = 2.5;
-const double letterSpaceMassive = 3.0;
+const double kLetterSpaceTiny = .5;
+const double kLetterSpaceSmall = 1.0;
+const double kLetterSpaceRegular = 1.5;
+const double kLetterSpaceMedium = 2.0;
+const double kLetterSpaceLarge = 2.5;
+const double kLetterSpaceMassive = 3.0;
 
 // Line Height
-const double lineHeightTiny = .5;
-const double lineHeightSmall = 1.0;
-const double lineHeightRegular = 1.5;
-const double lineHeightMedium = 2.0;
-const double lineHeightLarge = 2.5;
-const double lineHeightMassive = 3.0;
+const double kLineHeightTiny = .5;
+const double kLineHeightSmall = 1.0;
+const double kLineHeightRegular = 1.5;
+const double kLineHeightMedium = 2.0;
+const double kLineHeightLarge = 2.5;
+const double kLineHeightMassive = 3.0;
 
 // Colors
-const Color correctColor = Colors.green;
+const Color kCorrectColor = Colors.green;
 
 // Shadow Colors
-const Color shadowColorGrey = Color(0xFF8F959E);
-const Color shadowColorGreyLight = Color.fromARGB(255, 234, 235, 236);
-const Color shadowColorGreyDark = Color.fromARGB(255, 115, 117, 119);
+const Color kShadowColorGrey = Color(0xFF8F959E);
+const Color kShadowColorGreyLight = Color.fromARGB(255, 234, 235, 236);
+const Color kShadowColorGreyDark = Color.fromARGB(255, 115, 117, 119);
 
 // Elevations
-const double elevationTiny = 2.5;
-const double elevationSmall = 5;
-const double elevationRegular = 7.5;
-const double elevationMedium = 10;
-const double elevationLarge = 12.5;
-const double elevationMassive = 20;
+const double kElevationTiny = 2.5;
+const double kElevationSmall = 5;
+const double kElevationRegular = 7.5;
+const double kElevationMedium = 10;
+const double kElevationLarge = 12.5;
+const double kElevationMassive = 20;
 
 // Border Radius
-const double borderRadiusTiny = 5.0;
-const double borderRadiusSmall = 10.0;
-const double borderRadiusRegular = 15.0;
-const double borderRadiusMedium = 20.0;
-const double borderRadiusLarge = 25.0;
-const double borderRadiusMassive = 30.0;
+const double kBorderRadiusTiny = 5.0;
+const double kBorderRadiusSmall = 10.0;
+const double kBorderRadiusRegular = 15.0;
+const double kBorderRadiusMedium = 20.0;
+const double kBorderRadiusLarge = 25.0;
+const double kBorderRadiusMassive = 30.0;

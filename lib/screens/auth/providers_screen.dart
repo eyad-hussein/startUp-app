@@ -25,7 +25,7 @@ class ProvidersScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             const SizedBox(
-              height: verticalSpaceSmall,
+              height: kVerticalSpaceSmall,
             ),
             const Header(title: "Let's Get Started"),
             const SizedBox(

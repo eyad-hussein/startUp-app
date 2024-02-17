@@ -59,7 +59,7 @@ class ProductOverviewScreen extends StatelessWidget {
       body: Stack(
         children: [
           Padding(
-            padding: const EdgeInsets.only(bottom: verticalSpaceLarge),
+            padding: const EdgeInsets.only(bottom: kVerticalSpaceLarge),
             child: SingleChildScrollView(
               child: Column(
                 children: [
@@ -78,8 +78,8 @@ class ProductOverviewScreen extends StatelessWidget {
             right: 0,
             child: Padding(
               padding: const EdgeInsets.symmetric(
-                horizontal: horizontalSpaceRegular,
-                vertical: verticalSpaceSmall,
+                horizontal: kHorizontalSpaceRegular,
+                vertical: kVerticalSpaceSmall,
               ),
               child: TotalPrice(getHeight: getHeight, getWidth: getWidth),
             ),

@@ -1,13 +1,10 @@
 import 'package:app/controllers/cart_controller.dart';
 import 'package:app/shared/ui/ui_helpers.dart';
 import 'package:app/widgets/cart-screen/cart_items_widget.dart';
-import 'package:app/widgets/cart-screen/cart_product_card/cart_product_card_widget.dart';
 import 'package:app/widgets/cart-screen/personal_information_viewer_widget.dart';
-import 'package:app/widgets/shared/main_app_bar_widget.dart';
 import 'package:app/widgets/shared/main_bottom_navigation_bar_widget.dart';
 import 'package:app/widgets/shared/title_app_bar_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 const String dummytext =
@@ -34,7 +31,8 @@ class CartScreen extends StatelessWidget {
       bottomNavigationBar: const MainBottomNavigationBar(content: "Checkout"),
       appBar: const TitleAppBar(title: 'Cart'),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: horizontalSpaceRegular),
+        padding:
+            const EdgeInsets.symmetric(horizontal: kHorizontalSpaceRegular),
         child: Column(
           children: [
             Container(

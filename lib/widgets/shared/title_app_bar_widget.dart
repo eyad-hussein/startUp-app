@@ -1,4 +1,3 @@
-import 'package:app/shared/themes.dart';
 import 'package:app/shared/ui/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -13,11 +12,11 @@ class TitleAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: horizontalSpaceSmall),
+      padding: const EdgeInsets.symmetric(horizontal: kHorizontalSpaceSmall),
       child: AppBar(
         title: Text(
           title,
-          style: kPrimaryTextTheme.titleMedium,
+          style: kTitleMedium,
         ),
         centerTitle: true,
         leading: IconButton(
