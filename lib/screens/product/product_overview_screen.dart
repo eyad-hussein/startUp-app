@@ -44,7 +44,15 @@ class ProductOverviewScreen extends StatelessWidget {
           description:
               "lorem ipsum dolor sit amet consectetur adipiscing elit ",
           shortDescription: "lorem ipsum dolor sit amet",
-          brand: BrandModel(address: "", name: "Nike", id: 1),
+          brand: const BrandModel(
+            address: "",
+            name: "Nike",
+            id: 1,
+            image: ImageModel(
+              id: 1,
+              url: "",
+            ),
+          ),
           sizesAvailable: [],
           reviews: []);
     }

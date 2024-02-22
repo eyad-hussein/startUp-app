@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:app/shared/routes.dart';
 
+// Validation: email and password validations are also covered by GetX. Now you do not need to install a separate validation package
 enum MixedTextArgs { mainText, linkText, route }
 
 const Map<MixedTextArgs, String> loginMixedText = {

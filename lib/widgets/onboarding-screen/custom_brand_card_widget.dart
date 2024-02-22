@@ -1,13 +1,14 @@
+import 'package:app/models/image_model.dart';
 import 'package:flutter/material.dart';
 
 class CustomBrandCard extends StatelessWidget {
   final String text;
-  // final dynamic icon;
+  final ImageModel image;
 
   const CustomBrandCard({
     Key? key,
     required this.text,
-    // required this.icon,
+    required this.image,
   }) : super(key: key);
 
   @override
