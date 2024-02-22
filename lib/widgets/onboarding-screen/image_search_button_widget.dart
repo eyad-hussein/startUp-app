@@ -1,18 +1,17 @@
-import 'package:app/models/brand_model.dart';
-import 'package:app/models/product_model.dart';
+import 'package:app/controllers/product_controller.dart';
 import 'package:app/shared/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:image_picker/image_picker.dart';
-import '../../controllers/image_search_controller.dart';
+import 'package:app/controllers/image_search_controller.dart';
 
 class ImageSearchButton extends StatelessWidget {
   final ImageSource source;
   ImageSearchButton({super.key, required this.source});
-  final ImageSearchController imageSearchController =
+  final ImageSearchController _imageSearchController =
       Get.find<ImageSearchController>();
+  final ProductController _productController = Get.find<ProductController>();
   @override
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
@@ -28,16 +27,13 @@ class ImageSearchButton extends StatelessWidget {
 
     return GestureDetector(
       onTap: () async {
-        List<ProductModel> products =
-            await imageSearchController.getSimilarProducts(source);
-        List<BrandModel> brands = imageSearchController.getBrands(products);
-        if (products.isEmpty) {
-          return;
+        try {
+          await _imageSearchController.getSimilarProducts(source);
+        } catch (e) {
+          print(e);
         }
-        Get.toNamed(
-          Routes.onBoardingScreenRoute,
-          arguments: {"products": products, "brands": brands},
-        );
+
+        Get.toNamed(Routes.onBoardingScreenRoute);
       },
       child: Container(
         width: getWidth(50),

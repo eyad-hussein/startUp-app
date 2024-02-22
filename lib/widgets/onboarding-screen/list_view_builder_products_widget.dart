@@ -1,14 +1,14 @@
+import 'package:app/controllers/product_controller.dart';
 import 'package:flutter/material.dart';
-
-import '../../models/product_model.dart';
 import 'custom_product_card_widget.dart';
 
 class ListViewProducts extends StatelessWidget {
-  const ListViewProducts({Key? key, required this.products}) : super(key: key);
-  final List<ProductModel> products;
+  const ListViewProducts({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final ProductController productController = ProductController();
+
     final double screenWidth = MediaQuery.of(context).size.width;
     final double screenHeight = MediaQuery.of(context).size.height;
 
@@ -27,9 +27,9 @@ class ListViewProducts extends StatelessWidget {
         crossAxisSpacing: 20, // Add horizontal spacing between grid items
         mainAxisSpacing: 8.0,
       ),
-      itemCount: products.length,
+      itemCount: productController.products.length,
       itemBuilder: (BuildContext context, int index) {
-        return CustomProductCard(product: products[index]);
+        return CustomProductCard(product: productController.products[index]);
       },
     );
   }
