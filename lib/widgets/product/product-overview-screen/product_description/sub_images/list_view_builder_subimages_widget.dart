@@ -1,6 +1,5 @@
 import 'package:app/models/sub_image_model.dart';
 import 'package:flutter/material.dart';
-import '../../../models/brand_model.dart';
 import 'subimage_card_widget.dart';
 
 class ListViewSubImages extends StatelessWidget {

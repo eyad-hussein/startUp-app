@@ -1,5 +1,5 @@
 import 'package:app/shared/routes.dart';
-import 'package:app/widgets/custom_bottom_nav_bar_widget.dart';
+import 'package:app/widgets/shared/main_bottom_navigation_bar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
@@ -24,9 +24,8 @@ class VerificationCodeScreen extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.background,
       bottomNavigationBar: GestureDetector(
         onTap: () => Get.offNamed(Routes.newPasswordScreenRoute),
-        child: CustomBottomNavBar(
-          text: 'Confirm Code',
-          height: getHeight(75),
+        child: const MainBottomNavigationBar(
+          content: 'Confirm Code',
         ),
       ),
       body: SingleChildScrollView(

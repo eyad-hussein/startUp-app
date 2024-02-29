@@ -1,3 +1,4 @@
+import 'package:app/shared/ui/ui_helpers.dart';
 import 'package:flutter/material.dart';
 
 class Header extends StatelessWidget {
@@ -9,15 +10,8 @@ class Header extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       title,
-      style: TextStyle(
-        fontSize: Theme.of(context)
-            .textTheme
-            .displayMedium!
-            .fontSize,
-        fontWeight: Theme.of(context)
-            .textTheme
-            .displayMedium!
-            .fontWeight,
+      style: kTitleLarge.copyWith(
+        color: Theme.of(context).colorScheme.primary,
       ),
     );
   }

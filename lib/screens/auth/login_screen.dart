@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:app/shared/routes.dart';
 
+// Validation: email and password validations are also covered by GetX. Now you do not need to install a separate validation package
 enum MixedTextArgs { mainText, linkText, route }
 
 const Map<MixedTextArgs, String> loginMixedText = {
@@ -50,25 +51,25 @@ class LoginScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               const SizedBox(
-                height: 80,
+                height: kVerticalSpaceLarge,
               ),
               const LoginHeader(),
               const SizedBox(
-                height: verticalSpaceMassive,
+                height: kVerticalSpaceMassive,
               ),
               SizedBox(
-                height: verticalSpaceMassive * 2.5,
+                height: kVerticalSpaceMassive * 2.5,
                 child: LoginForm(
                   formKey: formKey,
                 ),
               ),
               const SizedBox(
-                height: verticalSpaceRegular,
+                height: kVerticalSpaceRegular,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: MixedText(
-                  fontSize: 13,
+                  fontSize: kBodyLarge.fontSize!,
                   mainText: loginMixedText[MixedTextArgs.mainText]!,
                   linkText: loginMixedText[MixedTextArgs.linkText]!,
                   route: loginMixedText[MixedTextArgs.route]!,

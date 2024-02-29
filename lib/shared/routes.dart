@@ -10,9 +10,9 @@ import 'package:app/screens/onboarding_screen.dart';
 import 'package:app/screens/pick_search_type_screen.dart';
 import 'package:app/screens/order_confirmed_screen.dart';
 import 'package:app/screens/payment_screen.dart';
-import 'package:app/screens/product_overview_screen.dart';
+import 'package:app/screens/product/product_overview_screen.dart';
 import 'package:app/screens/auth/providers_screen.dart';
-import 'package:app/screens/product_search_screen.dart';
+import 'package:app/screens/product/product_search_screen.dart';
 import 'package:app/screens/splash_screen.dart';
 import 'package:app/screens/text_search_screen.dart';
 import 'package:get/get.dart';
@@ -20,7 +20,7 @@ import 'package:get/get.dart';
 class Routes {
   static String splashScreenRoute = '/splash-screen';
   static String loginScreenRoute = '/login-screen';
-  static String signupScreenRoute = '/signup-screen';
+  static String signUpScreenRoute = '/sign-up-screen';
   static String providersScreenRoute = '/providers-screen';
   static String productScreenRoute = '/product-overview-screen';
   static String addressScreenRoute = '/address-screen';
@@ -48,7 +48,7 @@ final getPages = [
     page: () => LoginScreen(),
   ),
   GetPage(
-    name: Routes.signupScreenRoute,
+    name: Routes.signUpScreenRoute,
     page: () => SignUpScreen(),
   ),
   GetPage(

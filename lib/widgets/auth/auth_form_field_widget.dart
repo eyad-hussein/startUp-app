@@ -1,3 +1,5 @@
+import 'package:app/shared/ui/ui_helpers.dart';
+import 'package:app/shared/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -43,7 +45,7 @@ class _AuthFormFieldState extends State<AuthFormField> {
           child: SvgPicture.asset(
             'assets/icons/check.svg',
             colorFilter: ColorFilter.mode(
-              Theme.of(context).colorScheme.secondary,
+              Theme.of(context).colorScheme.tertiary,
               BlendMode.srcIn,
             ),
             fit: BoxFit.contain,
@@ -67,9 +69,8 @@ class _AuthFormFieldState extends State<AuthFormField> {
           padding: const EdgeInsets.only(top: 14),
           child: Text(
             'Strong',
-            style: TextStyle(
-              color: Theme.of(context).colorScheme.secondary,
-              fontWeight: FontWeight.w500,
+            style: kBodyLarge.copyWith(
+              color: Theme.of(context).colorScheme.tertiary,
             ),
           ),
         );
@@ -95,7 +96,7 @@ class _AuthFormFieldState extends State<AuthFormField> {
           child: SvgPicture.asset(
             'assets/icons/check.svg',
             colorFilter: ColorFilter.mode(
-              suffixIconColor ?? Theme.of(context).colorScheme.secondary,
+              suffixIconColor ?? Theme.of(context).colorScheme.tertiary,
               BlendMode.srcIn,
             ),
             fit: BoxFit.contain,
@@ -117,7 +118,7 @@ class _AuthFormFieldState extends State<AuthFormField> {
             return 'Please enter a valid email address';
           }
           setState(() {
-            suffixIconColor = Colors.green;
+            suffixIconColor = kCorrectColor;
           });
           return null;
         };
@@ -128,22 +129,20 @@ class _AuthFormFieldState extends State<AuthFormField> {
       onChanged: widget.onChanged,
       validator: validator,
       obscureText: isObscureText,
-      style: TextStyle(
+      style: kBodyLarge.copyWith(
         color: Theme.of(context).colorScheme.primary,
-        fontWeight: FontWeight.w500,
       ),
       cursorColor: Theme.of(context).colorScheme.secondary,
       decoration: InputDecoration(
         suffixIcon: suffixIcon,
         labelText: widget.label,
-        labelStyle: TextStyle(
-          color: Theme.of(context).colorScheme.secondary,
-          fontWeight: FontWeight.w500,
+        labelStyle: kBodyLarge.copyWith(
+          color: Theme.of(context).colorScheme.tertiary,
         ),
         contentPadding: const EdgeInsets.only(bottom: 13),
-        focusedBorder: const UnderlineInputBorder(
+        focusedBorder: UnderlineInputBorder(
           borderSide: BorderSide(
-            color: Color(0xFF8F959E),
+            color: Theme.of(context).colorScheme.tertiary,
           ),
         ),
       ),

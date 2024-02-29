@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:app/models/product_model.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'dart:io';
@@ -20,10 +19,10 @@ class ImageSearchService extends GetxService {
     http.MultipartRequest request =
         http.MultipartRequest('POST', Uri.parse('$apiUrl/image-search'));
     if (GetPlatform.isMobile && file != null) {
-      File _file = File(file.path);
+      File filePath = File(file.path);
       request.files.add(http.MultipartFile(
-          'image', _file.readAsBytes().asStream(), _file.lengthSync(),
-          filename: _file.path.split('/').last));
+          'image', filePath.readAsBytes().asStream(), filePath.lengthSync(),
+          filename: filePath.path.split('/').last));
     }
     http.StreamedResponse response = await request.send();
     return response;
@@ -33,9 +32,9 @@ class ImageSearchService extends GetxService {
   Future<List<ProductModel>> getSimilarProducts(XFile? pickedFile) async {
     http.StreamedResponse response = await sendRequest(pickedFile);
     Map map = jsonDecode(await response.stream.bytesToString());
-    List<ProductModel> products = ((jsonDecode(map['products']) as List)
+    List<ProductModel> products = (map['products'] as List)
         .map((product) => ProductModel.fromJson(product))
-        .toList());
+        .toList();
     return products;
   }
 }

@@ -1,17 +1,13 @@
-import 'package:app/controllers/image_search_controller.dart';
 import 'package:app/widgets/shared/extended_appbar_widget.dart';
 import 'package:app/widgets/onboarding-screen/custom_search_bar_widget.dart';
 import 'package:get/get.dart';
 import 'package:app/controllers/product_controller.dart';
 import 'package:app/widgets/onboarding-screen/custom_bottom_navigator_bar_widget.dart';
-import 'package:app/widgets/onboarding-screen/custom_product_card_widget.dart';
 import 'package:app/widgets/onboarding-screen/list_view_builder_brands_widget.dart';
 import 'package:app/widgets/onboarding-screen/list_view_builder_products_widget.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
 
-import '../models/brand_model.dart';
-import '../models/product_model.dart';
+// needs to be refactored
 
 class OnBoardingScreen extends StatelessWidget {
   OnBoardingScreen({Key? key}) : super(key: key);
@@ -19,16 +15,6 @@ class OnBoardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //final Future<List<ProductModel>> products = productController.getProducts();
-    final Future<List<ProductModel>> products = Get.arguments as Future<List<ProductModel>>;
-    // List<Brand> BrandList = [
-    //   Brand(
-    //       name: 'Adidas',
-    //       icon: SvgPicture.asset('assets/icons/adidas-logo.svg')),
-    //   Brand(name: 'Nike', icon: SvgPicture.asset('assets/icons/nike-logo.svg')),
-    //   Brand(name: 'Puma', icon: SvgPicture.asset('assets/icons/puma-logo.svg')),
-    //   Brand(name: 'Fila', icon: SvgPicture.asset('assets/icons/fila-logo.svg')),
-    // ];
     final double screenWidth = MediaQuery.of(context).size.width;
     final double screenHeight = MediaQuery.of(context).size.height;
     double getHeight(double height) {
@@ -124,9 +110,7 @@ class OnBoardingScreen extends StatelessWidget {
                 child: SizedBox(
                   height: getHeight(50),
                   width: double.infinity,
-                  // child: ListViewBrands(
-                  //   brands: BrandList,
-                  // ),
+                  child: const ListViewBrands(),
                 ),
               ),
               Padding(
@@ -159,8 +143,9 @@ class OnBoardingScreen extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               SizedBox(
-                  height: getHeight(343),
-                  child: ListViewProducts(products: products)),
+                height: getHeight(343),
+                child: const ListViewProducts(),
+              ),
             ],
           ),
         ),

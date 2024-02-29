@@ -1,25 +1,25 @@
 import 'package:app/models/image_model.dart';
 import 'package:equatable/equatable.dart';
 
-class Brand extends Equatable {
+class BrandModel extends Equatable {
   final int id;
   final String name;
   final String address;
-  // final ImageModel icon;
+  final ImageModel image;
 
-  const Brand({
+  const BrandModel({
     required this.name,
-    // required this.icon,
+    required this.image,
     required this.id,
     required this.address,
   });
 
-  factory Brand.fromJson(Map<String, dynamic> json) {
-    return Brand(
+  factory BrandModel.fromJson(Map<String, dynamic> json) {
+    return BrandModel(
       id: json['id'] as int,
       name: json['name'] as String,
       address: json['address'] as String,
-      // icon: ImageModel.fromJson(json['icon']),
+      image: ImageModel.fromJson(json['image']),
     );
   }
 
@@ -28,7 +28,7 @@ class Brand extends Equatable {
       'id': id,
       'name': name,
       'address': address,
-      // 'icon': icon.toJson(),
+      'image': image.toJson(),
     };
   }
 

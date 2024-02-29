@@ -13,7 +13,7 @@ class ProductModel {
   final List<SizeModel> sizesAvailable;
   final String description;
   final String shortDescription;
-  final Brand brand;
+  final BrandModel brand;
   final List<ReviewModel> reviews;
   bool isFavourite = false;
   int? quantity;
@@ -50,7 +50,7 @@ class ProductModel {
       image: ImageModel.fromJson(json['image']),
       price: (json['price'] as num).toDouble(),
       description: json['description'] as String,
-      brand: Brand.fromJson(json['brand']),
+      brand: BrandModel.fromJson(json['brand']),
       sizesAvailable: sizesAvailable,
       subImages: subImagesUrl,
       shortDescription: json['short_description'] as String,

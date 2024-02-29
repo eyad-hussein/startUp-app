@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 
-class CustomProductDescription extends StatefulWidget {
+class DescriptionBoxContent extends StatefulWidget {
   final String description;
 
-  CustomProductDescription({required this.description});
+  const DescriptionBoxContent({super.key, required this.description});
 
   @override
-  _CustomProductDescriptionState createState() =>
-      _CustomProductDescriptionState();
+  State<DescriptionBoxContent> createState() => _DescriptionBoxContentState();
 }
 
-class _CustomProductDescriptionState extends State<CustomProductDescription> {
+class _DescriptionBoxContentState extends State<DescriptionBoxContent> {
   bool isExpanded = false;
 
   @override
@@ -18,7 +17,7 @@ class _CustomProductDescriptionState extends State<CustomProductDescription> {
     String truncatedDescription = widget.description;
 
     if (widget.description.length > 111 && !isExpanded) {
-      truncatedDescription = widget.description.substring(0, 45) + '...';
+      truncatedDescription = '${widget.description.substring(0, 45)}...';
     }
 
     return Column(

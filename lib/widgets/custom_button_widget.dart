@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-enum CustomButtonType { PRIMARY, SOCIAL }
+enum CustomButtonType { primary, social }
 
 class CustomButton extends StatelessWidget {
   const CustomButton(
       {super.key,
       required this.content,
       required this.onPressed,
-      this.type = CustomButtonType.PRIMARY});
+      this.type = CustomButtonType.primary});
 
   final CustomButtonType type;
   final String content;
@@ -18,7 +18,7 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final ElevatedButton button;
 
-    if (type == CustomButtonType.PRIMARY) {
+    if (type == CustomButtonType.primary) {
       button = ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(

@@ -40,25 +40,26 @@ class SignUpScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           const SizedBox(
-            height: verticalSpaceMedium,
+            height: kVerticalSpaceMedium,
           ),
           const Center(
             child: Header(title: "Sign Up"),
           ),
           const SizedBox(
-            height: verticalSpaceMassive * 0.8,
+            height: kVerticalSpaceMassive * 0.8,
           ),
           Expanded(
-            child: ListView(
-              children: [
-                SignUpForm(
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.only(top: kVerticalSpaceSmall),
+                child: SignUpForm(
                   formKey: formKey,
                 ),
-              ],
+              ),
             ),
           ),
           const SizedBox(
-            height: verticalSpaceRegular,
+            height: kVerticalSpaceRegular,
           ),
         ],
       ),

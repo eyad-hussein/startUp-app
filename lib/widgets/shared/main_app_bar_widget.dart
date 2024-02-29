@@ -14,8 +14,10 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
         onPressed: () {
           Get.back();
         },
-        icon: Icon(Icons.arrow_back,
-            color: Theme.of(context).colorScheme.primary),
+        icon: Icon(
+          Icons.arrow_back,
+          color: Theme.of(context).colorScheme.primary,
+        ),
       ),
     );
   }

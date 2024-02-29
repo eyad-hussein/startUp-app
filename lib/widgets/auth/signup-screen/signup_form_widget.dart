@@ -1,4 +1,5 @@
 import 'package:app/controllers/auth_controller.dart';
+import 'package:app/shared/ui/ui_helpers.dart';
 import 'package:app/widgets/auth/auth_form_field_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -19,7 +20,7 @@ class _SignUpFormState extends State<SignUpForm> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: kHorizontalSpaceRegular),
       child: Form(
         autovalidateMode: AutovalidateMode.onUserInteraction,
         key: widget.formKey,
@@ -32,21 +33,21 @@ class _SignUpFormState extends State<SignUpForm> {
                 _authController.nameController.text = value;
               },
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: kVerticalSpaceRegular),
             AuthFormField(
               label: 'Password',
               type: AuthFormFieldType.password,
               onChanged: (value) =>
                   _authController.passwordController.text = value,
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: kVerticalSpaceRegular),
             AuthFormField(
               label: 'Confirm Password',
               type: AuthFormFieldType.password,
               onChanged: (value) =>
                   _authController.passwordConfirmationController.text = value,
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: kVerticalSpaceRegular),
             AuthFormField(
               label: 'Email',
               type: AuthFormFieldType.email,

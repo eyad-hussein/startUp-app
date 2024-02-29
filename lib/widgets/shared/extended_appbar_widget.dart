@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:app/shared/routes.dart';
 
 enum ExtendedAppbarType { onboarding, product }
 
 class ExtendedAppbar extends StatelessWidget {
   const ExtendedAppbar({super.key, required this.type});
   final ExtendedAppbarType type;
+
   @override
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
@@ -25,6 +27,7 @@ class ExtendedAppbar extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () {
+            print(type);
             Get.back();
           },
           child: Container(
@@ -47,7 +50,9 @@ class ExtendedAppbar extends StatelessWidget {
           ),
         ),
         GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Get.toNamed(Routes.cartScreenRoute);
+          },
           child: Container(
             width: getHeight(45),
             height: getHeight(45),
