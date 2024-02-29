@@ -8,7 +8,6 @@ import 'package:app/screens/auth/verification_code_screen.dart';
 import 'package:app/screens/cart_screen.dart';
 import 'package:app/screens/onboarding_screen.dart';
 import 'package:app/screens/pick_search_type_screen.dart';
-import 'package:app/screens/product/onboarding_screen.dart';
 import 'package:app/screens/order_confirmed_screen.dart';
 import 'package:app/screens/payment_screen.dart';
 import 'package:app/screens/product_overview_screen.dart';
