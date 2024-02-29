@@ -1,82 +1,56 @@
-import 'package:app/controllers/auth_controller.dart';
-import 'package:app/shared/ui/ui_helpers.dart';
-import 'package:app/widgets/auth/login-screen/login_form_widget.dart';
-import 'package:app/widgets/auth/login-screen/login_header_widget.dart';
-import 'package:app/widgets/shared/main_bottom_navigation_bar_widget.dart';
-import 'package:app/widgets/shared/mixed_text_widget.dart';
+//login_screen.dart
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:app/controllers/auth_controller.dart';
 import 'package:app/shared/routes.dart';
+import 'package:app/shared/ui/ui_helpers.dart';
+import 'package:app/shared/themes.dart';
+import 'package:app/widgets/auth/login-screen/login_header_widget.dart';
+import 'package:app/widgets/auth/login-screen/login_form_widget.dart';
+import 'package:app/widgets/shared/mixed_text_widget.dart';
 
-// Validation: email and password validations are also covered by GetX. Now you do not need to install a separate validation package
 enum MixedTextArgs { mainText, linkText, route }
 
 const Map<MixedTextArgs, String> loginMixedText = {
   MixedTextArgs.mainText:
       "By connecting your account you confirm that you agree with our ",
   MixedTextArgs.linkText: "Terms and Conditions",
-  MixedTextArgs.route: "Routes.termsAndConditionsScreenRoute",
+  MixedTextArgs.route:
+      "Routes.termsAndConditionsScreenRoute", // Ensure this is correctly defined in your Routes
 };
 
 class LoginScreen extends StatelessWidget {
-  LoginScreen({super.key});
-
-  final AuthController authController = Get.find<AuthController>();
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  LoginScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
-      bottomNavigationBar: GestureDetector(
-        onTap: () async {
-          if (formKey.currentState?.validate() ?? false) {
-            try {
-              await authController.login();
-              Get.offNamed(Routes.productSearchRoute);
-            } catch (e) {
-              // AUTH FAILED MESSAGE
-              print(e);
-            }
-          } else {
-            // FORM NOT SUBMITTED MESSAGE
-            print('Form no submitted');
-          }
-        },
-        child: const MainBottomNavigationBar(content: "Log In"),
-      ),
       body: ListView(
         children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              const SizedBox(
-                height: kVerticalSpaceLarge,
-              ),
-              const LoginHeader(),
-              const SizedBox(
-                height: kVerticalSpaceMassive,
-              ),
-              SizedBox(
-                height: kVerticalSpaceMassive * 2.5,
-                child: LoginForm(
-                  formKey: formKey,
-                ),
-              ),
-              const SizedBox(
-                height: kVerticalSpaceRegular,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: MixedText(
-                  fontSize: kBodyLarge.fontSize!,
-                  mainText: loginMixedText[MixedTextArgs.mainText]!,
-                  linkText: loginMixedText[MixedTextArgs.linkText]!,
-                  route: loginMixedText[MixedTextArgs.route]!,
-                ),
-              ),
-            ],
-          )
+          const SizedBox(height: 2),
+          const LoginHeaderWidget(),
+          const SizedBox(height: 1),
+          LoginForm(
+              formKey:
+                  formKey), // This contains your email, password fields, and continue button
+          const SizedBox(height: kVerticalSpaceTiny),
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: kHorizontalSpaceTiny),
+            child: MixedText(
+              fontSize: kBodyLarge.fontSize!,
+              mainText: loginMixedText[MixedTextArgs.mainText]!,
+              linkText: loginMixedText[MixedTextArgs.linkText]!,
+              route: loginMixedText[MixedTextArgs.route]!,
+              onPressed: () {
+                Get.toNamed(loginMixedText[MixedTextArgs.route]!);
+              },
+            ),
+          ),
+          // You can add more widgets here if needed
         ],
       ),
     );

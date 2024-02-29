@@ -15,6 +15,7 @@ class AuthFormField extends StatefulWidget {
     required this.label,
     required this.type,
     required this.onChanged,
+    required IconButton suffixIcon,
   });
 
   final String label;

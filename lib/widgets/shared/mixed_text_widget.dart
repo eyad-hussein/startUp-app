@@ -16,6 +16,7 @@ class MixedText extends StatelessWidget {
     required this.mainText,
     required this.linkText,
     required this.route,
+    required Null Function() onPressed,
   });
 
   @override

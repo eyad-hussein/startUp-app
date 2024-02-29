@@ -5,6 +5,7 @@ import 'package:app/controllers/product_controller.dart';
 import 'package:app/controllers/user_controller.dart';
 import 'package:app/shared/routes.dart';
 import 'package:app/shared/themes.dart';
+import 'package:app/widgets/shared/mixed_text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
         initialRoute: Routes
-            .productSearchRoute, // Restore it to default after finishing testing
+            .loginScreenRoute, // Restore it to default after finishing testing
         getPages: getPages,
         themeMode: ThemeMode.light,
         theme: kLightTheme,

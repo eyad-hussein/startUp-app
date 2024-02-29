@@ -43,14 +43,14 @@ final getPages = [
     name: Routes.loginScreenRoute,
     page: () => LoginScreen(),
   ),
-  GetPage(
-    name: Routes.signUpScreenRoute,
-    page: () => SignUpScreen(),
-  ),
-  GetPage(
-    name: Routes.providersScreenRoute,
-    page: () => const ProvidersScreen(),
-  ),
+  // GetPage(
+  //   name: Routes.signUpScreenRoute,
+  //   page: () => SignUpScreen(),
+  // ),
+  // GetPage(
+  //   name: Routes.providersScreenRoute,
+  //   page: () => const ProvidersScreen(),
+  // ),
   GetPage(
     name: Routes.onBoardingScreenRoute,
     page: () => OnBoardingScreen(),
@@ -67,30 +67,30 @@ final getPages = [
     name: Routes.addNewCardScreenRoute,
     page: () => const AddNewCardScreen(),
   ),
-  GetPage(
-    name: Routes.productScreenRoute,
-    page: () => const ProductOverviewScreen(),
-  ),
-  GetPage(
-    name: Routes.addressScreenRoute,
-    page: () => const AddressScreen(),
-  ),
-  GetPage(
-    name: Routes.cartScreenRoute,
-    page: () => const CartScreen(),
-  ),
-  GetPage(
-    name: Routes.forgetPasswordEmailScreenRoute,
-    page: () => const ForgetPasswordEmailScreen(),
-  ),
-  GetPage(
-    name: Routes.newPasswordScreenRoute,
-    page: () => const NewPasswordScreen(),
-  ),
-  GetPage(
-    name: Routes.verificationCodeScreenRoute,
-    page: () => const VerificationCodeScreen(),
-  ),
+  // GetPage(
+  //   name: Routes.productScreenRoute,
+  //   page: () => const ProductOverviewScreen(),
+  // ),
+  // GetPage(
+  //   name: Routes.addressScreenRoute,
+  //   page: () => const AddressScreen(),
+  // ),
+  // GetPage(
+  //   name: Routes.cartScreenRoute,
+  //   page: () => const CartScreen(),
+  // ),
+  // GetPage(
+  //   name: Routes.forgetPasswordEmailScreenRoute,
+  //   page: () => const ForgetPasswordEmailScreen(),
+  // ),
+  // GetPage(
+  //   name: Routes.newPasswordScreenRoute,
+  //   page: () => const NewPasswordScreen(),
+  // ),
+  // GetPage(
+  //   name: Routes.verificationCodeScreenRoute,
+  //   page: () => const VerificationCodeScreen(),
+  // ),
   GetPage(
     name: Routes.productSearchRoute,
     page: () => const ProductSearchScreen(),

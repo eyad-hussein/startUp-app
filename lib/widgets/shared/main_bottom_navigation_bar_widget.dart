@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class MainBottomNavigationBar extends StatelessWidget {
   final String content;
 
-  const MainBottomNavigationBar({super.key, required this.content});
+  const MainBottomNavigationBar(void Function() onContinue, {super.key, required this.content});
 
   @override
   Widget build(BuildContext context) {
