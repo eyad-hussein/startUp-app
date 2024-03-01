@@ -6,7 +6,6 @@ import 'package:app/screens/auth/new_password_screen.dart';
 import 'package:app/screens/auth/signup_screen.dart';
 import 'package:app/screens/auth/verification_code_screen.dart';
 import 'package:app/screens/cart_screen.dart';
-import 'package:app/screens/onboarding_screen.dart';
 import 'package:app/screens/pick_search_type_screen.dart';
 import 'package:app/screens/order_confirmed_screen.dart';
 import 'package:app/screens/payment_screen.dart';
@@ -54,10 +53,6 @@ final getPages = [
   GetPage(
     name: Routes.providersScreenRoute,
     page: () => const ProvidersScreen(),
-  ),
-  GetPage(
-    name: Routes.onBoardingScreenRoute,
-    page: () => OnBoardingScreen(),
   ),
   GetPage(
     name: Routes.paymentScreenRoute,

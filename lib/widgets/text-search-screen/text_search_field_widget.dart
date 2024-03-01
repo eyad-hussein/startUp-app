@@ -1,5 +1,7 @@
+import 'package:app/controllers/text_search_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:app/shared/ui/ui_helpers.dart';
+import 'package:get/get.dart';
 
 class TextSearchFieldWidget extends StatelessWidget {
   const TextSearchFieldWidget({super.key});
@@ -15,6 +17,8 @@ class TextSearchFieldWidget extends StatelessWidget {
     double getWidth(double width) {
       return screenWidth * width / 412.0;
     }
+
+    final TextSearchController _textSearchController = Get.find<TextSearchController>();
 
     return Column(
       children: [
@@ -46,6 +50,9 @@ class TextSearchFieldWidget extends StatelessWidget {
                       SizedBox(
                         width: getWidth(250),
                         child: TextFormField(
+                          onChanged: (value) {
+                            _textSearchController.descriptionController.text = value;
+                          },
                           style: kTitleInter.copyWith(
                               fontSize: 15, letterSpacing: 0),
                           decoration: const InputDecoration(
