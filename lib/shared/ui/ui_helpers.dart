@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 const TextStyle kDisplay = TextStyle(
   fontFamily: "Roboto",
   fontSize: 36,
-  height: 44,
+  height: 1.2,
   letterSpacing: 0,
   fontWeight: FontWeight.w500,
 );
@@ -12,7 +12,7 @@ const TextStyle kDisplay = TextStyle(
 const TextStyle kHeadlineLarge = TextStyle(
   fontFamily: "Roboto",
   fontSize: 32,
-  height: 40,
+  height: 1.25,
   letterSpacing: 0,
   fontWeight: FontWeight.normal,
 );
@@ -20,7 +20,7 @@ const TextStyle kHeadlineLarge = TextStyle(
 const TextStyle kHeadlineMedium = TextStyle(
   fontFamily: "Roboto",
   fontSize: 28,
-  height: 36,
+  height: 1.3,
   letterSpacing: 0,
   fontWeight: FontWeight.normal,
 );
@@ -28,7 +28,7 @@ const TextStyle kHeadlineMedium = TextStyle(
 const TextStyle kHeadlineSmall = TextStyle(
   fontFamily: "Roboto",
   fontSize: 24,
-  height: 32,
+  height: 1.35,
   letterSpacing: 0,
   fontWeight: FontWeight.normal,
 );
@@ -36,7 +36,7 @@ const TextStyle kHeadlineSmall = TextStyle(
 const TextStyle kTitleLarge = TextStyle(
   fontFamily: "Roboto",
   fontSize: 22,
-  height: 28,
+  height: 1.3,
   letterSpacing: 0,
   fontWeight: FontWeight.bold,
 );
@@ -44,7 +44,7 @@ const TextStyle kTitleLarge = TextStyle(
 const TextStyle kTitleMedium = TextStyle(
   fontFamily: "Roboto",
   fontSize: 18,
-  height: 24,
+  height: 1.35,
   letterSpacing: 0.1,
   fontWeight: FontWeight.bold,
 );
@@ -52,7 +52,7 @@ const TextStyle kTitleMedium = TextStyle(
 const TextStyle kTitleSmall = TextStyle(
   fontFamily: "Roboto",
   fontSize: 14,
-  height: 20,
+  height: 1.4,
   letterSpacing: 0.1,
   fontWeight: FontWeight.w500,
 );
@@ -60,7 +60,7 @@ const TextStyle kTitleSmall = TextStyle(
 const TextStyle kBodyLarge = TextStyle(
   fontFamily: "Roboto",
   fontSize: 16,
-  height: 24,
+  height: 1.5,
   letterSpacing: 0.5,
   fontWeight: FontWeight.normal,
 );
@@ -68,7 +68,7 @@ const TextStyle kBodyLarge = TextStyle(
 const TextStyle kBodyMedium = TextStyle(
   fontFamily: "Roboto",
   fontSize: 14,
-  height: 20,
+  height: 1.4,
   letterSpacing: 0.25,
   fontWeight: FontWeight.normal,
 );
@@ -84,7 +84,7 @@ const TextStyle kBodySmall = TextStyle(
 const TextStyle kLabelLarge = TextStyle(
   fontFamily: "Roboto",
   fontSize: 14,
-  height: 20,
+  height: 1.35,
   letterSpacing: 0.1,
   fontWeight: FontWeight.bold,
 );
@@ -92,7 +92,7 @@ const TextStyle kLabelLarge = TextStyle(
 const TextStyle kLabelMedium = TextStyle(
   fontFamily: "Roboto",
   fontSize: 12,
-  height: 16,
+  height: 1.35,
   letterSpacing: 0.5,
   fontWeight: FontWeight.bold,
 );
@@ -100,7 +100,7 @@ const TextStyle kLabelMedium = TextStyle(
 const TextStyle kLabelSmall = TextStyle(
   fontFamily: "Roboto",
   fontSize: 11,
-  height: 16,
+  height: 1.45,
   letterSpacing: 0.5,
   fontWeight: FontWeight.bold,
 );
