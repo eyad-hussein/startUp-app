@@ -5,6 +5,7 @@ import 'package:app/screens/auth/login_screen.dart';
 import 'package:app/screens/auth/new_password_screen.dart';
 import 'package:app/screens/auth/signup_screen.dart';
 import 'package:app/screens/auth/verification_code_screen.dart';
+import 'package:app/screens/product/onboarding_screen.dart';
 import 'package:app/screens/cart_screen.dart';
 import 'package:app/screens/pick_search_type_screen.dart';
 import 'package:app/screens/order_confirmed_screen.dart';
@@ -15,6 +16,8 @@ import 'package:app/screens/product/product_search_screen.dart';
 import 'package:app/screens/splash_screen.dart';
 import 'package:app/screens/text_search_screen.dart';
 import 'package:get/get.dart';
+
+
 
 class Routes {
   static String splashScreenRoute = '/splash-screen';
@@ -53,6 +56,10 @@ final getPages = [
   GetPage(
     name: Routes.providersScreenRoute,
     page: () => const ProvidersScreen(),
+  ),
+  GetPage(
+    name: Routes.onBoardingScreenRoute,
+    page: () => OnBoardingScreen(),
   ),
   GetPage(
     name: Routes.paymentScreenRoute,
