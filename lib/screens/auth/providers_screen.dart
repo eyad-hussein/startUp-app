@@ -42,18 +42,21 @@ class ProvidersScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   CustomButton(
+                    CustomButtonType.primary,
                     content: 'Facebook',
                     onPressed: () {},
                     type: CustomButtonType.social,
                   ),
                   const SizedBox(height: 5),
                   CustomButton(
+                    CustomButtonType.primary,
                     content: 'Twitter',
                     onPressed: () {},
                     type: CustomButtonType.social,
                   ),
                   const SizedBox(height: 5),
                   CustomButton(
+                    CustomButtonType.primary,
                     content: 'Google',
                     onPressed: () {},
                     type: CustomButtonType.social,

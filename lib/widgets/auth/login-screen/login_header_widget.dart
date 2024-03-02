@@ -8,18 +8,24 @@ class LoginHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
+    return Center(
       child: Column(
+        mainAxisAlignment:
+            MainAxisAlignment.center, // Vertically center elements
         children: [
-          Header(
-            title: "Welcome",
+          // Image widget
+          Image.asset(
+            'assets/images/logo.png',
+            height: 150,
+            width: 200, // Adjust sizing as needed
           ),
-          SizedBox(
-            height: kVerticalSpaceTiny,
+          const SizedBox(
+              height:
+                  kVerticalSpaceMedium), // Add spacing between image and text
+          // Header widget
+          const Header(
+            title: "Login",
           ),
-          SubHeader(
-            title: "Please enter your data to continue",
-          )
         ],
       ),
     );

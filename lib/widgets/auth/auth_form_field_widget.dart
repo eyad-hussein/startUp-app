@@ -1,7 +1,7 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:app/shared/ui/ui_helpers.dart';
 import 'package:app/shared/themes.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 enum AuthFormFieldType {
   name,
@@ -25,8 +25,6 @@ class AuthFormField extends StatefulWidget {
   State<AuthFormField> createState() => _AuthFormFieldState();
 }
 
-// TODO :: Clean up the code -> create a validator class maybe
-// TODO :: Create a password strength indicator class as well
 class _AuthFormFieldState extends State<AuthFormField> {
   Color? suffixIconColor;
 
@@ -55,11 +53,9 @@ class _AuthFormFieldState extends State<AuthFormField> {
           if (value == null || value.isEmpty) {
             return 'Please enter your name';
           }
-
           if (!RegExp(r"^[a-zA-Z'-\s]+$").hasMatch(value)) {
             return 'Please enter a valid name';
           }
-
           return null;
         };
         break;
@@ -74,21 +70,17 @@ class _AuthFormFieldState extends State<AuthFormField> {
             ),
           ),
         );
-
         isObscureText = true;
         validator = (value) {
           if (value == null || value.isEmpty) {
             return 'Please enter a password';
           }
-
           if (!RegExp(r'^(?=.*[a-zA-Z])(?=.*\d).{8,}$').hasMatch(value)) {
             return 'Password must be at least 8 characters long\nPassword must include both letters and numbers';
           }
-
           return null;
         };
         break;
-
       case AuthFormFieldType.email:
         keyboardType = TextInputType.emailAddress;
         suffixIcon = Padding(
@@ -106,11 +98,9 @@ class _AuthFormFieldState extends State<AuthFormField> {
           if (value == null || value.isEmpty) {
             return 'Please enter an email address';
           }
-
           final isValidEmail =
               RegExp(r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$")
                   .hasMatch(value);
-
           if (!isValidEmail) {
             setState(() {
               suffixIconColor = Theme.of(context).colorScheme.error;
@@ -124,6 +114,9 @@ class _AuthFormFieldState extends State<AuthFormField> {
         };
         break;
     }
+    const OutlineInputBorder grayBorder = OutlineInputBorder(
+      borderSide: BorderSide(color: Colors.grey),
+    );
     return TextFormField(
       keyboardType: keyboardType,
       onChanged: widget.onChanged,
@@ -145,6 +138,10 @@ class _AuthFormFieldState extends State<AuthFormField> {
             color: Theme.of(context).colorScheme.tertiary,
           ),
         ),
+        border: widget.type == AuthFormFieldType.email ||
+                widget.type == AuthFormFieldType.password
+            ? grayBorder
+            : null,
       ),
     );
   }
