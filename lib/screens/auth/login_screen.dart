@@ -5,7 +5,7 @@ import 'package:app/widgets/auth/login-screen/login_header_widget.dart';
 import 'package:app/widgets/custom_button_widget.dart';
 import 'package:app/widgets/shared/main_bottom_navigation_bar_widget.dart';
 import 'package:app/widgets/shared/mixed_text_widget.dart';
-import 'package:app/widgets/auth/login-screen/special_button.dart';
+import 'package:app/widgets/auth/login-screen/special_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:app/shared/routes.dart';

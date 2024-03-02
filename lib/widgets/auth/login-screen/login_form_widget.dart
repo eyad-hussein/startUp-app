@@ -3,7 +3,7 @@ import 'package:app/shared/routes.dart';
 import 'package:app/shared/themes.dart';
 import 'package:app/shared/ui/ui_helpers.dart';
 import 'package:app/widgets/auth/auth_form_field_widget.dart';
-import 'package:app/widgets/auth/login-screen/special_button.dart';
+import 'package:app/widgets/auth/login-screen/special_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
