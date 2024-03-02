@@ -5,8 +5,10 @@ import 'package:get/get.dart';
 
 class TextSearchController extends GetxController{
   final TextSearchService textSearchService = Get.put(TextSearchService());
-
   final TextEditingController descriptionController = TextEditingController();
+
+  final RxList<String> urls = <String>[].obs;
+  final RxBool urlsAvailable = false.obs;
 
   @override
   void onClose(){
@@ -14,8 +16,9 @@ class TextSearchController extends GetxController{
     super.onClose();
   }
 
-  Future<void>? RequestSimilarImages(){
-      textSearchService.requestSimilarImages(descriptionController.text);
+  Future<void>? requestSimilarImages() async{
+    urls.value = await textSearchService.requestSimilarImages(descriptionController.text);
+    urlsAvailable.value = true;
   }
 
 }

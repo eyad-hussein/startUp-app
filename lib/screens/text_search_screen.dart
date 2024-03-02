@@ -1,7 +1,10 @@
 import 'package:app/widgets/text-search-screen/text_search_field_widget.dart';
+import 'package:app/widgets/text-search-screen/text_search_similar_images_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:app/shared/ui/ui_helpers.dart';
+import 'package:app/controllers/text_search_controller.dart';
+import 'package:get/get.dart';
 
 class TextSearchScreen extends StatelessWidget {
   const TextSearchScreen({super.key});
@@ -18,7 +21,11 @@ class TextSearchScreen extends StatelessWidget {
       return screenWidth * width / 412.0;
     }
 
+    final TextSearchController _textSearchController =
+        Get.find<TextSearchController>();
+
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -32,6 +39,10 @@ class TextSearchScreen extends StatelessWidget {
             ),
           ),
           const TextSearchFieldWidget(),
+          const SizedBox(
+            height: kVerticalSpaceSmall,
+          ),
+          _textSearchController.urlsAvailable.value ? TextSearchSimilarImages() : const SizedBox(),
         ],
       ),
     );

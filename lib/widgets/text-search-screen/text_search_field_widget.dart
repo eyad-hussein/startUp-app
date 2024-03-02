@@ -63,6 +63,10 @@ class TextSearchFieldWidget extends StatelessWidget {
                         ),
                       ),
                       GestureDetector(
+                        onTap: () {
+                            _textSearchController.requestSimilarImages();
+                            FocusScope.of(context).unfocus();
+                        },
                         child: Container(
                           width: getWidth(85),
                           height: getHeight(40),
