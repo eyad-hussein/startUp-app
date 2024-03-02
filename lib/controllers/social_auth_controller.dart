@@ -1,4 +1,4 @@
-import 'package:app/screens/repositories/auth_repository_Impl.dart';
+import 'package:app/repositories/auth_repository_impl.dart';
 
 class SocialAuthController {
   final SocialAuthController _repository;

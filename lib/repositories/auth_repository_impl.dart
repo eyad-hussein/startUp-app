@@ -1,5 +1,5 @@
 import 'dart:math';
-import 'package:app/screens/repositories/auth_repository.dart';
+import 'package:app/repositories/auth_repository.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
   final Random _random = Random();
