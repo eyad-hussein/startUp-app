@@ -17,8 +17,8 @@ class LoginHeaderWidget extends StatelessWidget {
       children: [
         Image.asset(
           'assets/images/logo.png',
-          width: 200.0,
-          height: 120.0,
+          width: 250,
+          height: 150,
         ),
         const Text(
           'Login',

@@ -30,13 +30,10 @@ class LoginScreen extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.background,
       body: ListView(
         children: [
-          const SizedBox(height: 2),
           const LoginHeaderWidget(),
-          const SizedBox(height: 1),
           LoginForm(
-              formKey:
-                  formKey), // This contains your email, password fields, and continue button
-          const SizedBox(height: kVerticalSpaceTiny),
+            formKey: formKey,
+          ), // This contains your email, password fields, and continue button
           Padding(
             padding:
                 const EdgeInsets.symmetric(horizontal: kHorizontalSpaceTiny),
