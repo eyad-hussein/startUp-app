@@ -3,11 +3,10 @@ import 'package:app/shared/routes.dart';
 import 'package:app/shared/themes.dart';
 import 'package:app/shared/ui/ui_helpers.dart';
 import 'package:app/widgets/auth/auth_form_field_widget.dart';
+import 'package:app/widgets/auth/login-screen/special_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-// TODO :: check whether to add rememberme option or not
-// TODO:: sign up button ui
 class LoginForm extends StatefulWidget {
   final GlobalKey<FormState> formKey;
   const LoginForm({super.key, required this.formKey});
@@ -17,7 +16,6 @@ class LoginForm extends StatefulWidget {
 }
 
 class _LoginFormState extends State<LoginForm> {
-  // bool _rememberMe = false;
   final AuthController _authController = Get.find<AuthController>();
 
   @override
@@ -30,66 +28,37 @@ class _LoginFormState extends State<LoginForm> {
         child: Column(
           children: [
             AuthFormField(
-              label: 'Email',
+              label: '   Email Address',
               type: AuthFormFieldType.email,
+              borderColor: Colors.grey.shade200,
               onChanged: (value) =>
                   _authController.emailController.text = value,
             ),
             const SizedBox(height: kVerticalSpaceRegular),
             AuthFormField(
-              label: 'Password',
+              label: '  Password',
               type: AuthFormFieldType.password,
+              borderColor: Colors.grey.shade200,
               onChanged: (value) =>
                   _authController.passwordController.text = value,
             ),
-            const SizedBox(height: kVerticalSpaceRegular),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Get.toNamed(Routes.signUpScreenRoute);
-                  },
-                  child: const Text(
-                    'Sign Up?',
-                    style: kBodyLarge,
+            const SizedBox(height: kVerticalSpaceTiny - 1),
+            Align(
+              alignment: Alignment.centerRight,
+              child: TextButton(
+                onPressed: () {
+                  Get.toNamed(Routes.forgetPasswordEmailScreenRoute);
+                },
+                child: Text(
+                  'Forgot Password?',
+                  style: kBodyLarge.copyWith(
+                    color: Colors.black,
+                    decoration: TextDecoration
+                        .underline, // Add this line to underline the text
                   ),
                 ),
-                TextButton(
-                  onPressed: () {
-                    Get.toNamed(Routes.forgetPasswordEmailScreenRoute);
-                  },
-                  child: Text(
-                    'Forgot Password?',
-                    style: kBodyLarge.copyWith(
-                      color: Theme.of(context).colorScheme.error,
-                    ),
-                  ),
-                ),
-              ],
+              ),
             ),
-            // const SizedBox(height: 20),
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //   crossAxisAlignment: CrossAxisAlignment.center,
-            //   children: [
-            //     const Text("Remember me"),
-            //     Transform.scale(
-            //       origin: const Offset(45, 0),
-            //       scale: 0.7,
-            //       child: Switch.adaptive(
-            //           inactiveThumbColor:
-            //               Theme.of(context).colorScheme.secondary,
-            //           inactiveTrackColor:
-            //               Theme.of(context).colorScheme.background,
-            //           activeColor: Theme.of(context).colorScheme.background,
-            //           activeTrackColor: const Color(0xFF34C559),
-            //           value: _rememberMe,
-            //           onChanged: (value) =>
-            //               setState(() => _rememberMe = value)),
-            //     ),
-            //   ],
-            // ),
           ],
         ),
       ),
