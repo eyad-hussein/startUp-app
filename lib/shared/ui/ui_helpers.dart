@@ -105,6 +105,20 @@ const TextStyle kLabelSmall = TextStyle(
   fontWeight: FontWeight.bold,
 );
 
+
+const TextStyle kTitleBebasNeue = TextStyle(
+  fontFamily: "BebasNeue",
+  fontSize: 36,
+  letterSpacing: 0.1,
+);
+
+const TextStyle kTitleInter = TextStyle(
+  fontFamily: "Inter",
+  fontSize: 20,
+  letterSpacing: 0.1,
+);
+
+
 // Horizontal Spacing
 const double kHorizontalSpaceTiny = 5.0;
 const double kHorizontalSpaceSmall = 10.0;

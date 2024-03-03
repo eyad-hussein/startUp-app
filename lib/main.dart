@@ -2,6 +2,7 @@ import 'package:app/controllers/auth_controller.dart';
 import 'package:app/controllers/cart_controller.dart';
 import 'package:app/controllers/image_search_controller.dart';
 import 'package:app/controllers/product_controller.dart';
+import 'package:app/controllers/text_search_controller.dart';
 import 'package:app/controllers/user_controller.dart';
 import 'package:app/shared/routes.dart';
 import 'package:app/shared/themes.dart';
@@ -15,6 +16,7 @@ void main() async {
   Get.put(ProductController());
   Get.put(ImageSearchController());
   Get.put(CartController());
+  Get.put(TextSearchController());
 
   try {
     await dotenv.load(fileName: ".env");
