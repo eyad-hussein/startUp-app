@@ -28,33 +28,36 @@ class _LoginFormState extends State<LoginForm> {
         child: Column(
           children: [
             AuthFormField(
-              label: 'Email',
+              label: '   Email Address',
               type: AuthFormFieldType.email,
+              borderColor: Colors.grey.shade200,
               onChanged: (value) =>
                   _authController.emailController.text = value,
             ),
             const SizedBox(height: kVerticalSpaceRegular),
             AuthFormField(
-              label: 'Password',
+              label: '  Password',
               type: AuthFormFieldType.password,
+              borderColor: Colors.grey.shade200,
               onChanged: (value) =>
                   _authController.passwordController.text = value,
             ),
-            const SizedBox(height: kVerticalSpaceRegular),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Get.toNamed(Routes.forgetPasswordEmailScreenRoute);
-                  },
-                  child: Text(
-                    'Forgot Password?',
-                    style: kBodyLarge.copyWith(
-                        color: Theme.of(context).colorScheme.error),
+            const SizedBox(height: kVerticalSpaceTiny - 1),
+            Align(
+              alignment: Alignment.centerRight,
+              child: TextButton(
+                onPressed: () {
+                  Get.toNamed(Routes.forgetPasswordEmailScreenRoute);
+                },
+                child: Text(
+                  'Forgot Password?',
+                  style: kBodyLarge.copyWith(
+                    color: Colors.black,
+                    decoration: TextDecoration
+                        .underline, // Add this line to underline the text
                   ),
                 ),
-              ],
+              ),
             ),
           ],
         ),

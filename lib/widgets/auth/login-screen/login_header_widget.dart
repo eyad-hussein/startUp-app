@@ -10,18 +10,15 @@ class LoginHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Column(
-        mainAxisAlignment:
-            MainAxisAlignment.center, // Vertically center elements
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           // Image widget
           Image.asset(
-            'assets/images/logo.png',
-            height: 150,
-            width: 200, // Adjust sizing as needed
+            'assets/images/Styleach-No-Text.png',
+            height: 100,
+            width: 160,
           ),
-          const SizedBox(
-              height:
-                  kVerticalSpaceMedium), // Add spacing between image and text
+          const SizedBox(height: kVerticalSpaceLarge),
           // Header widget
           const Header(
             title: "Login",

@@ -1,36 +1,50 @@
+import 'dart:async';
 import 'dart:math';
+
 import 'package:app/interfaces/auth_repository_interface.dart';
 
 class AuthRepository implements AuthRepositoryInterface {
-  final Random _random = Random();
+  final Random _random;
+
+  AuthRepository({Random? random}) : _random = random ?? Random();
 
   @override
   Future<void> signInWithGoogle() async {
-    await Future.delayed(Duration(seconds: 2));
+    await _simulateNetworkDelay();
     if (_random.nextBool()) {
       print('Successfully signed in with Google');
     } else {
-      throw Exception('Failed to sign in with Google');
+      throw SignInException('Failed to sign in with Google');
     }
   }
 
   @override
   Future<void> signInWithFacebook() async {
-    await Future.delayed(Duration(seconds: 2));
+    await _simulateNetworkDelay();
     if (_random.nextBool()) {
       print('Successfully signed in with Facebook');
     } else {
-      throw Exception('Failed to sign in with Facebook');
+      throw SignInException('Failed to sign in with Facebook');
     }
   }
 
   @override
   Future<void> signInWithTwitter() async {
-    await Future.delayed(Duration(seconds: 2));
+    await _simulateNetworkDelay();
     if (_random.nextBool()) {
       print('Successfully signed in with Twitter');
     } else {
-      throw Exception('Failed to sign in with Twitter');
+      throw SignInException('Failed to sign in with Twitter');
     }
   }
+
+  Future<void> _simulateNetworkDelay() async {
+    await Future.delayed(const Duration(seconds: 2));
+  }
+}
+
+class SignInException implements Exception {
+  final String message;
+
+  SignInException(this.message);
 }

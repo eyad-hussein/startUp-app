@@ -7,6 +7,7 @@ import 'package:app/widgets/shared/main_bottom_navigation_bar_widget.dart';
 import 'package:app/widgets/shared/mixed_text_widget.dart';
 import 'package:app/widgets/auth/login-screen/special_button_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:app/shared/routes.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -47,7 +48,7 @@ class LoginScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               const SizedBox(
-                height: kVerticalSpaceMedium,
+                height: kVerticalSpaceTiny / 4,
               ),
               const LoginHeader(),
               const SizedBox(
@@ -55,13 +56,19 @@ class LoginScreen extends StatelessWidget {
               ),
               SizedBox(
                 height: kVerticalSpaceMassive * 1.7,
+                width: kHorizontalSpaceLarge * 8,
                 child: LoginForm(
                   formKey: formKey,
                 ),
               ),
+              const SizedBox(
+                height: kVerticalSpaceMedium,
+              ),
+
               SpecialButton(
                 text: 'Continue',
                 color: Colors.black,
+                minimumSize: const Size(176, 44),
                 onPressed: () {
                   // Handle button press
                 },
@@ -69,7 +76,7 @@ class LoginScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: kVerticalSpaceRegular),
                 child: Text(
-                  '────────── or login with ──────────',
+                  '───────── or login with ─────────',
                   style: kBodyLarge.copyWith(color: Colors.grey),
                 ),
               ),
@@ -79,23 +86,23 @@ class LoginScreen extends StatelessWidget {
                 onPressed: () {
                   // Handle button press
                 },
-                color: Colors.blue,
+                color: const Color.fromARGB(255, 47, 85, 164),
                 borderRadius: kBorderRadiusRegular,
                 icon: FontAwesomeIcons.facebook,
                 iconColor: Colors.white,
               ),
-              const SizedBox(height: kVerticalSpaceRegular),
+              const SizedBox(height: kVerticalSpaceSmall),
               SpecialButton(
-                text: 'X',
+                text: 'Twitter',
                 onPressed: () {
                   // Handle button press
                 },
-                color: Colors.black,
+                color: Colors.lightBlue,
                 borderRadius: kBorderRadiusRegular,
-                icon: FontAwesomeIcons.x,
+                icon: FontAwesomeIcons.twitter,
                 iconColor: Colors.white,
               ),
-              const SizedBox(height: kVerticalSpaceRegular),
+              const SizedBox(height: kVerticalSpaceSmall),
               SpecialButton(
                 text: 'Google',
                 onPressed: () {
@@ -106,6 +113,26 @@ class LoginScreen extends StatelessWidget {
                 icon: FontAwesomeIcons.google,
                 iconColor: Colors.white,
               ),
+              const SizedBox(
+                height: kVerticalSpaceMedium,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: kVerticalSpaceRegular),
+                child: RichText(
+                  text: TextSpan(
+                    style: kBodyLarge.copyWith(color: Colors.black),
+                    children: const <TextSpan>[
+                      TextSpan(text: "Don't have an account? "), // Regular text
+                      TextSpan(
+                        text: 'Register',
+                        style:
+                            TextStyle(fontWeight: FontWeight.bold), // Bold text
+                      ),
+                    ],
+                  ),
+                ),
+              )
+
               // const SizedBox(height: kVerticalSpaceTiny), // For spacing
               // CustomButton(CustomButtonType.social,
               //     content: 'Google', borderRadius: kBorderRadiusMedium, onPressed: () {

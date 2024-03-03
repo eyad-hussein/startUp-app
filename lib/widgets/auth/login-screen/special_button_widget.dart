@@ -17,11 +17,11 @@ class SpecialButton extends StatelessWidget {
     required this.text,
     required this.onPressed,
     required this.color,
-    this.minimumSize = const Size(240, 60),
-    this.borderRadius = 14.0,
-    this.icon, // Add icon parameter
-    this.iconColor, // Add icon color parameter
-    this.iconPadding = 8.0, // Default space between icon and text
+    this.minimumSize = const Size(335, 50),
+    this.borderRadius = kBorderRadiusSmall,
+    this.icon,
+    this.iconColor,
+    this.iconPadding = 8.0,
   }) : super(key: key);
 
   @override
@@ -29,14 +29,14 @@ class SpecialButton extends StatelessWidget {
     return ElevatedButton.icon(
       icon: icon != null
           ? Icon(icon, color: iconColor ?? Colors.white)
-          : SizedBox.shrink(), // Conditional icon display
+          : const SizedBox.shrink(),
       label: icon != null
           ? Row(
               mainAxisSize: MainAxisSize
                   .min, // To prevent the Row from occupying full width of the button
               children: [
                 Text(text),
-                SizedBox(width: iconPadding), // Space between icon and text
+                SizedBox(width: iconPadding),
               ],
             )
           : Text(text),
@@ -44,7 +44,7 @@ class SpecialButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         backgroundColor: color, // Set button color
         foregroundColor: Colors.white,
-        minimumSize: minimumSize, // Use the minimumSize attribute
+        minimumSize: minimumSize,
         shape: RoundedRectangleBorder(
           // Define the button's shape
           borderRadius: BorderRadius.circular(borderRadius),
