@@ -37,4 +37,23 @@ class ImageSearchService extends GetxService {
         .toList();
     return products;
   }
+
+  Future<List<ProductModel>> getSimilarProductsFromUrl(String url) async {
+    final response = await http.post(
+      Uri.parse('$apiUrl/image-search/text'),
+      headers: {
+        'Accept': 'application/json',
+      },
+      body: {
+        'url': url,
+      },
+    );
+    Map map = jsonDecode(response.body);
+    List<ProductModel> products = (map['products'] as List)
+        .map((product) => ProductModel.fromJson(product))
+        .toList();
+    return products;
+  }
+
+
 }

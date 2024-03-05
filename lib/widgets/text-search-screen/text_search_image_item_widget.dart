@@ -1,4 +1,6 @@
+import 'package:app/controllers/image_search_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class TextSearchImageItem extends StatelessWidget {
 
@@ -15,10 +17,12 @@ class TextSearchImageItem extends StatelessWidget {
     double getWidth(double width) {
       return screenWidth * width / 412.0;
     }
+    final ImageSearchController _imageSearchController = Get.find<ImageSearchController>();
       return SizedBox(
         width: getWidth(153),
         height: getHeight(187),
         child: GestureDetector(
+          onTap: () => _imageSearchController.getSimilarProductsFromUrl(url),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(20),
             child: Image.network(

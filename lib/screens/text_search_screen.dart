@@ -42,7 +42,10 @@ class TextSearchScreen extends StatelessWidget {
           const SizedBox(
             height: kVerticalSpaceSmall,
           ),
-          _textSearchController.urlsAvailable.value ? TextSearchSimilarImages() : const SizedBox(),
+          Visibility(
+            visible: _textSearchController.urlsAvailable.value,
+            child: TextSearchSimilarImages(),
+          ),
         ],
       ),
     );
