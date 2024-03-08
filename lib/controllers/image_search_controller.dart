@@ -22,4 +22,8 @@ class ImageSearchController extends GetxController {
     _productController
         .setProducts(await _imageSearchService.getSimilarProducts(_pickedFile));
   }
+
+  Future<void> getSimilarProductsFromUrl(String url)async{
+    _productController.setProducts(await _imageSearchService.getSimilarProductsFromUrl(url));
+  }
 }
