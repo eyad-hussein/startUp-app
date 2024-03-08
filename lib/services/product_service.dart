@@ -48,4 +48,6 @@ class ProductService extends GetxService {
       throw Exception('Failed to retrieve products');
     }
   }
+
+
 }

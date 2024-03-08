@@ -32,10 +32,14 @@ class ImageSearchService extends GetxService {
   Future<List<ProductModel>> getSimilarProducts(XFile? pickedFile) async {
     http.StreamedResponse response = await sendRequest(pickedFile);
     Map map = jsonDecode(await response.stream.bytesToString());
-    List<ProductModel> products = (map['products'] as List)
+    List<ProductModel> products = getProductsFromMap(map);
+    return products;
+  }
+
+  List<ProductModel> getProductsFromMap(Map map){
+    return (map['products'] as List)
         .map((product) => ProductModel.fromJson(product))
         .toList();
-    return products;
   }
 
   Future<List<ProductModel>> getSimilarProductsFromUrl(String url) async {
@@ -49,9 +53,7 @@ class ImageSearchService extends GetxService {
       },
     );
     Map map = jsonDecode(response.body);
-    List<ProductModel> products = (map['products'] as List)
-        .map((product) => ProductModel.fromJson(product))
-        .toList();
+    List<ProductModel> products = getProductsFromMap(map);
     return products;
   }
 
