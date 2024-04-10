@@ -23,124 +23,110 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
-      // bottomNavigationBar: GestureDetector(
-      //   onTap: () async {
-      //     if (formKey.currentState?.validate() ?? false) {
-      //       try {
-      //         await authController.login();
-      //         Get.offNamed(Routes.productSearchRoute);
-      //       } catch (e) {
-      //         // AUTH FAILED MESSAGE
-      //         print(e);
-      //       }
-      //     } else {
-      //       // FORM NOT SUBMITTED MESSAGE
-      //       print('Form no submitted');
-      //     }
-      //   },
-      //   child: const MainBottomNavigationBar(content: "Log In"),
-      // ),
-      body: ListView(
-        children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              const SizedBox(
-                height: kVerticalSpaceTiny / 4,
-              ),
-              const LoginHeader(),
-              const SizedBox(
-                height: kVerticalSpaceMedium * 1.5,
-              ),
-              SizedBox(
-                height: kVerticalSpaceMassive * 1.7,
-                width: kHorizontalSpaceLarge * 8,
-                child: LoginForm(
-                  formKey: formKey,
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Theme.of(context).colorScheme.background,
+        body: ListView(
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                const SizedBox(
+                  height: kVerticalSpaceTiny / 4,
                 ),
-              ),
-              const SizedBox(
-                height: kVerticalSpaceMedium,
-              ),
-
-              SpecialButton(
-                text: 'Continue',
-                color: Colors.black,
-                minimumSize: const Size(176, 44),
-                onPressed: () {
-                  // Handle button press
-                },
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: kVerticalSpaceRegular),
-                child: Text(
-                  '───────── or login with ─────────',
-                  style: kBodyLarge.copyWith(color: Colors.grey),
+                const LoginHeader(),
+                const SizedBox(
+                  height: kVerticalSpaceMedium * 1.5,
                 ),
-              ),
-              const SizedBox(height: kVerticalSpaceRegular),
-              SpecialButton(
-                text: 'Facebook',
-                onPressed: () {
-                  // Handle button press
-                },
-                color: const Color.fromARGB(255, 47, 85, 164),
-                borderRadius: kBorderRadiusRegular,
-                icon: FontAwesomeIcons.facebook,
-                iconColor: Colors.white,
-              ),
-              const SizedBox(height: kVerticalSpaceSmall),
-              SpecialButton(
-                text: 'Twitter',
-                onPressed: () {
-                  // Handle button press
-                },
-                color: Colors.lightBlue,
-                borderRadius: kBorderRadiusRegular,
-                icon: FontAwesomeIcons.twitter,
-                iconColor: Colors.white,
-              ),
-              const SizedBox(height: kVerticalSpaceSmall),
-              SpecialButton(
-                text: 'Google',
-                onPressed: () {
-                  // Handle button press
-                },
-                color: Colors.red,
-                borderRadius: kBorderRadiusRegular,
-                icon: FontAwesomeIcons.google,
-                iconColor: Colors.white,
-              ),
-              const SizedBox(
-                height: kVerticalSpaceMedium,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: kVerticalSpaceRegular),
-                child: RichText(
-                  text: TextSpan(
-                    style: kBodyLarge.copyWith(color: Colors.black),
-                    children: const <TextSpan>[
-                      TextSpan(text: "Don't have an account? "), // Regular text
-                      TextSpan(
-                        text: 'Register',
-                        style:
-                            TextStyle(fontWeight: FontWeight.bold), // Bold text
-                      ),
-                    ],
+                SizedBox(
+                  height: kVerticalSpaceMassive * 1.7,
+                  width: kHorizontalSpaceLarge * 8,
+                  child: LoginForm(
+                    formKey: formKey,
                   ),
                 ),
-              )
+                const SizedBox(
+                  height: kVerticalSpaceMedium,
+                ),
 
-              // const SizedBox(height: kVerticalSpaceTiny), // For spacing
-              // CustomButton(CustomButtonType.social,
-              //     content: 'Google', borderRadius: kBorderRadiusMedium, onPressed: () {
-              //   // Handle button press
-              // }),
-            ],
-          )
-        ],
+                SpecialButton(
+                  text: 'Continue',
+                  color: Colors.black,
+                  minimumSize: const Size(176, 44),
+                  onPressed: () {
+                    // Handle button press
+                  },
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: kVerticalSpaceRegular),
+                  child: Text(
+                    '───────── or login with ─────────',
+                    style: kBodyLarge.copyWith(color: Colors.grey),
+                  ),
+                ),
+                const SizedBox(height: kVerticalSpaceRegular),
+                SpecialButton(
+                  text: 'Facebook',
+                  onPressed: () {
+                    // Handle button press
+                  },
+                  color: const Color.fromARGB(255, 47, 85, 164),
+                  borderRadius: kBorderRadiusRegular,
+                  icon: FontAwesomeIcons.facebook,
+                  iconColor: Colors.white,
+                ),
+                const SizedBox(height: kVerticalSpaceSmall),
+                SpecialButton(
+                  text: 'Twitter',
+                  onPressed: () {
+                    // Handle button press
+                  },
+                  color: Colors.lightBlue,
+                  borderRadius: kBorderRadiusRegular,
+                  icon: FontAwesomeIcons.twitter,
+                  iconColor: Colors.white,
+                ),
+                const SizedBox(height: kVerticalSpaceSmall),
+                SpecialButton(
+                  text: 'Google',
+                  onPressed: () {
+                    // Handle button press
+                  },
+                  color: Colors.red,
+                  borderRadius: kBorderRadiusRegular,
+                  icon: FontAwesomeIcons.google,
+                  iconColor: Colors.white,
+                ),
+                const SizedBox(
+                  height: kVerticalSpaceMedium,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: kVerticalSpaceRegular),
+                  child: RichText(
+                    text: TextSpan(
+                      style: kBodyLarge.copyWith(color: Colors.black),
+                      children: const <TextSpan>[
+                        TextSpan(
+                            text: "Don't have an account? "), // Regular text
+                        TextSpan(
+                          text: 'Register',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold), // Bold text
+                        ),
+                      ],
+                    ),
+                  ),
+                )
+
+                // const SizedBox(height: kVerticalSpaceTiny), // For spacing
+                // CustomButton(CustomButtonType.social,
+                //     content: 'Google', borderRadius: kBorderRadiusMedium, onPressed: () {
+                //   // Handle button press
+                // }),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
