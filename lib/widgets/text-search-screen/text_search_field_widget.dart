@@ -18,21 +18,11 @@ class TextSearchFieldWidget extends StatelessWidget {
       return screenWidth * width / 412.0;
     }
 
-    final TextSearchController _textSearchController = Get.find<TextSearchController>();
+    final TextSearchController _textSearchController =
+        Get.find<TextSearchController>();
 
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.only(
-              top: kVerticalSpaceMedium, bottom: kVerticalSpaceSmall),
-          child: Center(
-            child: Text(
-              'Styleach Generative Image Search',
-              style: kTitleInter.copyWith(
-                  height: 0, fontSize: 20, letterSpacing: 0),
-            ),
-          ),
-        ),
         Center(
           child: Container(
             height: getHeight(60),
@@ -51,7 +41,8 @@ class TextSearchFieldWidget extends StatelessWidget {
                         width: getWidth(250),
                         child: TextFormField(
                           onChanged: (value) {
-                            _textSearchController.descriptionController.text = value;
+                            _textSearchController.descriptionController.text =
+                                value;
                           },
                           style: kTitleInter.copyWith(
                               fontSize: 15, letterSpacing: 0),
@@ -59,13 +50,14 @@ class TextSearchFieldWidget extends StatelessWidget {
                             border: InputBorder.none,
                             contentPadding:
                                 EdgeInsets.only(left: kHorizontalSpaceSmall),
+                            hintText: "Search...",
                           ),
                         ),
                       ),
                       GestureDetector(
                         onTap: () {
-                            _textSearchController.requestSimilarImages();
-                            FocusScope.of(context).unfocus();
+                          _textSearchController.requestSimilarImages();
+                          FocusScope.of(context).unfocus();
                         },
                         child: Container(
                           width: getWidth(85),
@@ -80,9 +72,10 @@ class TextSearchFieldWidget extends StatelessWidget {
                             child: Text(
                               "Generate",
                               style: kBodyLarge.copyWith(
-                                  color: Colors.white,
-                                  height: 0,
-                                  letterSpacing: 0.01),
+                                color: Colors.white,
+                                height: 0,
+                                letterSpacing: 0.01,
+                              ),
                             ),
                           ),
                         ),

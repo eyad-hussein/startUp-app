@@ -18,25 +18,19 @@ class PickSearchTypePanel extends StatelessWidget {
     double getWidth(double width) {
       return screenWidth * width / 412.0;
     }
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const Padding(
-          padding: EdgeInsets.only(
-            top: kVerticalSpaceRegular,
-            left: kHorizontalSpaceMedium,
-            bottom: kVerticalSpaceMedium,
-          ),
-          child: Text("Search Via...", style: kTitleBebasNeue),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(
-            left: kHorizontalSpaceMedium,
-          ),
-          child: Row(
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: kHorizontalSpaceMedium),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text("Search Via...", style: kTitleBebasNeue),
+          const SizedBox(height: kVerticalSpaceMedium),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               GestureDetector(
-                onTap: ()=>Get.offNamed(Routes.textSearchScreen),
+                onTap: () => Get.offNamed(Routes.textSearchScreen),
                 child: Container(
                   width: getWidth(156),
                   height: getHeight(65),
@@ -47,28 +41,11 @@ class PickSearchTypePanel extends StatelessWidget {
                     color: Colors.black,
                   ),
                   child: Center(
-                    child: Text(
-                      "Text Search",
-                      style: kBodyLarge.copyWith(
-                          color: Colors.white,
-                          height: 0,
-                          letterSpacing: 0.01),
+                    child: SvgPicture.asset(
+                      'assets/icons/text.svg',
+                      width: 31,
+                      height: 31,
                     ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: kHorizontalSpaceTiny,
-                  right: kHorizontalSpaceTiny,
-                ),
-                child: Text(
-                  'Or',
-                  style: kBodyLarge.copyWith(
-                    fontSize: 32,
-                    color: Colors.black,
-                    height: 0,
-                    letterSpacing: 0.01,
                   ),
                 ),
               ),
@@ -83,14 +60,13 @@ class PickSearchTypePanel extends StatelessWidget {
                     color: Colors.black,
                   ),
                   child: Center(
-                      child: SvgPicture.asset('assets/icons/camera.svg')
-                  ),
+                      child: SvgPicture.asset('assets/icons/camera.svg')),
                 ),
               ),
             ],
           ),
-        )
-      ],
+        ],
+      ),
     );
   }
 }

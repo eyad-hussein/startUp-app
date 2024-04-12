@@ -25,29 +25,51 @@ class TextSearchScreen extends StatelessWidget {
         Get.find<TextSearchController>();
 
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(
-              top: kVerticalSpaceLarge,
-              bottom: kVerticalSpaceSmall,
-            ),
-            child: Center(
-              child: SvgPicture.asset('assets/icons/styleach-logo.svg'),
-            ),
+        resizeToAvoidBottomInset: false,
+        body: Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: getWidth(10),
+            vertical: getHeight(30),
           ),
-          const TextSearchFieldWidget(),
-          const SizedBox(
-            height: kVerticalSpaceSmall,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  IconButton(
+                    icon: SvgPicture.asset(
+                      'assets/icons/close.svg',
+                      height: 16,
+                      width: 16,
+                    ),
+                    onPressed: () {
+                      Get.back();
+                    },
+                  ),
+                  const SizedBox(
+                    width: kHorizontalSpaceSmall,
+                  ),
+                  const Expanded(child: SizedBox()),
+                  SvgPicture.asset(
+                    'assets/logos/styleach-logo.svg',
+                  ),
+                  const Expanded(
+                    flex: 2,
+                    child: SizedBox(),
+                  ),
+                ],
+              ),
+              const TextSearchFieldWidget(),
+              const SizedBox(
+                height: kVerticalSpaceSmall,
+              ),
+              Visibility(
+                visible: _textSearchController.urlsAvailable.value,
+                child: TextSearchSimilarImages(),
+              ),
+            ],
           ),
-          Visibility(
-            visible: _textSearchController.urlsAvailable.value,
-            child: TextSearchSimilarImages(),
-          ),
-        ],
-      ),
-    );
+        ));
   }
 }

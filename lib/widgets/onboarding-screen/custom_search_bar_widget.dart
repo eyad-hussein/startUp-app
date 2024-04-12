@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:image_picker/image_picker.dart';
 
-
 class CustomSearchBar extends StatelessWidget {
   const CustomSearchBar({super.key});
 
@@ -19,11 +18,12 @@ class CustomSearchBar extends StatelessWidget {
     double getWidth(double width) {
       return screenWidth * width / 375.0;
     }
+
     return Row(
       children: [
         Container(
-          width: getWidth(274),
-          height: getHeight(60),
+          width: getWidth(250),
+          height: getHeight(50),
           padding: EdgeInsets.only(
             left: getWidth(15),
           ),
@@ -52,7 +52,9 @@ class CustomSearchBar extends StatelessWidget {
           padding: EdgeInsets.only(
             left: getWidth(10),
           ),
-          child: ImageSearchButton(source: ImageSource.gallery,),
+          child: ImageSearchButton(
+            source: ImageSource.gallery,
+          ),
         ),
       ],
     );

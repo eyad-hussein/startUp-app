@@ -5,7 +5,8 @@ import 'package:app/screens/auth/login_screen.dart';
 import 'package:app/screens/auth/new_password_screen.dart';
 import 'package:app/screens/auth/signup_screen.dart';
 import 'package:app/screens/auth/verification_code_screen.dart';
-import 'package:app/screens/product/onboarding_screen.dart';
+import 'package:app/screens/onboarding_screen.dart';
+import 'package:app/screens/product/products_screen.dart';
 import 'package:app/screens/cart_screen.dart';
 import 'package:app/screens/pick_search_type_screen.dart';
 import 'package:app/screens/order_confirmed_screen.dart';
@@ -17,8 +18,6 @@ import 'package:app/screens/splash_screen.dart';
 import 'package:app/screens/text_search_screen.dart';
 import 'package:get/get.dart';
 
-
-
 class Routes {
   static String splashScreenRoute = '/splash-screen';
   static String loginScreenRoute = '/login-screen';
@@ -29,6 +28,7 @@ class Routes {
   static String cartScreenRoute = '/cart-screen';
   static String productSearchRoute = '/product-search-screen';
   static String onBoardingScreenRoute = '/onboarding-screen';
+  static String productsScreenRoute = '/products-screen';
   static String paymentScreenRoute = '/payment-screen';
   static String addNewCardScreenRoute = '/add-new-card-screen';
   static String orderConfirmedScreenRoute = '/order-confirmed-screen';
@@ -59,7 +59,11 @@ final getPages = [
   ),
   GetPage(
     name: Routes.onBoardingScreenRoute,
-    page: () => OnBoardingScreen(),
+    page: () => const OnBoardingScreen(),
+  ),
+  GetPage(
+    name: Routes.productsScreenRoute,
+    page: () => const ProductsScreen(),
   ),
   GetPage(
     name: Routes.paymentScreenRoute,

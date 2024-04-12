@@ -37,10 +37,7 @@ class ImageSearchButton extends StatelessWidget {
       },
       child: Container(
         width: getWidth(50),
-        height: getHeight(60),
-        padding: EdgeInsets.only(
-          left: getWidth(12),
-        ),
+        height: getHeight(50),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           border: Border.all(color: Colors.black),
@@ -54,6 +51,8 @@ class ImageSearchButton extends StatelessWidget {
           ),
         ),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SvgPicture.asset('assets/icons/camera.svg'),
           ],

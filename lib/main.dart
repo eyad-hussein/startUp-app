@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
         initialRoute: Routes
-            .splashScreenRoute, // Restore it to default after finishing testing
+            .textSearchScreen, // Restore it to default after finishing testing
         getPages: getPages,
         themeMode: ThemeMode.light,
         theme: kLightTheme,

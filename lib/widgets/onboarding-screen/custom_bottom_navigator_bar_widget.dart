@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-import '../../shared/routes.dart';
+import 'package:app/shared/routes.dart';
 
 class CustomBottomNavigatorBar extends StatefulWidget {
   const CustomBottomNavigatorBar({super.key});
@@ -26,7 +26,7 @@ class _BottomNavigatorBarState extends State<CustomBottomNavigatorBar> {
     }
 
     return Container(
-      height: getHeight(80),
+      height: getHeight(85),
       decoration: BoxDecoration(
         gradient: RadialGradient(
           center: Alignment.topLeft,

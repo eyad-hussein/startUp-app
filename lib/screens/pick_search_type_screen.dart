@@ -39,6 +39,9 @@ class PickSearchTypeScreen extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
+          const SizedBox(
+            height: kVerticalSpaceSmall,
+          ),
           const PickSearchTypePanel(),
         ],
       ),
